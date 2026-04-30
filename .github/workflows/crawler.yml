@@ -1,0 +1,64 @@
+name: Daily Crawler
+
+on:
+  schedule:
+    - cron: '0 16 * * *'  # 北京时间 00:00 (UTC+8)
+  workflow_dispatch:
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        persist-credentials: true
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.x"
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Create cookie file from secret
+      run: |
+        echo "${{ secrets.COOKIE_TXT }}" | base64 -d > cookie.txt
+        mkdir -p scripts
+        cp cookie.txt scripts/cookie.txt
+    
+    - name: Run crawler
+      run: python main.py --all --limit 10
+    
+    - name: Migrate to bucket (direct mode)
+      run: python scripts/migrate_to_bucket.py --direct --author all
+      env:
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    
+    - name: Migrate to bucket (API mode)
+      run: python scripts/migrate_to_bucket.py --author all
+      env:
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    
+    - name: Upload data artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: crawler-data-${{ github.run_number }}
+        path: |
+          data/
+          logs/
+        retention-days: 3
+    
+    - name: Commit data to repo
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -f data/ logs/ 2>/dev/null || true
+        git diff --quiet && git diff --staged --quiet || git commit -m "Auto crawl: $(date '+%Y-%m-%d %H:%M')"
+        git push || echo "No changes to commit"
+      continue-on-error: true

@@ -3,3 +3,4 @@ httpx
 tqdm
 pillow
 pillow-heif
+huggingface_hub

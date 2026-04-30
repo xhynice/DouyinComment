@@ -1,0 +1,173 @@
+2026-05-01 01:14:19 | 0s | [INIT] 日志文件: C:\Users\Administrator\Desktop\DouyinComment\scripts\..\logs\migrate\migrate_20260501_011419.log
+2026-05-01 01:14:19 | 0s | ======================================================================
+2026-05-01 01:14:19 | 0s |   [INIT] 抖音资源 → HF Bucket 迁移（v3）
+2026-05-01 01:14:19 | 0s |   [INIT] 数据目录:    C:\Users\Administrator\Desktop\DouyinComment\scripts\..\data
+2026-05-01 01:14:19 | 0s |   [INIT] 日志目录:    C:\Users\Administrator\Desktop\DouyinComment\scripts\..\logs\migrate
+2026-05-01 01:14:19 | 0s |   [INIT] 作者过滤:    all
+2026-05-01 01:14:19 | 0s |   [INIT] 限制表:      全部
+2026-05-01 01:14:19 | 0s |   [INIT] 限制字段:    全部
+2026-05-01 01:14:19 | 0s |   [INIT] 最大任务数:  不限
+2026-05-01 01:14:19 | 0s |   [INIT] 批次大小:    20
+2026-05-01 01:14:19 | 0s |   [INIT] 并发数:      6
+2026-05-01 01:14:19 | 0s |   [INIT] Dry-run:     否
+2026-05-01 01:14:19 | 0s |   [INIT] Direct:      否
+2026-05-01 01:14:19 | 0s | ======================================================================
+2026-05-01 01:14:19 | 0s | 
+  [SCAN] 已选择 2 个数据库:
+2026-05-01 01:14:19 | 0s |   [SCAN] 📁 MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSY... (videos=399, comments=95326, replies=20956, 43.6 MB)
+2026-05-01 01:14:19 | 0s |   [SCAN] 📁 MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfN... (videos=146, comments=7907, replies=1920, 3.9 MB)
+2026-05-01 01:14:19 | 0s | 
+--- HEIF 格式检测 ---
+2026-05-01 01:14:19 | 0s | ✅ pillow-heif 已就绪
+2026-05-01 01:14:20 | 0s | 
+--- 验证 Cookie ---
+2026-05-01 01:14:22 | 2s | ✅ Cookie 有效，用户: 小黄鸭剪辑
+2026-05-01 01:14:22 | 2s | 
+──────────────────────────────────────────────────────────────────────
+2026-05-01 01:14:22 | 2s |   [SCAN] 📁 作者: MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSY...
+2026-05-01 01:14:22 | 2s |   [SCAN] 📄 数据库: C:\Users\Administrator\Desktop\DouyinComment\scripts\..\data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
+2026-05-01 01:14:22 | 2s | ──────────────────────────────────────────────────────────────────────
+2026-05-01 01:14:22 | 2s |   [SCAN] 总 task 数: 55
+2026-05-01 01:14:22 | 2s |     comment_image: 44
+2026-05-01 01:14:22 | 2s |     comment_sticker: 9
+2026-05-01 01:14:22 | 2s |     reply_image: 1
+2026-05-01 01:14:22 | 2s |     reply_sticker: 1
+2026-05-01 01:14:22 | 2s |   [SCAN] 唯一分组: 55，去重节省: 0 次下载
+2026-05-01 01:14:22 | 2s |   [BATCH] aweme_id 数: 16，分 1 批处理
+2026-05-01 01:14:22 | 2s | 
+  [BATCH] 📦 批次 1/1: 16 个 aweme_id, 55 个 URL
+2026-05-01 01:14:22 | 2s |   [API] 视频 aweme_id: 0, 评论 aweme_id: 15, 回复评论数: 2
+2026-05-01 01:14:22 | 2s |   [API] 涉及作者数: 0
+2026-05-01 01:14:22 | 2s |   [API] 数据库评论数: 95326, 回复数: 20956
+2026-05-01 01:14:43 | 24s |   [API] [评论] aweme_id=7374457005232131343: API 返回 575 条, 匹配 560, 不在DB中 15 (API样本: ['7374472091741946633', '7375861462990144306', '7374547032475026191', '7375088071966540607', '7374925120748028707'])
+2026-05-01 01:15:06 | 46s |   [API] [评论] aweme_id=7418241172264471847: API 返回 508 条, 匹配 507, 不在DB中 1 (API样本: ['7418255020107891495', '7418352129340080905', '7418433357446906663', '7418532991825740581', '7418247009742390052'])
+2026-05-01 01:16:23 | 2m03s |   [API] [评论] aweme_id=7437445576398048571: API 返回 956 条, 匹配 848, 不在DB中 108 (API样本: ['7437446084370318137', '7437471500863243020', '7554853227167138575', '7437452504939791104', '7437456564103709477'])
+2026-05-01 01:17:03 | 2m44s |   [API] [评论] aweme_id=7447440432881077563: API 返回 1062 条, 匹配 935, 不在DB中 127 (API样本: ['7447441435214971706', '7460425742826308393', '7447537297409934106', '7447745900824380194', '7448516680940290874'])
+2026-05-01 01:17:55 | 3m35s |   [API] [评论] aweme_id=7509903583040228666: API 返回 526 条, 匹配 525, 不在DB中 1 (API样本: ['7510066065483285263', '7542307092234486555', '7509933460762313532', '7509905001955984167', '7510082948680483641'])
+2026-05-01 01:18:14 | 3m55s |   [API] [评论] aweme_id=7527965091980348732: API 返回 528 条, 匹配 526, 不在DB中 2 (API样本: ['7558089973430469391', '7555458515479200571', '7558808448848315182', '7528034986961830696', '7527970927229813563'])
+2026-05-01 01:18:46 | 4m27s |   [API] [评论] aweme_id=7552144767007313210: API 返回 857 条, 匹配 747, 不在DB中 110 (API样本: ['7552343019686609723', '7552341843439059770', '7552360962344485684', '7553094834552275762', '7580929350061949745'])
+2026-05-01 01:19:39 | 5m19s |   [API] [评论] aweme_id=7553617629527002425: API 返回 1275 条, 匹配 1141, 不在DB中 134 (API样本: ['7553629238181790516', '7553705317034804008', '7585878136276271913', '7566318379910480650', '7566919432133706554'])
+2026-05-01 01:20:48 | 6m28s |   [API] [评论] aweme_id=7555833842822843706: API 返回 1863 条, 匹配 1729, 不在DB中 134 (API样本: ['7556443225264636723', '7557159860698317603', '7555841802823222076', '7555895786110747392', '7601671986515313445'])
+2026-05-01 01:21:14 | 6m55s |   [API] [回复] aweme_id=7560954743410675002 cid=7561015775118771004: API 返回 0 条回复
+2026-05-01 01:21:14 | 6m55s |   [BATCH] 获取签名 URL: 10240 个
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | replies.id=18126 api_type=reply_image | 表=replies | aweme=7560954743410675002 | 字段=image_list | 原因=cache_key=7560954743410675002:reply_image:7561076079004762907:7561015775118771004
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=64278 api_type=comment_sticker | 表=comments | aweme=7503090764761009465 | 字段=sticker | 原因=cache_key=7503090764761009465:comment_sticker:7503801460549108540
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36431 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7430788511643910947
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=90723 api_type=comment_sticker | 表=comments | aweme=7575874445581119665 | 字段=sticker | 原因=cache_key=7575874445581119665:comment_sticker:7605402697084551973
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36722 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429331474228970278
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36654 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429362260005634875
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36726 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429329667171877691
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36794 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429314204811232037
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=85194 api_type=comment_sticker | 表=comments | aweme=7560954743410675002 | 字段=sticker | 原因=cache_key=7560954743410675002:comment_sticker:7560974587825144595
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36543 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429636587237540642
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36639 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429370450096636710
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=68125 api_type=comment_sticker | 表=comments | aweme=7509903583040228666 | 字段=sticker | 原因=cache_key=7509903583040228666:comment_sticker:7509918927485928249
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=82002 api_type=comment_image | 表=comments | aweme=7555833842822843706 | 字段=image_list | 原因=cache_key=7555833842822843706:comment_image:7555852297412559667
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36584 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429538921605841723
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36457 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7430244546258797346
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36324 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429744339184698112
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36600 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429509211597914939
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=43502 api_type=comment_image | 表=comments | aweme=7447440432881077563 | 字段=image_list | 原因=cache_key=7447440432881077563:comment_image:7447465121943601958
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36345 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429306741702099770
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=85119 api_type=comment_image | 表=comments | aweme=7560954743410675002 | 字段=image_list | 原因=cache_key=7560954743410675002:comment_image:7561015775118771004
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=46997 api_type=comment_sticker | 表=comments | aweme=7456483966602841403 | 字段=sticker | 原因=cache_key=7456483966602841403:comment_sticker:7456484925118612261
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36551 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429611563205919545
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36727 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429329567783256891
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=80515 api_type=comment_image | 表=comments | aweme=7553617629527002425 | 字段=image_list | 原因=cache_key=7553617629527002425:comment_image:7553635051151213372
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36762 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429319081075622696
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36643 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429367338992698127
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36409 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7432858018943157052
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=80540 api_type=comment_image | 表=comments | aweme=7553617629527002425 | 字段=image_list | 原因=cache_key=7553617629527002425:comment_image:7553861984212124473
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36731 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429327442378113792
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=55094 api_type=comment_image | 表=comments | aweme=7476411176209976636 | 字段=image_list | 原因=cache_key=7476411176209976636:comment_image:7477523394284536636
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36340 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429328043532174090
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | replies.id=21178 api_type=reply_sticker | 表=replies | aweme=7631634541144461489 | 字段=sticker | 原因=cache_key=7631634541144461489:reply_sticker:7631725939220005690:7631635677198058298
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36412 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7432273504824116025
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=68123 api_type=comment_image | 表=comments | aweme=7509903583040228666 | 字段=image_list | 原因=cache_key=7509903583040228666:comment_image:7510060689391567676
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36773 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429317466600375098
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36728 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429329208747737906
+2026-05-01 01:21:14 | 6m55s |   [FAIL] 签名缺失 | comments.id=36445 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7430406597745427258
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/stickers/9a8710d53e11133008d1227917ff2f7a.gif
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/8055e2acabed77ace0326b7f928f1495.jpg
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/9fd2ff45aa0970849fde362222797f91.jpg
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/3c61736f76dc19709700aea9d6664819.jpg
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/b3bab5d93594ec22eb16fea543ecda8a.jpg
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/eb05b8a003272375b5de19759fdb5f34.jpg
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/stickers/33625d52be477b163a387153ae242f37.gif
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/698927a50eaef537b5b3e2c436dae512.jpg
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/5262b594137e8770c8ad04792ef2b0b5.jpg
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/stickers/15e13d90976d9fc406ee68a54e27c619.gif
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/stickers/79b38975a7d624a89023a99e86de60c9.gif
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/6050431c3cd5184130555ce5d1dfb4c1.jpg
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/d4167d29b5d537bd042ba6595bf784fb.jpg
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/74adc56cbb0f4f2f3b985cec86edc983.jpg
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/8114d7cf77e0a5bbbe056ca7d2df56bb.jpg
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/99f8c9310f936d9c205b4132d7ede218.jpg
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/1da9d8f9b4e5a217be97a205765c4cb3.jpg
+2026-05-01 01:21:29 | 7m09s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/a6d075788adeabca02efc494a0e201e7.jpg
+2026-05-01 01:21:29 | 7m09s |   [DB] 📝 待更新: 18 行
+2026-05-01 01:21:29 | 7m09s |   [DB] ✅ commit 成功: 18 行已写入
+2026-05-01 01:21:29 | 7m09s |   [BATCH] ✅ 批次完成，已提交 55/55 个 URL，耗时 427.2s
+2026-05-01 01:21:29 | 7m09s | 
+  [OK] 作者完成: 上传 18，更新 18 行，HEIC 转换 0，失败 37
+2026-05-01 01:21:29 | 7m09s | 
+──────────────────────────────────────────────────────────────────────
+2026-05-01 01:21:29 | 7m09s |   [SCAN] 📁 作者: MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfN...
+2026-05-01 01:21:29 | 7m09s |   [SCAN] 📄 数据库: C:\Users\Administrator\Desktop\DouyinComment\scripts\..\data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
+2026-05-01 01:21:29 | 7m09s | ──────────────────────────────────────────────────────────────────────
+2026-05-01 01:21:29 | 7m09s |   [SCAN] ⚠️  无资源，跳过
+2026-05-01 01:21:29 | 7m09s | 
+2026-05-01 01:21:29 | 7m09s | ======================================================================
+2026-05-01 01:21:29 | 7m09s |   全部完成
+2026-05-01 01:21:29 | 7m09s | ======================================================================
+2026-05-01 01:21:29 | 7m09s |   作者数:        1
+2026-05-01 01:21:29 | 7m09s |   总 task:       55
+2026-05-01 01:21:29 | 7m09s |   上传成功:      18
+2026-05-01 01:21:29 | 7m09s |   更新行数:      18
+2026-05-01 01:21:29 | 7m09s |   HEIC 转换:     0
+2026-05-01 01:21:29 | 7m09s |   失败:          37
+2026-05-01 01:21:29 | 7m09s |   总耗时:        430s (7m09s)
+2026-05-01 01:21:29 | 7m09s | ======================================================================
+2026-05-01 01:21:29 | 7m09s | 
+──────────────────────────────────────────────────────────────────────
+2026-05-01 01:21:29 | 7m09s |   失败汇总 (共 37 项)
+2026-05-01 01:21:29 | 7m09s | ──────────────────────────────────────────────────────────────────────
+2026-05-01 01:21:29 | 7m09s |     签名缺失: 37
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | replies.id=18126 api_type=reply_image | cache_key=7560954743410675002:reply_image:7561076079004762907:7561015775118771004
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=64278 api_type=comment_sticker | cache_key=7503090764761009465:comment_sticker:7503801460549108540
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36431 api_type=comment_image | cache_key=7429276471669083451:comment_image:7430788511643910947
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=90723 api_type=comment_sticker | cache_key=7575874445581119665:comment_sticker:7605402697084551973
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36722 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429331474228970278
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36654 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429362260005634875
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36726 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429329667171877691
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36794 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429314204811232037
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=85194 api_type=comment_sticker | cache_key=7560954743410675002:comment_sticker:7560974587825144595
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36543 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429636587237540642
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36639 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429370450096636710
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=68125 api_type=comment_sticker | cache_key=7509903583040228666:comment_sticker:7509918927485928249
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=82002 api_type=comment_image | cache_key=7555833842822843706:comment_image:7555852297412559667
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36584 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429538921605841723
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36457 api_type=comment_image | cache_key=7429276471669083451:comment_image:7430244546258797346
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36324 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429744339184698112
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36600 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429509211597914939
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=43502 api_type=comment_image | cache_key=7447440432881077563:comment_image:7447465121943601958
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36345 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429306741702099770
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=85119 api_type=comment_image | cache_key=7560954743410675002:comment_image:7561015775118771004
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=46997 api_type=comment_sticker | cache_key=7456483966602841403:comment_sticker:7456484925118612261
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36551 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429611563205919545
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36727 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429329567783256891
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=80515 api_type=comment_image | cache_key=7553617629527002425:comment_image:7553635051151213372
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36762 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429319081075622696
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36643 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429367338992698127
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36409 api_type=comment_image | cache_key=7429276471669083451:comment_image:7432858018943157052
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=80540 api_type=comment_image | cache_key=7553617629527002425:comment_image:7553861984212124473
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36731 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429327442378113792
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=55094 api_type=comment_image | cache_key=7476411176209976636:comment_image:7477523394284536636
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36340 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429328043532174090
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | replies.id=21178 api_type=reply_sticker | cache_key=7631634541144461489:reply_sticker:7631725939220005690:7631635677198058298
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36412 api_type=comment_image | cache_key=7429276471669083451:comment_image:7432273504824116025
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=68123 api_type=comment_image | cache_key=7509903583040228666:comment_image:7510060689391567676
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36773 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429317466600375098
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36728 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429329208747737906
+2026-05-01 01:21:29 | 7m09s |     • 签名缺失 | comments.id=36445 api_type=comment_image | cache_key=7429276471669083451:comment_image:7430406597745427258
+2026-05-01 01:21:29 | 7m09s | ──────────────────────────────────────────────────────────────────────

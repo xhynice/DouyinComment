@@ -4,8 +4,10 @@ import csv
 import json
 import ast
 import time
+import sqlite3
+import argparse
 from datetime import datetime, timezone, timedelta
-from typing import List, Dict
+from typing import List, Dict, Optional
 import shutil
 
 
@@ -26,16 +28,20 @@ def _ts_to_str(timestamp, fmt: str) -> str:
 
 
 class SiteBuilder:
-    def __init__(self, data_dir: str = 'data', output_dir: str = 'docs', upload_dir: str = 'upload'):
+    def __init__(self, data_dir: str = 'data', output_dir: str = 'docs', upload_dir: str = 'upload', use_sqlite: bool = False, cdn_url: str = ''):
         self.data_dir = data_dir
         self.output_dir = output_dir
         self.upload_dir = upload_dir
+        self.use_sqlite = use_sqlite
+        self.cdn_url = cdn_url.rstrip('/') if cdn_url else ''
+        self.use_cdn = bool(self.cdn_url)
         self.data_output_dir = os.path.join(output_dir, 'data', 'comment')
         self.current_sec_uid = None
         self.current_user_dir = None
         self.current_comments_dir = None
         self._config_cache = None
         self._config_path = None
+        self._db_conn: Optional[sqlite3.Connection] = None
         
     def _load_config(self):
         """懒加载配置并缓存。"""
@@ -68,6 +74,12 @@ class SiteBuilder:
         
         output_mtime = os.path.getmtime(output_path)
         
+        if self.use_sqlite:
+            db_path = os.path.join(user_path, 'sqlite.db')
+            if os.path.exists(db_path) and os.path.getmtime(db_path) > output_mtime:
+                return True
+            return False
+        
         videos_csv = os.path.join(user_path, 'videos.csv')
         if os.path.exists(videos_csv) and os.path.getmtime(videos_csv) > output_mtime:
             return True
@@ -89,18 +101,26 @@ class SiteBuilder:
         existing_users = self._load_existing_users_index()
         all_users_data = []
         
-        user_dirs = [
-            d for d in os.listdir(self.data_dir)
-            if os.path.isdir(os.path.join(self.data_dir, d))
-            and os.path.exists(os.path.join(self.data_dir, d, 'videos.csv'))
-        ]
+        if self.use_sqlite:
+            user_dirs = [
+                d for d in os.listdir(self.data_dir)
+                if os.path.isdir(os.path.join(self.data_dir, d))
+                and os.path.exists(os.path.join(self.data_dir, d, 'sqlite.db'))
+            ]
+        else:
+            user_dirs = [
+                d for d in os.listdir(self.data_dir)
+                if os.path.isdir(os.path.join(self.data_dir, d))
+                and os.path.exists(os.path.join(self.data_dir, d, 'videos.csv'))
+            ]
         
         total_users = len(user_dirs)
         if total_users == 0:
             print("没有找到需要处理的用户数据")
             return
         
-        print(f"\n找到 {total_users} 个用户数据")
+        data_source = "SQLite" if self.use_sqlite else "CSV"
+        print(f"\n找到 {total_users} 个用户数据 (数据源: {data_source})")
         print("=" * 60)
         
         start_time = time.time()
@@ -184,9 +204,14 @@ class SiteBuilder:
                 
                 video_list.sort(key=lambda x: x.get('create_time', 0) or 0, reverse=True)
                 
+                if self.use_cdn:
+                    base_url = f"{self.cdn_url}/{user_dir}/"
+                else:
+                    base_url = f"{self.upload_dir}/{user_dir}/"
+                
                 video_list_data = {
                     'sec_uid': user_dir,
-                    'base_url': f'upload/{user_dir}/',
+                    'base_url': base_url,
                     'videos': video_list,
                     'total_videos': len(video_list),
                     'total_comments': sum(v['comment_count'] for v in video_list) + total_reply_count
@@ -232,8 +257,196 @@ class SiteBuilder:
     
     # ==================== 数据加载 ====================
     
+    def _get_db_connection(self, db_path: str) -> sqlite3.Connection:
+        self._close_db_connection()
+        self._db_conn = sqlite3.connect(db_path)
+        self._db_conn.row_factory = sqlite3.Row
+        return self._db_conn
+    
+    def _close_db_connection(self):
+        if self._db_conn is not None:
+            self._db_conn.close()
+            self._db_conn = None
+    
+    def _build_media_url(self, subdir: str, filename: str, year: str = '') -> str:
+        """
+        构建媒体资源 URL。
+        本地模式: {subdir}/{year}/{filename}
+        CDN模式: {subdir}/{filename}?download=true
+        """
+        if not filename or filename.startswith('http'):
+            return filename
+        
+        if self.use_cdn:
+            return f"{subdir}/{filename}?download=true"
+        else:
+            if year:
+                return f"{subdir}/{year}/{filename}"
+            return f"{subdir}/{filename}"
+    
+    def _load_videos_sqlite(self, db_path: str) -> List[Dict]:
+        conn = self._get_db_connection(db_path)
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM videos WHERE sec_uid = ?", (self.current_sec_uid,))
+        rows = cursor.fetchall()
+        
+        videos = []
+        for row in rows:
+            video = {
+                'aweme_id': str(row['aweme_id']),
+                'desc': row['desc'] or '',
+                'create_time': row['create_time'],
+                'images': row['images'] or '',
+                'video': row['video'] or '',
+                'thumb': row['thumb'] or '',
+                'sec_uid': row['sec_uid'] or ''
+            }
+            
+            has_video = bool(video.get('video', '').strip())
+            has_images = bool(video.get('images', '').strip())
+            video['media_type'] = 'image' if has_images else 'video'
+            
+            if video.get('create_time'):
+                try:
+                    ts = int(video['create_time'])
+                    dt = datetime.fromtimestamp(ts)
+                    video['create_time_str'] = dt.strftime('%Y-%m-%d %H:%M')
+                    year = dt.strftime('%Y')
+                except (ValueError, TypeError):
+                    video['create_time_str'] = ''
+                    year = 'unknown'
+                
+                for field, subdir in [('images', 'images'), ('video', 'videos'), ('thumb', 'thumbs')]:
+                    raw = video.get(field, '').strip()
+                    if raw:
+                        urls = self._parse_json_list(raw)
+                        
+                        def _resolve_url(u, s=subdir, y=year):
+                            if isinstance(u, str) and not u.startswith('http'):
+                                return self._build_media_url(s, u, y)
+                            return u
+                        
+                        if urls and isinstance(urls[0], list):
+                            video[field] = str([[_resolve_url(u) for u in group] for group in urls])
+                        else:
+                            video[field] = str([_resolve_url(u) for u in urls]) if urls else raw
+            videos.append(video)
+        return videos
+    
+    def _load_all_comments_sqlite(self, db_path: str) -> Dict[str, List[Dict]]:
+        conn = self._get_db_connection(db_path)
+        cursor = conn.cursor()
+        
+        cursor.execute("SELECT * FROM comments WHERE aweme_id IN (SELECT aweme_id FROM videos WHERE sec_uid = ?)", (self.current_sec_uid,))
+        comment_rows = cursor.fetchall()
+        
+        cursor.execute("SELECT * FROM replies WHERE aweme_id IN (SELECT aweme_id FROM videos WHERE sec_uid = ?)", (self.current_sec_uid,))
+        reply_rows = cursor.fetchall()
+        
+        replies_by_cid = {}
+        for row in reply_rows:
+            reply = self._parse_sqlite_reply(row)
+            replies_by_cid.setdefault(str(row['reply_id']), []).append(reply)
+        
+        comments_data = {}
+        for row in comment_rows:
+            comment = self._parse_sqlite_comment(row)
+            cid = str(row['cid'])
+            comment['replies'] = replies_by_cid.get(cid, [])
+            comment['reply_count'] = len(comment['replies'])
+            
+            aweme_id = str(row['aweme_id'])
+            comments_data.setdefault(aweme_id, []).append(comment)
+        
+        return comments_data
+    
+    def _parse_sqlite_comment(self, row: sqlite3.Row) -> Dict:
+        year = _ts_to_str(row['create_time'], '%Y')
+        
+        image_list = self._parse_json_list(row['image_list'] or '')
+        if image_list:
+            image_list = [self._build_media_url('images', img, year) if isinstance(img, str) and not img.startswith('http') else img for img in image_list]
+        
+        comment = {
+            'aweme_id': str(row['aweme_id']),
+            'cid': str(row['cid']),
+            'text': row['text'] or '',
+            'image_list': image_list,
+            'digg_count': row['digg_count'] or 0,
+            'create_time': row['create_time'],
+            'user_nickname': row['user_nickname'] or '',
+            'user_unique_id': row['user_unique_id'] or '',
+            'user_avatar': row['user_avatar'] or '',
+            'sticker': row['sticker'] or '',
+            'reply_comment_total': row['reply_comment_total'] or 0,
+            'ip_label': row['ip_label'] or ''
+        }
+        
+        if row['create_time']:
+            try:
+                ts = int(row['create_time'])
+                comment['create_time_str'] = datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M')
+            except (ValueError, TypeError):
+                comment['create_time_str'] = ''
+        
+        if comment.get('sticker'):
+            sticker_url = comment['sticker'].strip()
+            if not sticker_url.startswith('http'):
+                comment['sticker'] = self._build_media_url('stickers', sticker_url, year)
+        
+        if comment.get('user_avatar') and not comment['user_avatar'].startswith('http'):
+            comment['user_avatar'] = self._build_media_url('avatars', comment['user_avatar'], year)
+        
+        return comment
+    
+    def _parse_sqlite_reply(self, row: sqlite3.Row) -> Dict:
+        year = _ts_to_str(row['create_time'], '%Y')
+        
+        image_list = self._parse_json_list(row['image_list'] or '')
+        if image_list:
+            image_list = [self._build_media_url('images', img, year) if isinstance(img, str) and not img.startswith('http') else img for img in image_list]
+        
+        reply = {
+            'aweme_id': str(row['aweme_id']),
+            'cid': str(row['cid']),
+            'reply_id': str(row['reply_id']),
+            'reply_to_reply_id': row['reply_to_reply_id'] or '',
+            'text': row['text'] or '',
+            'image_list': image_list,
+            'digg_count': row['digg_count'] or 0,
+            'create_time': row['create_time'],
+            'user_nickname': row['user_nickname'] or '',
+            'user_unique_id': row['user_unique_id'] or '',
+            'user_avatar': row['user_avatar'] or '',
+            'sticker': row['sticker'] or '',
+            'reply_to_username': row['reply_to_username'] or '',
+            'ip_label': row['ip_label'] or ''
+        }
+        
+        if row['create_time']:
+            try:
+                ts = int(row['create_time'])
+                reply['create_time_str'] = datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M')
+            except (ValueError, TypeError):
+                reply['create_time_str'] = ''
+        
+        if reply.get('sticker'):
+            sticker_url = reply['sticker'].strip()
+            if not sticker_url.startswith('http'):
+                reply['sticker'] = self._build_media_url('stickers', sticker_url, year)
+        
+        if reply.get('user_avatar') and not reply['user_avatar'].startswith('http'):
+            reply['user_avatar'] = self._build_media_url('avatars', reply['user_avatar'], year)
+        
+        return reply
+    
     def _load_videos(self, user_path: str) -> List[Dict]:
         """加载视频列表，处理媒体URL和时间转换。"""
+        if self.use_sqlite:
+            db_path = os.path.join(user_path, 'sqlite.db')
+            if os.path.exists(db_path):
+                return self._load_videos_sqlite(db_path)
+        
         videos = []
         csv_path = os.path.join(user_path, 'videos.csv')
         
@@ -262,8 +475,8 @@ class SiteBuilder:
                             urls = self._parse_json_list(raw)
                             
                             def _resolve_url(u, s=subdir, y=year):
-                                if isinstance(u, str):
-                                    return f"{s}/{y}/{u}" if not u.startswith('http') else u
+                                if isinstance(u, str) and not u.startswith('http'):
+                                    return self._build_media_url(s, u, y)
                                 return u
                             
                             if urls and isinstance(urls[0], list):
@@ -274,6 +487,11 @@ class SiteBuilder:
         return videos
     
     def _load_all_comments(self, user_path: str) -> Dict[str, List[Dict]]:
+        if self.use_sqlite:
+            db_path = os.path.join(user_path, 'sqlite.db')
+            if os.path.exists(db_path):
+                return self._load_all_comments_sqlite(db_path)
+        
         comments_data = {}
         
         for entry in os.listdir(user_path):
@@ -318,17 +536,21 @@ class SiteBuilder:
                 
                 if item.get('sticker', '').strip():
                     sticker_url = item['sticker'].strip()
-                    item['sticker'] = sticker_url if sticker_url.startswith('http') else f"stickers/{year}/{sticker_url}"
+                    if not sticker_url.startswith('http'):
+                        item['sticker'] = self._build_media_url('stickers', sticker_url, year)
                 
                 if item.get('image_list', '').strip():
-                    item['image_list'] = self._parse_json_list(item['image_list'])
+                    image_list = self._parse_json_list(item['image_list'])
+                    if image_list:
+                        image_list = [self._build_media_url('images', img, year) if isinstance(img, str) and not img.startswith('http') else img for img in image_list]
+                    item['image_list'] = image_list
                 
                 if item.get('create_time'):
                     try:
                         ts = int(item['create_time'])
                         item['create_time_str'] = datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M')
                         if item.get('user_avatar') and not item['user_avatar'].startswith('http'):
-                            item['user_avatar'] = f"avatars/{year}/{item['user_avatar']}"
+                            item['user_avatar'] = self._build_media_url('avatars', item['user_avatar'], year)
                     except (ValueError, TypeError):
                         item['create_time_str'] = ''
                 items.append(item)
@@ -393,7 +615,9 @@ class SiteBuilder:
         
         def _resolve_one(url):
             if isinstance(url, str) and not url.startswith('http'):
-                return f"{subdir}/{year}/{url}"
+                if '/' in url:
+                    return url
+                return self._build_media_url(subdir, url, year)
             return url
         
         if urls and isinstance(urls[0], list):
@@ -471,7 +695,21 @@ class SiteBuilder:
 
 
 def main():
-    SiteBuilder().build()
+    parser = argparse.ArgumentParser(description='构建评论数据站点')
+    parser.add_argument('--sqlite', action='store_true', help='使用 SQLite 数据库作为数据源')
+    parser.add_argument('--cdn', dest='cdn_url', default='', help='CDN 基础 URL (启用 CDN 模式)')
+    parser.add_argument('--data-dir', default='data', help='数据目录路径 (默认: data)')
+    parser.add_argument('--output-dir', default='docs', help='输出目录路径 (默认: docs)')
+    parser.add_argument('--upload-dir', default='upload', help='上传文件目录路径 (默认: upload)')
+    args = parser.parse_args()
+    
+    SiteBuilder(
+        data_dir=args.data_dir,
+        output_dir=args.output_dir,
+        upload_dir=args.upload_dir,
+        use_sqlite=args.sqlite,
+        cdn_url=args.cdn_url
+    ).build()
 
 
 if __name__ == '__main__':

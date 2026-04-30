@@ -134,11 +134,12 @@ class App {
         return html || '<span class="empty-text">[信息为图片或表情 系统未保存]</span>';
     }
     
-    renderUserHeader(item, cssPrefix, avatarPlaceholder) {
+    renderUserHeader(item, cssPrefix, avatarPlaceholder, replyTo = '') {
         const avatarHtml = item.user_avatar
             ? `<img class="${cssPrefix}-avatar" src="${this.getFullUrl(item.user_avatar)}" alt="头像" onerror="this.src='${avatarPlaceholder}'">`
             : '';
         const ipHtml = item.ip_label ? `<span class="${cssPrefix}-ip">${item.ip_label}</span>` : '';
+        const replyToHtml = replyTo ? `<span class="reply-to">回复 @<span data-copy="${this.escapeAttr(replyTo)}">${this.escapeHtml(replyTo)}</span></span>` : '';
         return `
             ${avatarHtml}
             <div class="${cssPrefix}-user">
@@ -146,6 +147,7 @@ class App {
                     <span class="${cssPrefix}-user-info">
                         <span class="${cssPrefix}-nickname" data-copy="${this.escapeAttr(item.user_nickname || '匿名')}">${this.escapeHtml(item.user_nickname || '匿名')}</span>
                         ${ipHtml}
+                        ${replyToHtml}
                     </span>
                 </div>
                 <span class="${cssPrefix}-time">${this.formatTimestamp(item.create_time)}</span>
@@ -714,19 +716,24 @@ class App {
             const sorted = [...comment.replies].sort((a,b) => (parseInt(a.create_time)||0) - (parseInt(b.create_time)||0));
             repliesHtml = `<div class="replies-section">${sorted.map(r => {
                 const rHL = hType === 'reply' && hCid === r.cid;
-                const rto = r.reply_to_username ? `<span class="reply-to">回复 @<span data-copy="${this.escapeAttr(r.reply_to_username)}">${this.escapeHtml(r.reply_to_username)}</span></span>` : '';
-                return `<div class="reply-item" id="reply-${r.cid}" style="${rHL?'background:#fff3cd':''}"><div class="reply-header">${this.renderUserHeader(r,'reply',ph)}${rto}</div><div class="reply-text">${this.renderContentHtml(r)}</div></div>`;
+                return `<div class="reply-item" id="reply-${r.cid}" style="${rHL?'background:#fff3cd':''}"><div class="reply-header">${this.renderUserHeader(r,'reply',ph,r.reply_to_username)}</div><div class="reply-text">${this.renderContentHtml(r)}</div></div>`;
             }).join('')}</div>`;
         }
         
         return `<div class="comment-item${isHot?' hot-comment':''}" id="comment-${comment.cid}" style="${isHL?'background:#fff3cd':''}">
             <div class="comment-header">${this.renderUserHeader(comment,'comment',ph)}</div>
             <div class="comment-text">${this.renderContentHtml(comment)}</div>
-            ${replies ? `<div class="replies-toggle-wrapper"><span class="replies-toggle" onclick="app.toggleReplies(this)">展开 ${replies} 条回复</span></div><div class="replies-container" style="display:${expand?'block':'none'}">${repliesHtml}</div>` : ''}
+            ${replies ? `<div class="replies-toggle-wrapper"><span class="replies-toggle" data-count="${replies}" onclick="app.toggleReplies(this)">展开 ${replies} 条回复</span></div><div class="replies-container" style="display:${expand?'block':'none'}">${repliesHtml}</div>` : ''}
         </div>`;
     }
     
-    toggleReplies(t) { const c = t.parentElement.nextElementSibling; c.style.display = c.style.display === 'none' ? 'block' : 'none'; }
+    toggleReplies(t) {
+        const c = t.parentElement.nextElementSibling;
+        const count = t.dataset.count;
+        const isHidden = c.style.display === 'none';
+        c.style.display = isHidden ? 'block' : 'none';
+        t.textContent = isHidden ? `收起回复` : `展开 ${count} 条回复`;
+    }
     
     copyToClipboard(text, el) {
         navigator.clipboard.writeText(text).then(() => { const o = el.textContent; el.textContent = '已复制'; el.classList.add('copied'); setTimeout(() => { el.textContent = o; el.classList.remove('copied'); }, 1000); }).catch(() => {});
