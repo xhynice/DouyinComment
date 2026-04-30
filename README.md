@@ -2,7 +2,7 @@
 
 > 抖音用户作品与评论数据采集器 — API 分页拉取，评论/回复全量采集，CSV + SQLite 存储 + 媒体下载。
 
-![Python](https://img.shields.io/badge/Python-3.12+-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)
 
 ## 目录
@@ -38,7 +38,7 @@
 
 ### 1. 环境要求
 
-- Python 3.8+
+- Python 3.11+
 
 ### 2. 安装
 

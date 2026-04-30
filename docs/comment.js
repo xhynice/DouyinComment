@@ -44,7 +44,7 @@ class App {
     getMainUrls(arr) {
         if (!arr || arr.length === 0) return [];
         if (Array.isArray(arr[0])) return arr.map(p => p[0] || '').filter(Boolean);
-        return [arr[0]].filter(Boolean);
+        return arr.filter(Boolean);
     }
     
     formatDateTime(video) {
@@ -250,6 +250,13 @@ class App {
         document.getElementById('video-modal').addEventListener('click', e => { if (e.target.id === 'video-modal') this.closeModal(); });
         document.addEventListener('keydown', e => {
             if (e.key === 'Escape') { this.closeModal(); this.closeSearchResults(); this.closeAllCustomSelects(); }
+        });
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                document.querySelectorAll('#video-modal video, #video-modal audio').forEach(el => {
+                    el.pause();
+                });
+            }
         });
         document.addEventListener('click', e => {
             const copyable = e.target.closest('[data-copy]');
@@ -461,38 +468,35 @@ class App {
         if (!c) { c = document.createElement('div'); c.id = 'active-repliers'; c.className = 'active-repliers'; document.getElementById('stats').appendChild(c); }
         const ph = this.getPlaceholderSvg('avatar');
         c.innerHTML = `<div class="repliers-label">活跃用户</div><div class="repliers-avatars">${
-            repliers.map(r => `<div class="replier-item" data-nickname="${this.escapeAttr(r.nickname)}" data-count="${r.count}">
-                <img class="replier-avatar" src="${r.avatar ? this.getFullUrl(r.avatar) : ph}" alt="${this.escapeHtml(r.nickname)}" onerror="this.src='${ph}'"></div>`).join('')
+            repliers.map(r => `<div class="replier-item" tabindex="0" data-nickname="${this.escapeAttr(r.nickname)}" data-count="${r.count}">
+                <img class="replier-avatar" src="${r.avatar ? this.getFullUrl(r.avatar) : ph}" alt="${this.escapeHtml(r.nickname)}" onerror="this.src='${ph}'">
+                <div class="replier-popover"><div class="replier-popover-name">${this.escapeHtml(r.nickname)}</div><div class="replier-popover-count">${r.count} 条回复</div></div>
+            </div>`).join('')
         }</div>`;
-        c.querySelectorAll('.replier-item').forEach(el => el.addEventListener('click', () => this.showReplierPopover(el)));
+        c.querySelectorAll('.replier-popover-name').forEach(el => el.addEventListener('click', e => { e.stopPropagation(); this.searchByNickname(el.textContent); }));
+        c.querySelectorAll('.replier-item').forEach(el => {
+            el.addEventListener('mouseenter', () => this._adjustPopoverPosition(el));
+            el.addEventListener('focus', () => this._adjustPopoverPosition(el));
+        });
     }
     
-    showReplierPopover(el) {
-        this.hideReplierPopover();
-        const n = el.dataset.nickname, cnt = el.dataset.count;
-        const pop = document.createElement('div');
-        pop.className = 'replier-popover';
-        pop.innerHTML = `<div class="replier-popover-name">${this.escapeHtml(n)}</div><div class="replier-popover-count">${cnt} 条回复</div>`;
-        pop.querySelector('.replier-popover-name').addEventListener('click', e => { e.stopPropagation(); this.searchByNickname(n); });
-        el.appendChild(pop);
-        el.classList.add('active');
+    _adjustPopoverPosition(el) {
+        const pop = el.querySelector('.replier-popover');
+        if (!pop || el.dataset.adjusted) return;
         const r = pop.getBoundingClientRect();
-        if (r.left < 10) { pop.style.left = '0'; pop.style.transform = 'translateX(0)'; pop.classList.add('arrow-left'); }
-        else if (r.right > window.innerWidth - 10) { pop.style.left = 'auto'; pop.style.right = '0'; pop.style.transform = 'none'; pop.classList.add('arrow-right'); }
-        setTimeout(() => document.addEventListener('click', this._rph = e => { if (!el.contains(e.target)) this.hideReplierPopover(); }), 0);
+        if (r.left < 10) {
+            pop.style.left = '0'; pop.style.transform = 'translateX(0)'; pop.classList.add('arrow-left');
+        } else if (r.right > window.innerWidth - 10) {
+            pop.style.left = 'auto'; pop.style.right = '0'; pop.style.transform = 'none'; pop.classList.add('arrow-right');
+        }
+        el.dataset.adjusted = '1';
     }
     
     searchByNickname(n) {
-        this.hideReplierPopover();
         document.querySelector('#search-type-wrapper .custom-select-trigger').dataset.value = 'nickname';
         document.querySelector('#search-type-wrapper .custom-select-trigger span').textContent = '昵称';
         document.getElementById('search-input').value = n;
         this.search();
-    }
-    
-    hideReplierPopover() {
-        document.querySelectorAll('.replier-item.active').forEach(el => { el.classList.remove('active'); el.querySelector('.replier-popover')?.remove(); });
-        if (this._rph) { document.removeEventListener('click', this._rph); this._rph = null; }
     }
     
     // ==================== 搜索 ====================
@@ -739,7 +743,16 @@ class App {
         navigator.clipboard.writeText(text).then(() => { const o = el.textContent; el.textContent = '已复制'; el.classList.add('copied'); setTimeout(() => { el.textContent = o; el.classList.remove('copied'); }, 1000); }).catch(() => {});
     }
     
-    closeModal() { document.getElementById('video-modal').classList.remove('active'); document.body.style.overflow = ''; document.body.style.paddingRight = ''; }
+    closeModal() {
+        const modal = document.getElementById('video-modal');
+        modal.querySelectorAll('video, audio').forEach(el => {
+            el.pause();
+            el.currentTime = 0;
+        });
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+    }
     loadMore() { this.renderVideos(); }
     
     async init() { await this.loadEmojiMap(); this.bindEvents(); await this.loadData(); }

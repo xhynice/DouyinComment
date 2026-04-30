@@ -232,14 +232,14 @@ body {
 .replier-avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,.1); transition: transform .2s; }
 .replier-avatar:hover { transform: scale(1.1); }
 .replier-item { position: relative; cursor: pointer; }
-.replier-popover { position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: rgba(0,0,0,.85); color: #fff; padding: 2px 12px; border-radius: 8px; text-align: center; white-space: nowrap; z-index: 100; animation: popoverFadeIn .2s ease; margin-bottom: 5px; }
+.replier-popover { position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: rgba(0,0,0,.85); color: #fff; padding: 2px 12px; border-radius: 8px; text-align: center; white-space: nowrap; z-index: 100; opacity: 0; visibility: hidden; transition: opacity .2s, visibility .2s; margin-bottom: 5px; }
+.replier-item:hover .replier-popover, .replier-item:focus-within .replier-popover { opacity: 1; visibility: visible; }
 .replier-popover::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top-color: rgba(0,0,0,.85); }
 .replier-popover.arrow-left::after { left: 20px; }
 .replier-popover.arrow-right::after { left: auto; right: 20px; transform: none; }
 .replier-popover-name { font-size: .85rem; font-weight: 500; margin-bottom: 2px; max-width: 150px; overflow: hidden; text-overflow: ellipsis; cursor: pointer; transition: color .2s; }
 .replier-popover-name:hover { color: #ffd700; }
 .replier-popover-count { font-size: .75rem; color: #ccc; }
-@keyframes popoverFadeIn { from { opacity: 0; margin-bottom: 15px; } to { opacity: 1; margin-bottom: 5px; } }
 
 /* ==================== Nav & Search ==================== */
 
