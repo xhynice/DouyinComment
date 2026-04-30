@@ -1,0 +1,5 @@
+pyyaml
+httpx
+tqdm
+pillow
+pillow-heif

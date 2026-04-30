@@ -1,0 +1,91 @@
+2026-04-26 18:12:47 | ERROR    | [主程序] 运行出错: name 'skip_existing' is not defined
+2026-04-26 18:12:47 | INFO     | [清理] 资源释放完成
+2026-04-26 18:12:47 | INFO     | [清理] 资源释放完成
+2026-04-26 18:15:00 | INFO     | [DB] SQLite 初始化完成: data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
+2026-04-26 18:15:00 | INFO     | [采集] 开始 用户=MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA 类型=作品
+2026-04-26 18:15:01 | INFO     | [Cookie] ✓ 验证通过，登录用户: 小黄鸭剪辑
+2026-04-26 18:15:02 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1771148368000
+2026-04-26 18:15:03 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\videos.csv
+2026-04-26 18:15:03 | INFO     | [存储] DB 写入 1 条 → videos
+2026-04-26 18:15:03 | INFO     | [采集] 开始 用户=MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA 类型=评论 视频=5
+2026-04-26 18:15:04 | INFO     | [Cookie] ✓ 验证通过，登录用户: 小黄鸭剪辑
+2026-04-26 18:15:11 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-04\7627558294349234875\comments.csv
+2026-04-26 18:15:11 | INFO     | [存储] DB 写入 1 条 → comments
+2026-04-26 18:15:11 | INFO     | [采集] 视频 7627558294349234875 采集评论 105 条，新增 1 条
+2026-04-26 18:15:25 | INFO     | [存储] CSV 写入 7 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-04\7629651594590023163\comments.csv
+2026-04-26 18:15:25 | INFO     | [存储] DB 写入 7 条 → comments
+2026-04-26 18:15:25 | INFO     | [采集] 视频 7629651594590023163 采集评论 182 条，新增 7 条
+2026-04-26 18:15:30 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-04\7631634541144461489\comments.csv
+2026-04-26 18:15:30 | INFO     | [存储] DB 写入 1 条 → comments
+2026-04-26 18:15:30 | INFO     | [采集] 视频 7631634541144461489 采集评论 51 条，新增 1 条
+2026-04-26 18:15:34 | INFO     | [存储] CSV 写入 38 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-04\7632013241091009201\comments.csv
+2026-04-26 18:15:34 | INFO     | [存储] DB 写入 38 条 → comments
+2026-04-26 18:15:34 | INFO     | [采集] 视频 7632013241091009201 采集评论 38 条，新增 38 条
+2026-04-26 18:15:41 | INFO     | [存储] CSV 写入 108 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-04\7632818045987846010\comments.csv
+2026-04-26 18:15:41 | INFO     | [存储] DB 写入 108 条 → comments
+2026-04-26 18:15:41 | INFO     | [采集] 视频 7632818045987846010 采集评论 108 条，新增 108 条
+2026-04-26 18:15:42 | INFO     | [采集] 开始 用户=MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA 类型=回复 评论=40 视频=5
+2026-04-26 18:15:43 | INFO     | [Cookie] ✓ 验证通过，登录用户: 小黄鸭剪辑
+2026-04-26 18:16:01 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-04\7627558294349234875\replies.csv
+2026-04-26 18:16:01 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-26 18:16:01 | INFO     | [采集] 视频 7627558294349234875 采集回复 49 条，新增 1 条
+2026-04-26 18:16:17 | INFO     | [采集] 视频 7629651594590023163 采集回复 35 条，新增 0 条
+2026-04-26 18:16:24 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-04\7631634541144461489\replies.csv
+2026-04-26 18:16:24 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-26 18:16:24 | INFO     | [采集] 视频 7631634541144461489 采集回复 17 条，新增 2 条
+2026-04-26 18:16:29 | INFO     | [存储] CSV 写入 10 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-04\7632013241091009201\replies.csv
+2026-04-26 18:16:29 | INFO     | [存储] DB 写入 10 条 → replies
+2026-04-26 18:16:29 | INFO     | [采集] 视频 7632013241091009201 采集回复 10 条，新增 10 条
+2026-04-26 18:16:36 | INFO     | [存储] CSV 写入 8 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-04\7632818045987846010\replies.csv
+2026-04-26 18:16:36 | INFO     | [存储] DB 写入 8 条 → replies
+2026-04-26 18:16:36 | INFO     | [采集] 视频 7632818045987846010 采集回复 8 条，新增 8 条
+2026-04-26 18:16:37 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
+2026-04-26 18:16:37 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
+2026-04-26 18:16:37 | INFO     | [清理] 资源释放完成
+2026-04-26 18:17:53 | INFO     | [DB] SQLite 初始化完成: data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
+2026-04-26 18:17:53 | INFO     | [采集] 开始 用户=MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA 类型=作品
+2026-04-26 18:17:54 | INFO     | [Cookie] ✓ 验证通过，登录用户: 小黄鸭剪辑
+2026-04-26 18:17:55 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1771148368000
+2026-04-26 18:17:56 | INFO     | [采集] 开始 用户=MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA 类型=评论 视频=15
+2026-04-26 18:17:57 | INFO     | [Cookie] ✓ 验证通过，登录用户: 小黄鸭剪辑
+2026-04-26 18:18:06 | INFO     | [采集] 视频 7611119874355018853 采集评论 130 条，新增 0 条
+2026-04-26 18:18:28 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-03\7612948256855177649\comments.csv
+2026-04-26 18:18:28 | INFO     | [存储] DB 写入 2 条 → comments
+2026-04-26 18:18:28 | INFO     | [采集] 视频 7612948256855177649 采集评论 298 条，新增 2 条
+2026-04-26 18:18:57 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-03\7612953623395664113\comments.csv
+2026-04-26 18:18:57 | INFO     | [存储] DB 写入 1 条 → comments
+2026-04-26 18:18:57 | INFO     | [采集] 视频 7612953623395664113 采集评论 377 条，新增 1 条
+2026-04-26 18:19:01 | INFO     | [采集] 视频 7615217396639228529 采集评论 43 条，新增 0 条
+2026-04-26 18:19:17 | INFO     | [采集] 视频 7616789594936209585 采集评论 205 条，新增 0 条
+2026-04-26 18:19:21 | INFO     | [采集] 视频 7620514013474295418 采集评论 64 条，新增 0 条
+2026-04-26 18:19:27 | INFO     | [采集] 视频 7622614670629050033 采集评论 56 条，新增 0 条
+2026-04-26 18:19:33 | INFO     | [采集] 视频 7623179719697457849 采集评论 83 条，新增 0 条
+2026-04-26 18:19:38 | INFO     | [存储] CSV 写入 3 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-04\7624581934820144074\comments.csv
+2026-04-26 18:19:38 | INFO     | [存储] DB 写入 3 条 → comments
+2026-04-26 18:19:38 | INFO     | [采集] 视频 7624581934820144074 采集评论 71 条，新增 3 条
+2026-04-26 18:19:48 | INFO     | [采集] 视频 7626441345066862705 采集评论 141 条，新增 0 条
+2026-04-26 18:19:56 | INFO     | [采集] 视频 7627558294349234875 采集评论 105 条，新增 0 条
+2026-04-26 18:20:10 | INFO     | [采集] 视频 7629651594590023163 采集评论 182 条，新增 0 条
+2026-04-26 18:20:15 | INFO     | [采集] 视频 7631634541144461489 采集评论 51 条，新增 0 条
+2026-04-26 18:20:19 | INFO     | [采集] 视频 7632013241091009201 采集评论 38 条，新增 0 条
+2026-04-26 18:20:27 | INFO     | [采集] 视频 7632818045987846010 采集评论 108 条，新增 0 条
+2026-04-26 18:20:28 | INFO     | [采集] 开始 用户=MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA 类型=回复 评论=171 视频=15
+2026-04-26 18:20:29 | INFO     | [Cookie] ✓ 验证通过，登录用户: 小黄鸭剪辑
+2026-04-26 18:20:42 | INFO     | [采集] 视频 7611119874355018853 采集回复 26 条，新增 0 条
+2026-04-26 18:21:10 | INFO     | [采集] 视频 7612948256855177649 采集回复 56 条，新增 0 条
+2026-04-26 18:21:41 | INFO     | [采集] 视频 7612953623395664113 采集回复 63 条，新增 0 条
+2026-04-26 18:21:46 | INFO     | [采集] 视频 7615217396639228529 采集回复 12 条，新增 0 条
+2026-04-26 18:22:10 | INFO     | [采集] 视频 7616789594936209585 采集回复 41 条，新增 0 条
+2026-04-26 18:22:22 | INFO     | [采集] 视频 7620514013474295418 采集回复 22 条，新增 0 条
+2026-04-26 18:22:34 | INFO     | [采集] 视频 7622614670629050033 采集回复 42 条，新增 0 条
+2026-04-26 18:22:55 | INFO     | [采集] 视频 7623179719697457849 采集回复 51 条，新增 0 条
+2026-04-26 18:23:11 | INFO     | [采集] 视频 7624581934820144074 采集回复 21 条，新增 0 条
+2026-04-26 18:23:24 | INFO     | [采集] 视频 7626441345066862705 采集回复 38 条，新增 0 条
+2026-04-26 18:23:43 | INFO     | [采集] 视频 7627558294349234875 采集回复 49 条，新增 0 条
+2026-04-26 18:23:58 | INFO     | [采集] 视频 7629651594590023163 采集回复 35 条，新增 0 条
+2026-04-26 18:24:04 | INFO     | [采集] 视频 7631634541144461489 采集回复 17 条，新增 0 条
+2026-04-26 18:24:08 | INFO     | [采集] 视频 7632013241091009201 采集回复 10 条，新增 0 条
+2026-04-26 18:24:15 | INFO     | [采集] 视频 7632818045987846010 采集回复 8 条，新增 0 条
+2026-04-26 18:24:16 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
+2026-04-26 18:24:16 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
+2026-04-26 18:24:16 | INFO     | [清理] 资源释放完成

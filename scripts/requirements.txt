@@ -1,0 +1,5 @@
+httpx
+huggingface_hub
+tqdm
+pillow
+pillow-heif

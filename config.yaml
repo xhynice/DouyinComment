@@ -1,0 +1,104 @@
+# ==================== 用户配置 ====================
+# 支持多用户批量采集，每个用户数据独立存储
+users:
+  - enabled: true                  # 是否启用该用户（true=采集，false=跳过）
+    sec_uid: "MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA"    # 用户 ID（从主页 URL 获取）
+    nickname: "张全蛋。"            # 用户昵称（用于日志显示，便于识别）
+    videos: true                   # 是否采集作品
+    comments: true                 # 是否采集评论
+    replies: true                  # 是否采集回复
+
+  - enabled: true
+    sec_uid: "MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR"
+    nickname: "才扁扁"
+    videos: true
+    comments: true
+    replies: true
+
+
+# ==================== 存储配置 ====================
+# SQLite 用于去重和加速查询，CSV 用于 Excel 直接打开
+sqlite: true                       # true=CSV+SQLite 双写，false=仅 CSV
+
+
+# ==================== 采集配置 ====================
+crawler:
+  request_delay: 1               # 请求间隔（秒），自动加 30% 随机抖动
+                                   # 推荐 1.0-2.0，过快可能触发风控
+  download_threads: 6              # 媒体下载并发线程数
+                                   # 推荐 4-8，过多可能被限流
+
+
+# ==================== 日志配置 ====================
+log:
+  console_level: INFO              # 控制台日志级别：DEBUG | INFO | WARNING | ERROR
+  file_level: DEBUG                # 文件日志级别（建议始终 DEBUG，保留详细信息）
+
+
+# ==================== 字段配置 ====================
+# 控制各类数据保存哪些字段到 CSV
+# 以 # 开头的行会被忽略（不保存该字段）
+fields:
+  # 作品字段
+  video:
+    - aweme_id                     # 作品 ID
+    - desc                         # 作品描述
+    - create_time                  # 创建时间（时间戳）
+    - images                       # 图片列表（多个 URL）
+    - video                        # 视频地址
+    - thumb                        # 缩略图
+
+  # 评论字段
+  comment:
+    - aweme_id                     # 作品 ID
+    - cid                          # 评论 ID
+    - text                         # 评论内容
+    - image_list                   # 评论图片列表
+    - digg_count                   # 点赞数
+    - create_time                  # 创建时间（时间戳）
+    - user_nickname                # 用户昵称
+    - user_unique_id               # 用户 ID
+    - user_avatar                  # 用户头像 URL
+    - sticker                      # 表情包 URL
+    - reply_comment_total          # 回复数量
+    - ip_label                     # IP 归属地
+    # - digg_count                 # 示例：如何忽略字段（前面加 # 和空格）
+
+  # 回复字段
+  reply:
+    - aweme_id                     # 作品 ID
+    - cid                          # 评论 ID
+    - reply_id                     # 回复 ID
+    - reply_to_reply_id            # 回复的回复 ID
+    - text                         # 回复内容
+    - image_list                   # 回复图片列表
+    - digg_count                   # 点赞数
+    - create_time                  # 创建时间（时间戳）
+    - user_nickname                # 用户昵称
+    - user_unique_id               # 用户 ID
+    - user_avatar                  # 用户头像 URL
+    - sticker                      # 表情包 URL
+    - reply_to_username            # 回复的目标用户名
+    - ip_label                     # IP 归属地
+
+
+# ==================== 媒体下载配置 ====================
+# 控制各类媒体文件是否下载（仅 --download-only 时生效）
+media_download:
+  # 作品相关媒体
+  video:
+    images: true                   # 作品图片
+    videos: true                   # 作品视频
+    thumbs: true                   # 作品缩略图
+  
+  # 评论相关媒体
+  comment:
+    images: true                   # 评论图片
+    avatars: true                  # 用户头像
+    stickers: true                 # 表情包
+  
+  # 回复相关媒体
+  reply:
+    images: true                   # 回复图片
+    avatars: true                  # 用户头像
+    stickers: true                 # 表情包

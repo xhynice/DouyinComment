@@ -1,0 +1,31 @@
+2026-04-24 22:17:27 | INFO     | [DB] SQLite 初始化完成: data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
+2026-04-24 22:17:27 | INFO     | [采集] 开始 用户=MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA 类型=作品
+2026-04-24 22:17:28 | INFO     | [Cookie] ✓ 验证通过，登录用户: 小黄鸭剪辑
+2026-04-24 22:17:29 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1770569365000
+2026-04-24 22:17:31 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1765291898000
+2026-04-24 22:17:32 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1761986339000
+2026-04-24 22:17:34 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1757928737000
+2026-04-24 22:17:36 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1754251971000
+2026-04-24 22:17:38 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1748677123000
+2026-04-24 22:17:39 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1746520773000
+2026-04-24 22:17:41 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1743665828000
+2026-04-24 22:17:43 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1740250839000
+2026-04-24 22:17:45 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1737627675000
+2026-04-24 22:17:46 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1735295453000
+2026-04-24 22:17:48 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1732029856000
+2026-04-24 22:17:50 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1728864468000
+2026-04-24 22:17:51 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1725947940000
+2026-04-24 22:17:52 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1721852863000
+2026-04-24 22:17:54 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1717357481000
+2026-04-24 22:17:55 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1711365484000
+2026-04-24 22:17:58 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1705137892000
+2026-04-24 22:18:00 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1701631329000
+2026-04-24 22:18:01 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1696876439000
+2026-04-24 22:18:03 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1689623644000
+2026-04-24 22:18:05 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1665227828000
+2026-04-24 22:18:06 | DEBUG    | [采集] API 响应：aweme_list=2, has_more=0, max_cursor=1662128470000
+2026-04-24 22:18:06 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\videos.csv
+2026-04-24 22:18:06 | INFO     | [存储] DB 写入 1 条 → videos
+2026-04-24 22:18:06 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
+2026-04-24 22:18:06 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
+2026-04-24 22:18:06 | INFO     | [清理] 资源释放完成

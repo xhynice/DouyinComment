@@ -1,0 +1,1017 @@
+2026-04-27 18:02:23 | INFO     | [DB] SQLite 初始化完成: data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
+2026-04-27 18:02:23 | INFO     | [采集] 开始 用户=MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA 类型=作品
+2026-04-27 18:02:24 | INFO     | [Cookie] ✓ 验证通过，登录用户: 小黄鸭剪辑
+2026-04-27 18:02:25 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1771148368000
+2026-04-27 18:02:27 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1765354217000
+2026-04-27 18:02:28 | INFO     | [采集] 开始 用户=MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA 类型=评论 视频=30
+2026-04-27 18:02:28 | INFO     | [Cookie] ✓ 验证通过，登录用户: 小黄鸭剪辑
+2026-04-27 18:02:42 | INFO     | [采集] 视频 7589330715935930233 采集评论 202 条，新增 0 条
+2026-04-27 18:02:58 | INFO     | [采集] 视频 7590420800285813434 采集评论 223 条，新增 0 条
+2026-04-27 18:03:08 | INFO     | [采集] 视频 7590429551584542373 采集评论 110 条，新增 0 条
+2026-04-27 18:03:16 | INFO     | [采集] 视频 7590846021770202609 采集评论 93 条，新增 0 条
+2026-04-27 18:03:38 | INFO     | [采集] 视频 7596891557152969459 采集评论 298 条，新增 0 条
+2026-04-27 18:03:54 | INFO     | [采集] 视频 7597137548649862769 采集评论 231 条，新增 0 条
+2026-04-27 18:04:10 | INFO     | [采集] 视频 7597347286225631409 采集评论 214 条，新增 0 条
+2026-04-27 18:04:26 | INFO     | [采集] 视频 7597388357547118235 采集评论 217 条，新增 0 条
+2026-04-27 18:04:32 | INFO     | [采集] 视频 7601191260158861305 采集评论 87 条，新增 0 条
+2026-04-27 18:04:40 | INFO     | [采集] 视频 7601284584450489529 采集评论 93 条，新增 0 条
+2026-04-27 18:04:55 | INFO     | [采集] 视频 7602592681696755185 采集评论 184 条，新增 0 条
+2026-04-27 18:05:08 | INFO     | [采集] 视频 7604537501063667621 采集评论 187 条，新增 0 条
+2026-04-27 18:05:24 | INFO     | [采集] 视频 7607024290999371002 采集评论 229 条，新增 0 条
+2026-04-27 18:06:10 | INFO     | [存储] CSV 写入 184 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-02\7607405782813441393\comments.csv
+2026-04-27 18:06:10 | INFO     | [存储] DB 写入 157 条 → comments
+2026-04-27 18:06:10 | INFO     | [采集] 视频 7607405782813441393 采集评论 627 条，新增 184 条
+2026-04-27 18:06:16 | INFO     | [采集] 视频 7607775162029418469 采集评论 64 条，新增 0 条
+2026-04-27 18:06:27 | INFO     | [采集] 视频 7611119874355018853 采集评论 130 条，新增 0 条
+2026-04-27 18:06:49 | INFO     | [采集] 视频 7612948256855177649 采集评论 298 条，新增 0 条
+2026-04-27 18:07:16 | INFO     | [采集] 视频 7612953623395664113 采集评论 377 条，新增 0 条
+2026-04-27 18:07:19 | INFO     | [采集] 视频 7615217396639228529 采集评论 43 条，新增 0 条
+2026-04-27 18:07:36 | INFO     | [采集] 视频 7616789594936209585 采集评论 205 条，新增 0 条
+2026-04-27 18:07:40 | INFO     | [采集] 视频 7620514013474295418 采集评论 64 条，新增 0 条
+2026-04-27 18:07:45 | INFO     | [采集] 视频 7622614670629050033 采集评论 56 条，新增 0 条
+2026-04-27 18:07:52 | INFO     | [采集] 视频 7623179719697457849 采集评论 83 条，新增 0 条
+2026-04-27 18:07:57 | INFO     | [采集] 视频 7624581934820144074 采集评论 71 条，新增 0 条
+2026-04-27 18:08:08 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-04\7626441345066862705\comments.csv
+2026-04-27 18:08:08 | INFO     | [存储] DB 写入 1 条 → comments
+2026-04-27 18:08:08 | INFO     | [采集] 视频 7626441345066862705 采集评论 142 条，新增 1 条
+2026-04-27 18:08:15 | INFO     | [采集] 视频 7627558294349234875 采集评论 105 条，新增 0 条
+2026-04-27 18:08:28 | INFO     | [采集] 视频 7629651594590023163 采集评论 182 条，新增 0 条
+2026-04-27 18:08:32 | INFO     | [采集] 视频 7631634541144461489 采集评论 51 条，新增 0 条
+2026-04-27 18:08:36 | INFO     | [采集] 视频 7632013241091009201 采集评论 38 条，新增 0 条
+2026-04-27 18:08:44 | INFO     | [存储] CSV 写入 17 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-04\7632818045987846010\comments.csv
+2026-04-27 18:08:44 | INFO     | [存储] DB 写入 17 条 → comments
+2026-04-27 18:08:44 | INFO     | [采集] 视频 7632818045987846010 采集评论 125 条，新增 17 条
+2026-04-27 18:08:46 | INFO     | [采集] 开始 用户=MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA 类型=回复 评论=369 视频=30
+2026-04-27 18:08:46 | INFO     | [Cookie] ✓ 验证通过，登录用户: 小黄鸭剪辑
+2026-04-27 18:09:09 | INFO     | [采集] 视频 7589330715935930233 采集回复 53 条，新增 0 条
+2026-04-27 18:09:16 | INFO     | [采集] 视频 7590420800285813434 采集回复 11 条，新增 0 条
+2026-04-27 18:09:25 | INFO     | [采集] 视频 7590429551584542373 采集回复 8 条，新增 0 条
+2026-04-27 18:09:39 | INFO     | [采集] 视频 7590846021770202609 采集回复 17 条，新增 0 条
+2026-04-27 18:10:01 | INFO     | [采集] 视频 7596891557152969459 采集回复 36 条，新增 0 条
+2026-04-27 18:10:23 | INFO     | [采集] 视频 7597137548649862769 采集回复 50 条，新增 0 条
+2026-04-27 18:10:38 | INFO     | [采集] 视频 7597347286225631409 采集回复 51 条，新增 0 条
+2026-04-27 18:10:52 | INFO     | [采集] 视频 7597388357547118235 采集回复 28 条，新增 0 条
+2026-04-27 18:11:06 | INFO     | [采集] 视频 7601191260158861305 采集回复 32 条，新增 0 条
+2026-04-27 18:11:13 | INFO     | [采集] 视频 7601284584450489529 采集回复 15 条，新增 0 条
+2026-04-27 18:11:21 | INFO     | [采集] 视频 7602592681696755185 采集回复 21 条，新增 0 条
+2026-04-27 18:11:41 | INFO     | [采集] 视频 7604537501063667621 采集回复 49 条，新增 0 条
+2026-04-27 18:12:05 | INFO     | [采集] 视频 7607024290999371002 采集回复 48 条，新增 0 条
+2026-04-27 18:12:58 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-02\7607405782813441393\replies.csv
+2026-04-27 18:12:58 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 18:12:58 | INFO     | [采集] 视频 7607405782813441393 采集回复 124 条，新增 1 条
+2026-04-27 18:13:07 | INFO     | [采集] 视频 7607775162029418469 采集回复 24 条，新增 0 条
+2026-04-27 18:13:20 | INFO     | [采集] 视频 7611119874355018853 采集回复 26 条，新增 0 条
+2026-04-27 18:13:48 | INFO     | [采集] 视频 7612948256855177649 采集回复 56 条，新增 0 条
+2026-04-27 18:14:17 | INFO     | [采集] 视频 7612953623395664113 采集回复 63 条，新增 0 条
+2026-04-27 18:14:22 | INFO     | [采集] 视频 7615217396639228529 采集回复 12 条，新增 0 条
+2026-04-27 18:14:46 | INFO     | [采集] 视频 7616789594936209585 采集回复 41 条，新增 0 条
+2026-04-27 18:15:00 | INFO     | [采集] 视频 7620514013474295418 采集回复 22 条，新增 0 条
+2026-04-27 18:15:12 | INFO     | [采集] 视频 7622614670629050033 采集回复 42 条，新增 0 条
+2026-04-27 18:15:33 | INFO     | [采集] 视频 7623179719697457849 采集回复 51 条，新增 0 条
+2026-04-27 18:15:50 | INFO     | [采集] 视频 7624581934820144074 采集回复 21 条，新增 0 条
+2026-04-27 18:16:02 | INFO     | [采集] 视频 7626441345066862705 采集回复 38 条，新增 0 条
+2026-04-27 18:16:22 | INFO     | [采集] 视频 7627558294349234875 采集回复 49 条，新增 0 条
+2026-04-27 18:16:37 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-04\7629651594590023163\replies.csv
+2026-04-27 18:16:37 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 18:16:37 | INFO     | [采集] 视频 7629651594590023163 采集回复 36 条，新增 1 条
+2026-04-27 18:16:43 | INFO     | [采集] 视频 7631634541144461489 采集回复 17 条，新增 0 条
+2026-04-27 18:16:48 | INFO     | [采集] 视频 7632013241091009201 采集回复 9 条，新增 0 条
+2026-04-27 18:16:56 | INFO     | [存储] CSV 写入 10 条 → data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\2026-04\7632818045987846010\replies.csv
+2026-04-27 18:16:56 | INFO     | [存储] DB 写入 10 条 → replies
+2026-04-27 18:16:56 | INFO     | [采集] 视频 7632818045987846010 采集回复 18 条，新增 10 条
+2026-04-27 18:16:57 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
+2026-04-27 18:16:57 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
+2026-04-27 18:16:57 | INFO     | [清理] 资源释放完成
+2026-04-27 18:17:55 | INFO     | [DB] SQLite 初始化完成: data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
+2026-04-27 18:17:55 | INFO     | [采集] 开始 用户=MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA 类型=回复 评论=369 视频=30
+2026-04-27 18:17:56 | INFO     | [Cookie] ✓ 验证通过，登录用户: 小黄鸭剪辑
+2026-04-27 18:18:19 | INFO     | [采集] 视频 7589330715935930233 采集回复 53 条，新增 0 条
+2026-04-27 18:18:26 | INFO     | [采集] 视频 7590420800285813434 采集回复 11 条，新增 0 条
+2026-04-27 18:18:35 | INFO     | [采集] 视频 7590429551584542373 采集回复 8 条，新增 0 条
+2026-04-27 18:18:48 | INFO     | [采集] 视频 7590846021770202609 采集回复 17 条，新增 0 条
+2026-04-27 18:19:09 | INFO     | [采集] 视频 7596891557152969459 采集回复 36 条，新增 0 条
+2026-04-27 18:19:31 | INFO     | [采集] 视频 7597137548649862769 采集回复 50 条，新增 0 条
+2026-04-27 18:19:45 | INFO     | [采集] 视频 7597347286225631409 采集回复 51 条，新增 0 条
+2026-04-27 18:20:00 | INFO     | [采集] 视频 7597388357547118235 采集回复 28 条，新增 0 条
+2026-04-27 18:20:15 | INFO     | [采集] 视频 7601191260158861305 采集回复 32 条，新增 0 条
+2026-04-27 18:20:22 | INFO     | [采集] 视频 7601284584450489529 采集回复 15 条，新增 0 条
+2026-04-27 18:20:30 | INFO     | [采集] 视频 7602592681696755185 采集回复 21 条，新增 0 条
+2026-04-27 18:20:51 | INFO     | [采集] 视频 7604537501063667621 采集回复 49 条，新增 0 条
+2026-04-27 18:21:15 | INFO     | [采集] 视频 7607024290999371002 采集回复 48 条，新增 0 条
+2026-04-27 18:22:09 | INFO     | [采集] 视频 7607405782813441393 采集回复 124 条，新增 0 条
+2026-04-27 18:22:19 | INFO     | [采集] 视频 7607775162029418469 采集回复 24 条，新增 0 条
+2026-04-27 18:22:32 | INFO     | [采集] 视频 7611119874355018853 采集回复 26 条，新增 0 条
+2026-04-27 18:23:01 | INFO     | [采集] 视频 7612948256855177649 采集回复 56 条，新增 0 条
+2026-04-27 18:23:31 | INFO     | [采集] 视频 7612953623395664113 采集回复 63 条，新增 0 条
+2026-04-27 18:23:35 | INFO     | [采集] 视频 7615217396639228529 采集回复 12 条，新增 0 条
+2026-04-27 18:23:59 | INFO     | [采集] 视频 7616789594936209585 采集回复 41 条，新增 0 条
+2026-04-27 18:24:11 | INFO     | [采集] 视频 7620514013474295418 采集回复 22 条，新增 0 条
+2026-04-27 18:24:23 | INFO     | [采集] 视频 7622614670629050033 采集回复 42 条，新增 0 条
+2026-04-27 18:24:44 | INFO     | [采集] 视频 7623179719697457849 采集回复 51 条，新增 0 条
+2026-04-27 18:24:58 | INFO     | [采集] 视频 7624581934820144074 采集回复 21 条，新增 0 条
+2026-04-27 18:25:10 | INFO     | [采集] 视频 7626441345066862705 采集回复 38 条，新增 0 条
+2026-04-27 18:25:29 | INFO     | [采集] 视频 7627558294349234875 采集回复 49 条，新增 0 条
+2026-04-27 18:25:44 | INFO     | [采集] 视频 7629651594590023163 采集回复 36 条，新增 0 条
+2026-04-27 18:25:55 | INFO     | [采集] 视频 7631634541144461489 采集回复 17 条，新增 0 条
+2026-04-27 18:26:00 | INFO     | [采集] 视频 7632013241091009201 采集回复 9 条，新增 0 条
+2026-04-27 18:26:07 | INFO     | [采集] 视频 7632818045987846010 采集回复 18 条，新增 0 条
+2026-04-27 18:26:08 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
+2026-04-27 18:26:08 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
+2026-04-27 18:26:08 | INFO     | [清理] 资源释放完成
+2026-04-27 22:36:51 | INFO     | [DB] SQLite 初始化完成: data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
+2026-04-27 22:36:51 | INFO     | [采集] 开始 用户=MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR 类型=作品
+2026-04-27 22:36:52 | INFO     | [Cookie] ✓ 验证通过，登录用户: 小黄鸭剪辑
+2026-04-27 22:36:53 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1765195628000
+2026-04-27 22:36:55 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1751113217000
+2026-04-27 22:36:57 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1739519305000
+2026-04-27 22:36:58 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1727285214000
+2026-04-27 22:37:00 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1720602996000
+2026-04-27 22:37:02 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1710135504000
+2026-04-27 22:37:03 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1700330635000
+2026-04-27 22:37:05 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1695468570000
+2026-04-27 22:37:07 | DEBUG    | [采集] API 响应：aweme_list=2, has_more=0, max_cursor=1690720171000
+2026-04-27 22:37:07 | INFO     | [存储] CSV 写入 146 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\videos.csv
+2026-04-27 22:37:07 | INFO     | [存储] DB 写入 146 条 → videos
+2026-04-27 22:37:07 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
+2026-04-27 22:37:07 | INFO     | [清理] 资源释放完成
+2026-04-27 22:37:07 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
+2026-04-27 22:39:22 | ERROR    | [主程序] 运行出错: sequence item 0: expected str instance, NoneType found
+2026-04-27 22:39:22 | INFO     | [清理] 资源释放完成
+2026-04-27 22:39:22 | INFO     | [清理] 资源释放完成
+2026-04-27 22:40:00 | INFO     | [DB] SQLite 初始化完成: data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
+2026-04-27 22:40:00 | INFO     | [采集] 跳过已采集的视频，剩余 146 个
+2026-04-27 22:40:00 | INFO     | [采集] 开始 用户=MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR 类型=评论 视频=146
+2026-04-27 22:40:02 | INFO     | [Cookie] ✓ 验证通过，登录用户: 小黄鸭剪辑
+2026-04-27 22:40:09 | INFO     | [存储] CSV 写入 91 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-07\7261587813836049725\comments.csv
+2026-04-27 22:40:09 | INFO     | [存储] DB 写入 91 条 → comments
+2026-04-27 22:40:09 | INFO     | [采集] 视频 7261587813836049725 采集评论 91 条，新增 91 条
+2026-04-27 22:40:11 | INFO     | [存储] CSV 写入 22 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-09\7279311852432018725\comments.csv
+2026-04-27 22:40:11 | INFO     | [存储] DB 写入 22 条 → comments
+2026-04-27 22:40:11 | INFO     | [采集] 视频 7279311852432018725 采集评论 22 条，新增 22 条
+2026-04-27 22:40:19 | INFO     | [存储] CSV 写入 96 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-09\7281982025345600825\comments.csv
+2026-04-27 22:40:19 | INFO     | [存储] DB 写入 96 条 → comments
+2026-04-27 22:40:19 | INFO     | [采集] 视频 7281982025345600825 采集评论 96 条，新增 96 条
+2026-04-27 22:40:22 | INFO     | [存储] CSV 写入 34 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-09\7283488720999681317\comments.csv
+2026-04-27 22:40:22 | INFO     | [存储] DB 写入 34 条 → comments
+2026-04-27 22:40:22 | INFO     | [采集] 视频 7283488720999681317 采集评论 34 条，新增 34 条
+2026-04-27 22:40:26 | INFO     | [存储] CSV 写入 68 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-09\7284062686785113400\comments.csv
+2026-04-27 22:40:26 | INFO     | [存储] DB 写入 68 条 → comments
+2026-04-27 22:40:26 | INFO     | [采集] 视频 7284062686785113400 采集评论 68 条，新增 68 条
+2026-04-27 22:40:37 | INFO     | [存储] CSV 写入 128 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7288253442756283706\comments.csv
+2026-04-27 22:40:37 | INFO     | [存储] DB 写入 128 条 → comments
+2026-04-27 22:40:37 | INFO     | [采集] 视频 7288253442756283706 采集评论 128 条，新增 128 条
+2026-04-27 22:40:41 | INFO     | [存储] CSV 写入 63 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7288661845714406717\comments.csv
+2026-04-27 22:40:41 | INFO     | [存储] DB 写入 63 条 → comments
+2026-04-27 22:40:41 | INFO     | [采集] 视频 7288661845714406717 采集评论 63 条，新增 63 条
+2026-04-27 22:40:48 | INFO     | [存储] CSV 写入 84 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7289394467847654717\comments.csv
+2026-04-27 22:40:48 | INFO     | [存储] DB 写入 84 条 → comments
+2026-04-27 22:40:48 | INFO     | [采集] 视频 7289394467847654717 采集评论 84 条，新增 84 条
+2026-04-27 22:40:53 | INFO     | [存储] CSV 写入 38 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7290255327683972408\comments.csv
+2026-04-27 22:40:53 | INFO     | [存储] DB 写入 38 条 → comments
+2026-04-27 22:40:53 | INFO     | [采集] 视频 7290255327683972408 采集评论 38 条，新增 38 条
+2026-04-27 22:40:56 | INFO     | [存储] CSV 写入 32 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7291220035832433977\comments.csv
+2026-04-27 22:40:56 | INFO     | [存储] DB 写入 32 条 → comments
+2026-04-27 22:40:56 | INFO     | [采集] 视频 7291220035832433977 采集评论 32 条，新增 32 条
+2026-04-27 22:40:59 | INFO     | [存储] CSV 写入 31 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7291731507096440073\comments.csv
+2026-04-27 22:40:59 | INFO     | [存储] DB 写入 31 条 → comments
+2026-04-27 22:40:59 | INFO     | [采集] 视频 7291731507096440073 采集评论 31 条，新增 31 条
+2026-04-27 22:41:06 | INFO     | [存储] CSV 写入 102 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7292102952691469618\comments.csv
+2026-04-27 22:41:06 | INFO     | [存储] DB 写入 102 条 → comments
+2026-04-27 22:41:06 | INFO     | [采集] 视频 7292102952691469618 采集评论 102 条，新增 102 条
+2026-04-27 22:41:09 | INFO     | [存储] CSV 写入 30 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7292290078905224474\comments.csv
+2026-04-27 22:41:09 | INFO     | [存储] DB 写入 30 条 → comments
+2026-04-27 22:41:09 | INFO     | [采集] 视频 7292290078905224474 采集评论 30 条，新增 30 条
+2026-04-27 22:41:14 | INFO     | [存储] CSV 写入 59 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7294152963709259059\comments.csv
+2026-04-27 22:41:14 | INFO     | [存储] DB 写入 59 条 → comments
+2026-04-27 22:41:14 | INFO     | [采集] 视频 7294152963709259059 采集评论 59 条，新增 59 条
+2026-04-27 22:41:17 | INFO     | [存储] CSV 写入 20 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7296140070451563814\comments.csv
+2026-04-27 22:41:17 | INFO     | [存储] DB 写入 20 条 → comments
+2026-04-27 22:41:17 | INFO     | [采集] 视频 7296140070451563814 采集评论 20 条，新增 20 条
+2026-04-27 22:41:19 | INFO     | [存储] CSV 写入 20 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7296449030677122314\comments.csv
+2026-04-27 22:41:19 | INFO     | [存储] DB 写入 20 条 → comments
+2026-04-27 22:41:19 | INFO     | [采集] 视频 7296449030677122314 采集评论 20 条，新增 20 条
+2026-04-27 22:41:27 | INFO     | [存储] CSV 写入 100 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7297141182373711154\comments.csv
+2026-04-27 22:41:27 | INFO     | [存储] DB 写入 100 条 → comments
+2026-04-27 22:41:27 | INFO     | [采集] 视频 7297141182373711154 采集评论 100 条，新增 100 条
+2026-04-27 22:41:35 | INFO     | [存储] CSV 写入 99 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7299132135712066826\comments.csv
+2026-04-27 22:41:35 | INFO     | [存储] DB 写入 99 条 → comments
+2026-04-27 22:41:35 | INFO     | [采集] 视频 7299132135712066826 采集评论 99 条，新增 99 条
+2026-04-27 22:41:37 | INFO     | [存储] CSV 写入 30 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7299342805757922610\comments.csv
+2026-04-27 22:41:37 | INFO     | [存储] DB 写入 30 条 → comments
+2026-04-27 22:41:37 | INFO     | [采集] 视频 7299342805757922610 采集评论 30 条，新增 30 条
+2026-04-27 22:41:41 | INFO     | [存储] CSV 写入 54 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7301887426841136411\comments.csv
+2026-04-27 22:41:41 | INFO     | [存储] DB 写入 54 条 → comments
+2026-04-27 22:41:41 | INFO     | [采集] 视频 7301887426841136411 采集评论 54 条，新增 54 条
+2026-04-27 22:41:45 | INFO     | [存储] CSV 写入 43 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7302864173812239654\comments.csv
+2026-04-27 22:41:45 | INFO     | [存储] DB 写入 43 条 → comments
+2026-04-27 22:41:45 | INFO     | [采集] 视频 7302864173812239654 采集评论 43 条，新增 43 条
+2026-04-27 22:41:49 | INFO     | [存储] CSV 写入 37 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7303241635402452250\comments.csv
+2026-04-27 22:41:49 | INFO     | [存储] DB 写入 37 条 → comments
+2026-04-27 22:41:49 | INFO     | [采集] 视频 7303241635402452250 采集评论 37 条，新增 37 条
+2026-04-27 22:41:51 | INFO     | [存储] CSV 写入 30 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7303799544825892134\comments.csv
+2026-04-27 22:41:51 | INFO     | [存储] DB 写入 30 条 → comments
+2026-04-27 22:41:51 | INFO     | [采集] 视频 7303799544825892134 采集评论 30 条，新增 30 条
+2026-04-27 22:41:58 | INFO     | [存储] CSV 写入 73 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7305451891301879091\comments.csv
+2026-04-27 22:41:58 | INFO     | [存储] DB 写入 73 条 → comments
+2026-04-27 22:41:58 | INFO     | [采集] 视频 7305451891301879091 采集评论 73 条，新增 73 条
+2026-04-27 22:43:22 | INFO     | [存储] CSV 写入 1195 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7306105815142960410\comments.csv
+2026-04-27 22:43:22 | INFO     | [存储] DB 写入 964 条 → comments
+2026-04-27 22:43:22 | INFO     | [采集] 视频 7306105815142960410 采集评论 1195 条，新增 1195 条
+2026-04-27 22:43:26 | INFO     | [存储] CSV 写入 47 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7307225351032147227\comments.csv
+2026-04-27 22:43:26 | INFO     | [存储] DB 写入 47 条 → comments
+2026-04-27 22:43:26 | INFO     | [采集] 视频 7307225351032147227 采集评论 47 条，新增 47 条
+2026-04-27 22:43:35 | INFO     | [存储] CSV 写入 111 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-12\7309531729046375730\comments.csv
+2026-04-27 22:43:35 | INFO     | [存储] DB 写入 111 条 → comments
+2026-04-27 22:43:35 | INFO     | [采集] 视频 7309531729046375730 采集评论 111 条，新增 111 条
+2026-04-27 22:43:39 | INFO     | [存储] CSV 写入 53 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-12\7312522928854175002\comments.csv
+2026-04-27 22:43:39 | INFO     | [存储] DB 写入 53 条 → comments
+2026-04-27 22:43:39 | INFO     | [采集] 视频 7312522928854175002 采集评论 53 条，新增 53 条
+2026-04-27 22:43:42 | INFO     | [存储] CSV 写入 27 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-12\7313451782972214555\comments.csv
+2026-04-27 22:43:42 | INFO     | [存储] DB 写入 27 条 → comments
+2026-04-27 22:43:42 | INFO     | [采集] 视频 7313451782972214555 采集评论 27 条，新增 27 条
+2026-04-27 22:43:44 | INFO     | [存储] CSV 写入 24 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-12\7316223400307871027\comments.csv
+2026-04-27 22:43:44 | INFO     | [存储] DB 写入 24 条 → comments
+2026-04-27 22:43:44 | INFO     | [采集] 视频 7316223400307871027 采集评论 24 条，新增 24 条
+2026-04-27 22:43:52 | INFO     | [存储] CSV 写入 76 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-01\7319037285519985929\comments.csv
+2026-04-27 22:43:52 | INFO     | [存储] DB 写入 76 条 → comments
+2026-04-27 22:43:52 | INFO     | [采集] 视频 7319037285519985929 采集评论 76 条，新增 76 条
+2026-04-27 22:43:54 | INFO     | [存储] CSV 写入 26 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-01\7320326783989976357\comments.csv
+2026-04-27 22:43:54 | INFO     | [存储] DB 写入 26 条 → comments
+2026-04-27 22:43:54 | INFO     | [采集] 视频 7320326783989976357 采集评论 26 条，新增 26 条
+2026-04-27 22:43:56 | INFO     | [存储] CSV 写入 33 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-01\7320579510368210202\comments.csv
+2026-04-27 22:43:56 | INFO     | [存储] DB 写入 33 条 → comments
+2026-04-27 22:43:56 | INFO     | [采集] 视频 7320579510368210202 采集评论 33 条，新增 33 条
+2026-04-27 22:44:04 | INFO     | [存储] CSV 写入 100 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-01\7326264268645535002\comments.csv
+2026-04-27 22:44:04 | INFO     | [存储] DB 写入 100 条 → comments
+2026-04-27 22:44:04 | INFO     | [采集] 视频 7326264268645535002 采集评论 100 条，新增 100 条
+2026-04-27 22:44:08 | INFO     | [存储] CSV 写入 36 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-01\7327936087756770598\comments.csv
+2026-04-27 22:44:08 | INFO     | [存储] DB 写入 36 条 → comments
+2026-04-27 22:44:08 | INFO     | [采集] 视频 7327936087756770598 采集评论 36 条，新增 36 条
+2026-04-27 22:44:13 | INFO     | [存储] CSV 写入 71 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-02\7333814963322015002\comments.csv
+2026-04-27 22:44:13 | INFO     | [存储] DB 写入 71 条 → comments
+2026-04-27 22:44:13 | INFO     | [采集] 视频 7333814963322015002 采集评论 71 条，新增 71 条
+2026-04-27 22:44:21 | INFO     | [存储] CSV 写入 100 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-02\7335084360145587507\comments.csv
+2026-04-27 22:44:21 | INFO     | [存储] DB 写入 100 条 → comments
+2026-04-27 22:44:21 | INFO     | [采集] 视频 7335084360145587507 采集评论 100 条，新增 100 条
+2026-04-27 22:44:24 | INFO     | [存储] CSV 写入 19 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-02\7335725760780520713\comments.csv
+2026-04-27 22:44:24 | INFO     | [存储] DB 写入 19 条 → comments
+2026-04-27 22:44:24 | INFO     | [采集] 视频 7335725760780520713 采集评论 19 条，新增 19 条
+2026-04-27 22:44:34 | INFO     | [存储] CSV 写入 140 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-03\7344976008048577842\comments.csv
+2026-04-27 22:44:34 | INFO     | [存储] DB 写入 140 条 → comments
+2026-04-27 22:44:34 | INFO     | [采集] 视频 7344976008048577842 采集评论 140 条，新增 140 条
+2026-04-27 22:44:36 | INFO     | [存储] CSV 写入 33 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-03\7346642803608358194\comments.csv
+2026-04-27 22:44:36 | INFO     | [存储] DB 写入 33 条 → comments
+2026-04-27 22:44:36 | INFO     | [采集] 视频 7346642803608358194 采集评论 33 条，新增 33 条
+2026-04-27 22:44:40 | INFO     | [存储] CSV 写入 43 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-03\7347268959416093962\comments.csv
+2026-04-27 22:44:40 | INFO     | [存储] DB 写入 43 条 → comments
+2026-04-27 22:44:40 | INFO     | [采集] 视频 7347268959416093962 采集评论 43 条，新增 43 条
+2026-04-27 22:44:44 | INFO     | [存储] CSV 写入 51 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-03\7350774556467973413\comments.csv
+2026-04-27 22:44:44 | INFO     | [存储] DB 写入 51 条 → comments
+2026-04-27 22:44:44 | INFO     | [采集] 视频 7350774556467973413 采集评论 51 条，新增 51 条
+2026-04-27 22:44:48 | INFO     | [存储] CSV 写入 44 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-04\7361719759513095433\comments.csv
+2026-04-27 22:44:48 | INFO     | [存储] DB 写入 44 条 → comments
+2026-04-27 22:44:48 | INFO     | [采集] 视频 7361719759513095433 采集评论 44 条，新增 44 条
+2026-04-27 22:44:51 | INFO     | [存储] CSV 写入 25 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-05\7364861940444695817\comments.csv
+2026-04-27 22:44:51 | INFO     | [存储] DB 写入 25 条 → comments
+2026-04-27 22:44:51 | INFO     | [采集] 视频 7364861940444695817 采集评论 25 条，新增 25 条
+2026-04-27 22:44:56 | INFO     | [存储] CSV 写入 61 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-05\7370250351515077939\comments.csv
+2026-04-27 22:44:56 | INFO     | [存储] DB 写入 61 条 → comments
+2026-04-27 22:44:56 | INFO     | [采集] 视频 7370250351515077939 采集评论 61 条，新增 61 条
+2026-04-27 22:45:02 | INFO     | [存储] CSV 写入 83 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-05\7371882667215703323\comments.csv
+2026-04-27 22:45:02 | INFO     | [存储] DB 写入 83 条 → comments
+2026-04-27 22:45:02 | INFO     | [采集] 视频 7371882667215703323 采集评论 83 条，新增 83 条
+2026-04-27 22:45:05 | INFO     | [存储] CSV 写入 22 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-05\7372467660577197322\comments.csv
+2026-04-27 22:45:05 | INFO     | [存储] DB 写入 22 条 → comments
+2026-04-27 22:45:05 | INFO     | [采集] 视频 7372467660577197322 采集评论 22 条，新增 22 条
+2026-04-27 22:45:07 | INFO     | [存储] CSV 写入 22 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-05\7373727569193078043\comments.csv
+2026-04-27 22:45:07 | INFO     | [存储] DB 写入 22 条 → comments
+2026-04-27 22:45:07 | INFO     | [采集] 视频 7373727569193078043 采集评论 22 条，新增 22 条
+2026-04-27 22:45:11 | INFO     | [存储] CSV 写入 51 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-06\7375221463508389157\comments.csv
+2026-04-27 22:45:11 | INFO     | [存储] DB 写入 51 条 → comments
+2026-04-27 22:45:11 | INFO     | [采集] 视频 7375221463508389157 采集评论 51 条，新增 51 条
+2026-04-27 22:45:16 | INFO     | [存储] CSV 写入 41 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-06\7378400935359417637\comments.csv
+2026-04-27 22:45:16 | INFO     | [存储] DB 写入 41 条 → comments
+2026-04-27 22:45:16 | INFO     | [采集] 视频 7378400935359417637 采集评论 41 条，新增 41 条
+2026-04-27 22:45:19 | INFO     | [存储] CSV 写入 44 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-06\7380058929507749158\comments.csv
+2026-04-27 22:45:19 | INFO     | [存储] DB 写入 44 条 → comments
+2026-04-27 22:45:19 | INFO     | [采集] 视频 7380058929507749158 采集评论 44 条，新增 44 条
+2026-04-27 22:45:28 | INFO     | [存储] CSV 写入 92 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-06\7384457605776788786\comments.csv
+2026-04-27 22:45:28 | INFO     | [存储] DB 写入 92 条 → comments
+2026-04-27 22:45:28 | INFO     | [采集] 视频 7384457605776788786 采集评论 92 条，新增 92 条
+2026-04-27 22:45:30 | INFO     | [存储] CSV 写入 17 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-07\7386641128629620006\comments.csv
+2026-04-27 22:45:30 | INFO     | [存储] DB 写入 17 条 → comments
+2026-04-27 22:45:30 | INFO     | [采集] 视频 7386641128629620006 采集评论 17 条，新增 17 条
+2026-04-27 22:45:32 | INFO     | [存储] CSV 写入 30 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-07\7387825962521496842\comments.csv
+2026-04-27 22:45:32 | INFO     | [存储] DB 写入 30 条 → comments
+2026-04-27 22:45:32 | INFO     | [采集] 视频 7387825962521496842 采集评论 30 条，新增 30 条
+2026-04-27 22:45:34 | INFO     | [存储] CSV 写入 28 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-07\7388202732336860426\comments.csv
+2026-04-27 22:45:34 | INFO     | [存储] DB 写入 28 条 → comments
+2026-04-27 22:45:34 | INFO     | [采集] 视频 7388202732336860426 采集评论 28 条，新增 28 条
+2026-04-27 22:45:38 | INFO     | [存储] CSV 写入 38 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-07\7389347946048818459\comments.csv
+2026-04-27 22:45:38 | INFO     | [存储] DB 写入 38 条 → comments
+2026-04-27 22:45:38 | INFO     | [采集] 视频 7389347946048818459 采集评论 38 条，新增 38 条
+2026-04-27 22:45:43 | INFO     | [存储] CSV 写入 62 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-07\7389933555058527514\comments.csv
+2026-04-27 22:45:43 | INFO     | [存储] DB 写入 62 条 → comments
+2026-04-27 22:45:43 | INFO     | [采集] 视频 7389933555058527514 采集评论 62 条，新增 62 条
+2026-04-27 22:45:45 | INFO     | [存储] CSV 写入 35 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-07\7392664822225063219\comments.csv
+2026-04-27 22:45:45 | INFO     | [存储] DB 写入 35 条 → comments
+2026-04-27 22:45:45 | INFO     | [采集] 视频 7392664822225063219 采集评论 35 条，新增 35 条
+2026-04-27 22:45:48 | INFO     | [存储] CSV 写入 24 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-07\7392799360515411251\comments.csv
+2026-04-27 22:45:48 | INFO     | [存储] DB 写入 24 条 → comments
+2026-04-27 22:45:48 | INFO     | [采集] 视频 7392799360515411251 采集评论 24 条，新增 24 条
+2026-04-27 22:45:50 | INFO     | [存储] CSV 写入 33 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-07\7395634096287911218\comments.csv
+2026-04-27 22:45:50 | INFO     | [存储] DB 写入 33 条 → comments
+2026-04-27 22:45:50 | INFO     | [采集] 视频 7395634096287911218 采集评论 33 条，新增 33 条
+2026-04-27 22:45:51 | INFO     | [存储] CSV 写入 12 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7401457479491652914\comments.csv
+2026-04-27 22:45:51 | INFO     | [存储] DB 写入 12 条 → comments
+2026-04-27 22:45:51 | INFO     | [采集] 视频 7401457479491652914 采集评论 12 条，新增 12 条
+2026-04-27 22:45:56 | INFO     | [存储] CSV 写入 41 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7402069880775658779\comments.csv
+2026-04-27 22:45:56 | INFO     | [存储] DB 写入 41 条 → comments
+2026-04-27 22:45:56 | INFO     | [采集] 视频 7402069880775658779 采集评论 41 条，新增 41 条
+2026-04-27 22:45:57 | INFO     | [存储] CSV 写入 18 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7402168346944277769\comments.csv
+2026-04-27 22:45:57 | INFO     | [存储] DB 写入 18 条 → comments
+2026-04-27 22:45:57 | INFO     | [采集] 视频 7402168346944277769 采集评论 18 条，新增 18 条
+2026-04-27 22:45:58 | INFO     | [存储] CSV 写入 17 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7402300009120582949\comments.csv
+2026-04-27 22:45:58 | INFO     | [存储] DB 写入 17 条 → comments
+2026-04-27 22:45:58 | INFO     | [采集] 视频 7402300009120582949 采集评论 17 条，新增 17 条
+2026-04-27 22:46:00 | INFO     | [存储] CSV 写入 15 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7403783768420519218\comments.csv
+2026-04-27 22:46:00 | INFO     | [存储] DB 写入 15 条 → comments
+2026-04-27 22:46:00 | INFO     | [采集] 视频 7403783768420519218 采集评论 15 条，新增 15 条
+2026-04-27 22:46:01 | INFO     | [存储] CSV 写入 6 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7404080507589283110\comments.csv
+2026-04-27 22:46:01 | INFO     | [存储] DB 写入 6 条 → comments
+2026-04-27 22:46:01 | INFO     | [采集] 视频 7404080507589283110 采集评论 6 条，新增 6 条
+2026-04-27 22:46:05 | INFO     | [存储] CSV 写入 42 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7404393560725835017\comments.csv
+2026-04-27 22:46:05 | INFO     | [存储] DB 写入 42 条 → comments
+2026-04-27 22:46:05 | INFO     | [采集] 视频 7404393560725835017 采集评论 42 条，新增 42 条
+2026-04-27 22:46:07 | INFO     | [存储] CSV 写入 10 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7405516247707766067\comments.csv
+2026-04-27 22:46:07 | INFO     | [存储] DB 写入 10 条 → comments
+2026-04-27 22:46:07 | INFO     | [采集] 视频 7405516247707766067 采集评论 10 条，新增 10 条
+2026-04-27 22:46:13 | INFO     | [存储] CSV 写入 60 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7406251308908301577\comments.csv
+2026-04-27 22:46:13 | INFO     | [存储] DB 写入 60 条 → comments
+2026-04-27 22:46:13 | INFO     | [采集] 视频 7406251308908301577 采集评论 60 条，新增 60 条
+2026-04-27 22:46:15 | INFO     | [存储] CSV 写入 31 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7408282407868157222\comments.csv
+2026-04-27 22:46:15 | INFO     | [存储] DB 写入 31 条 → comments
+2026-04-27 22:46:15 | INFO     | [采集] 视频 7408282407868157222 采集评论 31 条，新增 31 条
+2026-04-27 22:46:18 | INFO     | [存储] CSV 写入 31 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7408827897298832652\comments.csv
+2026-04-27 22:46:18 | INFO     | [存储] DB 写入 31 条 → comments
+2026-04-27 22:46:18 | INFO     | [采集] 视频 7408827897298832652 采集评论 31 条，新增 31 条
+2026-04-27 22:46:20 | INFO     | [存储] CSV 写入 21 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-09\7410697721922800935\comments.csv
+2026-04-27 22:46:20 | INFO     | [存储] DB 写入 21 条 → comments
+2026-04-27 22:46:20 | INFO     | [采集] 视频 7410697721922800935 采集评论 21 条，新增 21 条
+2026-04-27 22:46:28 | INFO     | [存储] CSV 写入 107 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-09\7411078046033235212\comments.csv
+2026-04-27 22:46:28 | INFO     | [存储] DB 写入 107 条 → comments
+2026-04-27 22:46:28 | INFO     | [采集] 视频 7411078046033235212 采集评论 107 条，新增 107 条
+2026-04-27 22:46:31 | INFO     | [存储] CSV 写入 19 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-09\7411235908235562276\comments.csv
+2026-04-27 22:46:31 | INFO     | [存储] DB 写入 19 条 → comments
+2026-04-27 22:46:31 | INFO     | [采集] 视频 7411235908235562276 采集评论 19 条，新增 19 条
+2026-04-27 22:46:46 | INFO     | [存储] CSV 写入 227 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-09\7418633164471536915\comments.csv
+2026-04-27 22:46:46 | INFO     | [存储] DB 写入 227 条 → comments
+2026-04-27 22:46:46 | INFO     | [采集] 视频 7418633164471536915 采集评论 227 条，新增 227 条
+2026-04-27 22:46:50 | INFO     | [存储] CSV 写入 41 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-09\7420379083638426921\comments.csv
+2026-04-27 22:46:50 | INFO     | [存储] DB 写入 41 条 → comments
+2026-04-27 22:46:50 | INFO     | [采集] 视频 7420379083638426921 采集评论 41 条，新增 41 条
+2026-04-27 22:46:54 | INFO     | [存储] CSV 写入 42 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-10\7420489775385169163\comments.csv
+2026-04-27 22:46:54 | INFO     | [存储] DB 写入 42 条 → comments
+2026-04-27 22:46:54 | INFO     | [采集] 视频 7420489775385169163 采集评论 42 条，新增 42 条
+2026-04-27 22:46:57 | INFO     | [存储] CSV 写入 38 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-10\7422635383277505803\comments.csv
+2026-04-27 22:46:57 | INFO     | [存储] DB 写入 38 条 → comments
+2026-04-27 22:46:57 | INFO     | [采集] 视频 7422635383277505803 采集评论 38 条，新增 38 条
+2026-04-27 22:47:00 | INFO     | [存储] CSV 写入 30 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-10\7427010781021048076\comments.csv
+2026-04-27 22:47:00 | INFO     | [存储] DB 写入 30 条 → comments
+2026-04-27 22:47:00 | INFO     | [采集] 视频 7427010781021048076 采集评论 30 条，新增 30 条
+2026-04-27 22:47:02 | INFO     | [存储] CSV 写入 25 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-11\7434196946413210892\comments.csv
+2026-04-27 22:47:02 | INFO     | [存储] DB 写入 25 条 → comments
+2026-04-27 22:47:02 | INFO     | [采集] 视频 7434196946413210892 采集评论 25 条，新增 25 条
+2026-04-27 22:47:05 | INFO     | [存储] CSV 写入 23 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-11\7437065551840677131\comments.csv
+2026-04-27 22:47:05 | INFO     | [存储] DB 写入 23 条 → comments
+2026-04-27 22:47:05 | INFO     | [采集] 视频 7437065551840677131 采集评论 23 条，新增 23 条
+2026-04-27 22:47:12 | INFO     | [存储] CSV 写入 78 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-11\7438704959010393356\comments.csv
+2026-04-27 22:47:12 | INFO     | [存储] DB 写入 78 条 → comments
+2026-04-27 22:47:12 | INFO     | [采集] 视频 7438704959010393356 采集评论 78 条，新增 78 条
+2026-04-27 22:47:15 | INFO     | [存储] CSV 写入 47 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-12\7453021880681909531\comments.csv
+2026-04-27 22:47:15 | INFO     | [存储] DB 写入 47 条 → comments
+2026-04-27 22:47:15 | INFO     | [采集] 视频 7453021880681909531 采集评论 47 条，新增 47 条
+2026-04-27 22:47:19 | INFO     | [存储] CSV 写入 42 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-01\7456335660862033202\comments.csv
+2026-04-27 22:47:19 | INFO     | [存储] DB 写入 42 条 → comments
+2026-04-27 22:47:19 | INFO     | [采集] 视频 7456335660862033202 采集评论 42 条，新增 42 条
+2026-04-27 22:47:21 | INFO     | [存储] CSV 写入 17 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-01\7456499005523070258\comments.csv
+2026-04-27 22:47:21 | INFO     | [存储] DB 写入 17 条 → comments
+2026-04-27 22:47:21 | INFO     | [采集] 视频 7456499005523070258 采集评论 17 条，新增 17 条
+2026-04-27 22:47:24 | INFO     | [存储] CSV 写入 30 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-01\7457154779739934003\comments.csv
+2026-04-27 22:47:24 | INFO     | [存储] DB 写入 30 条 → comments
+2026-04-27 22:47:24 | INFO     | [采集] 视频 7457154779739934003 采集评论 30 条，新增 30 条
+2026-04-27 22:47:26 | INFO     | [存储] CSV 写入 30 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-01\7457840071421463846\comments.csv
+2026-04-27 22:47:26 | INFO     | [存储] DB 写入 30 条 → comments
+2026-04-27 22:47:26 | INFO     | [采集] 视频 7457840071421463846 采集评论 30 条，新增 30 条
+2026-04-27 22:47:29 | INFO     | [存储] CSV 写入 22 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-01\7461891679763713306\comments.csv
+2026-04-27 22:47:29 | INFO     | [存储] DB 写入 22 条 → comments
+2026-04-27 22:47:29 | INFO     | [采集] 视频 7461891679763713306 采集评论 22 条，新增 22 条
+2026-04-27 22:47:31 | INFO     | [存储] CSV 写入 22 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-01\7465281561005509925\comments.csv
+2026-04-27 22:47:31 | INFO     | [存储] DB 写入 22 条 → comments
+2026-04-27 22:47:31 | INFO     | [采集] 视频 7465281561005509925 采集评论 22 条，新增 22 条
+2026-04-27 22:47:33 | INFO     | [存储] CSV 写入 9 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-01\7465982614332001586\comments.csv
+2026-04-27 22:47:33 | INFO     | [存储] DB 写入 9 条 → comments
+2026-04-27 22:47:33 | INFO     | [采集] 视频 7465982614332001586 采集评论 9 条，新增 9 条
+2026-04-27 22:47:37 | INFO     | [存储] CSV 写入 37 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-02\7469861568780520731\comments.csv
+2026-04-27 22:47:37 | INFO     | [存储] DB 写入 37 条 → comments
+2026-04-27 22:47:37 | INFO     | [采集] 视频 7469861568780520731 采集评论 37 条，新增 37 条
+2026-04-27 22:47:49 | INFO     | [存储] CSV 写入 147 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-02\7470500723457936691\comments.csv
+2026-04-27 22:47:49 | INFO     | [存储] DB 写入 147 条 → comments
+2026-04-27 22:47:49 | INFO     | [采集] 视频 7470500723457936691 采集评论 147 条，新增 147 条
+2026-04-27 22:47:50 | INFO     | [存储] CSV 写入 15 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-02\7471178362417990963\comments.csv
+2026-04-27 22:47:50 | INFO     | [存储] DB 写入 15 条 → comments
+2026-04-27 22:47:50 | INFO     | [采集] 视频 7471178362417990963 采集评论 15 条，新增 15 条
+2026-04-27 22:47:52 | INFO     | [存储] CSV 写入 14 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-02\7471687183125073202\comments.csv
+2026-04-27 22:47:52 | INFO     | [存储] DB 写入 14 条 → comments
+2026-04-27 22:47:52 | INFO     | [采集] 视频 7471687183125073202 采集评论 14 条，新增 14 条
+2026-04-27 22:47:55 | INFO     | [存储] CSV 写入 18 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-02\7475767020882070834\comments.csv
+2026-04-27 22:47:55 | INFO     | [存储] DB 写入 18 条 → comments
+2026-04-27 22:47:55 | INFO     | [采集] 视频 7475767020882070834 采集评论 18 条，新增 18 条
+2026-04-27 22:47:56 | INFO     | [存储] CSV 写入 17 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-03\7477189460174621990\comments.csv
+2026-04-27 22:47:56 | INFO     | [存储] DB 写入 17 条 → comments
+2026-04-27 22:47:56 | INFO     | [采集] 视频 7477189460174621990 采集评论 17 条，新增 17 条
+2026-04-27 22:47:59 | INFO     | [存储] CSV 写入 23 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-03\7480886603251043622\comments.csv
+2026-04-27 22:47:59 | INFO     | [存储] DB 写入 23 条 → comments
+2026-04-27 22:47:59 | INFO     | [采集] 视频 7480886603251043622 采集评论 23 条，新增 23 条
+2026-04-27 22:48:01 | INFO     | [存储] CSV 写入 34 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-04\7491975622512725286\comments.csv
+2026-04-27 22:48:01 | INFO     | [存储] DB 写入 34 条 → comments
+2026-04-27 22:48:01 | INFO     | [采集] 视频 7491975622512725286 采集评论 34 条，新增 34 条
+2026-04-27 22:48:04 | INFO     | [存储] CSV 写入 33 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-04\7496548282882477350\comments.csv
+2026-04-27 22:48:04 | INFO     | [存储] DB 写入 33 条 → comments
+2026-04-27 22:48:04 | INFO     | [采集] 视频 7496548282882477350 采集评论 33 条，新增 33 条
+2026-04-27 22:48:11 | INFO     | [存储] CSV 写入 100 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-04\7497924981742603583\comments.csv
+2026-04-27 22:48:11 | INFO     | [存储] DB 写入 100 条 → comments
+2026-04-27 22:48:11 | INFO     | [采集] 视频 7497924981742603583 采集评论 100 条，新增 100 条
+2026-04-27 22:48:14 | INFO     | [存储] CSV 写入 28 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-05\7500044273057336602\comments.csv
+2026-04-27 22:48:14 | INFO     | [存储] DB 写入 28 条 → comments
+2026-04-27 22:48:14 | INFO     | [采集] 视频 7500044273057336602 采集评论 28 条，新增 28 条
+2026-04-27 22:48:16 | INFO     | [存储] CSV 写入 30 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-05\7502725237583662346\comments.csv
+2026-04-27 22:48:16 | INFO     | [存储] DB 写入 30 条 → comments
+2026-04-27 22:48:16 | INFO     | [采集] 视频 7502725237583662346 采集评论 30 条，新增 30 条
+2026-04-27 22:48:18 | INFO     | [存储] CSV 写入 15 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-05\7506458871000714559\comments.csv
+2026-04-27 22:48:18 | INFO     | [存储] DB 写入 15 条 → comments
+2026-04-27 22:48:18 | INFO     | [采集] 视频 7506458871000714559 采集评论 15 条，新增 15 条
+2026-04-27 22:48:20 | INFO     | [存储] CSV 写入 21 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-05\7508056830648782099\comments.csv
+2026-04-27 22:48:20 | INFO     | [存储] DB 写入 21 条 → comments
+2026-04-27 22:48:20 | INFO     | [采集] 视频 7508056830648782099 采集评论 21 条，新增 21 条
+2026-04-27 22:48:22 | INFO     | [存储] CSV 写入 11 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-05\7509576798368501055\comments.csv
+2026-04-27 22:48:22 | INFO     | [存储] DB 写入 11 条 → comments
+2026-04-27 22:48:22 | INFO     | [采集] 视频 7509576798368501055 采集评论 11 条，新增 11 条
+2026-04-27 22:48:25 | INFO     | [存储] CSV 写入 28 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-06\7510655994562202919\comments.csv
+2026-04-27 22:48:25 | INFO     | [存储] DB 写入 28 条 → comments
+2026-04-27 22:48:25 | INFO     | [采集] 视频 7510655994562202919 采集评论 28 条，新增 28 条
+2026-04-27 22:48:27 | INFO     | [存储] CSV 写入 22 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-06\7510813660940684598\comments.csv
+2026-04-27 22:48:27 | INFO     | [存储] DB 写入 22 条 → comments
+2026-04-27 22:48:27 | INFO     | [采集] 视频 7510813660940684598 采集评论 22 条，新增 22 条
+2026-04-27 22:48:31 | INFO     | [存储] CSV 写入 46 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-06\7515108880990129465\comments.csv
+2026-04-27 22:48:31 | INFO     | [存储] DB 写入 46 条 → comments
+2026-04-27 22:48:31 | INFO     | [采集] 视频 7515108880990129465 采集评论 46 条，新增 46 条
+2026-04-27 22:48:34 | INFO     | [存储] CSV 写入 22 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-06\7518449259054878009\comments.csv
+2026-04-27 22:48:34 | INFO     | [存储] DB 写入 22 条 → comments
+2026-04-27 22:48:34 | INFO     | [采集] 视频 7518449259054878009 采集评论 22 条，新增 22 条
+2026-04-27 22:48:35 | INFO     | [存储] CSV 写入 15 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-06\7518825087707237689\comments.csv
+2026-04-27 22:48:35 | INFO     | [存储] DB 写入 15 条 → comments
+2026-04-27 22:48:35 | INFO     | [采集] 视频 7518825087707237689 采集评论 15 条，新增 15 条
+2026-04-27 22:48:37 | INFO     | [存储] CSV 写入 22 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-06\7520973991768968505\comments.csv
+2026-04-27 22:48:37 | INFO     | [存储] DB 写入 22 条 → comments
+2026-04-27 22:48:37 | INFO     | [采集] 视频 7520973991768968505 采集评论 22 条，新增 22 条
+2026-04-27 22:48:40 | INFO     | [存储] CSV 写入 20 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-07\7527882666731425084\comments.csv
+2026-04-27 22:48:40 | INFO     | [存储] DB 写入 20 条 → comments
+2026-04-27 22:48:40 | INFO     | [采集] 视频 7527882666731425084 采集评论 20 条，新增 20 条
+2026-04-27 22:48:43 | INFO     | [存储] CSV 写入 22 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-07\7532768741048094010\comments.csv
+2026-04-27 22:48:43 | INFO     | [存储] DB 写入 22 条 → comments
+2026-04-27 22:48:43 | INFO     | [采集] 视频 7532768741048094010 采集评论 22 条，新增 22 条
+2026-04-27 22:48:45 | INFO     | [存储] CSV 写入 34 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-08\7533518234445352251\comments.csv
+2026-04-27 22:48:45 | INFO     | [存储] DB 写入 34 条 → comments
+2026-04-27 22:48:45 | INFO     | [采集] 视频 7533518234445352251 采集评论 34 条，新增 34 条
+2026-04-27 22:48:53 | INFO     | [存储] CSV 写入 95 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-08\7537308327727041849\comments.csv
+2026-04-27 22:48:53 | INFO     | [存储] DB 写入 95 条 → comments
+2026-04-27 22:48:53 | INFO     | [采集] 视频 7537308327727041849 采集评论 95 条，新增 95 条
+2026-04-27 22:49:01 | INFO     | [存储] CSV 写入 91 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-08\7537608163916352826\comments.csv
+2026-04-27 22:49:01 | INFO     | [存储] DB 写入 91 条 → comments
+2026-04-27 22:49:01 | INFO     | [采集] 视频 7537608163916352826 采集评论 91 条，新增 91 条
+2026-04-27 22:49:06 | INFO     | [存储] CSV 写入 71 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-08\7537654713526439227\comments.csv
+2026-04-27 22:49:06 | INFO     | [存储] DB 写入 71 条 → comments
+2026-04-27 22:49:06 | INFO     | [采集] 视频 7537654713526439227 采集评论 71 条，新增 71 条
+2026-04-27 22:49:11 | INFO     | [存储] CSV 写入 54 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-08\7537693682305584444\comments.csv
+2026-04-27 22:49:11 | INFO     | [存储] DB 写入 54 条 → comments
+2026-04-27 22:49:11 | INFO     | [采集] 视频 7537693682305584444 采集评论 54 条，新增 54 条
+2026-04-27 22:49:17 | INFO     | [存储] CSV 写入 25 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-08\7540202443100556602\comments.csv
+2026-04-27 22:49:17 | INFO     | [存储] DB 写入 25 条 → comments
+2026-04-27 22:49:17 | INFO     | [采集] 视频 7540202443100556602 采集评论 25 条，新增 25 条
+2026-04-27 22:49:31 | INFO     | [存储] CSV 写入 183 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-08\7543195469028838714\comments.csv
+2026-04-27 22:49:31 | INFO     | [存储] DB 写入 183 条 → comments
+2026-04-27 22:49:31 | INFO     | [采集] 视频 7543195469028838714 采集评论 183 条，新增 183 条
+2026-04-27 22:49:34 | INFO     | [存储] CSV 写入 31 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-09\7547663836120730940\comments.csv
+2026-04-27 22:49:34 | INFO     | [存储] DB 写入 31 条 → comments
+2026-04-27 22:49:34 | INFO     | [采集] 视频 7547663836120730940 采集评论 31 条，新增 31 条
+2026-04-27 22:49:44 | INFO     | [存储] CSV 写入 140 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-10\7562986090622324026\comments.csv
+2026-04-27 22:49:44 | INFO     | [存储] DB 写入 140 条 → comments
+2026-04-27 22:49:44 | INFO     | [采集] 视频 7562986090622324026 采集评论 140 条，新增 140 条
+2026-04-27 22:49:47 | INFO     | [存储] CSV 写入 25 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-10\7564750488014621989\comments.csv
+2026-04-27 22:49:47 | INFO     | [存储] DB 写入 25 条 → comments
+2026-04-27 22:49:47 | INFO     | [采集] 视频 7564750488014621989 采集评论 25 条，新增 25 条
+2026-04-27 22:49:49 | INFO     | [存储] CSV 写入 35 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-11\7569663726073195386\comments.csv
+2026-04-27 22:49:49 | INFO     | [存储] DB 写入 35 条 → comments
+2026-04-27 22:49:49 | INFO     | [采集] 视频 7569663726073195386 采集评论 35 条，新增 35 条
+2026-04-27 22:49:52 | INFO     | [存储] CSV 写入 22 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-11\7572860497566853818\comments.csv
+2026-04-27 22:49:52 | INFO     | [存储] DB 写入 22 条 → comments
+2026-04-27 22:49:52 | INFO     | [采集] 视频 7572860497566853818 采集评论 22 条，新增 22 条
+2026-04-27 22:49:59 | INFO     | [存储] CSV 写入 90 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-11\7575765670223546491\comments.csv
+2026-04-27 22:49:59 | INFO     | [存储] DB 写入 90 条 → comments
+2026-04-27 22:49:59 | INFO     | [采集] 视频 7575765670223546491 采集评论 90 条，新增 90 条
+2026-04-27 22:50:08 | INFO     | [存储] CSV 写入 144 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-11\7575887502252457147\comments.csv
+2026-04-27 22:50:08 | INFO     | [存储] DB 写入 144 条 → comments
+2026-04-27 22:50:08 | INFO     | [采集] 视频 7575887502252457147 采集评论 144 条，新增 144 条
+2026-04-27 22:50:15 | INFO     | [存储] CSV 写入 82 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-11\7576364577147891705\comments.csv
+2026-04-27 22:50:15 | INFO     | [存储] DB 写入 82 条 → comments
+2026-04-27 22:50:15 | INFO     | [采集] 视频 7576364577147891705 采集评论 82 条，新增 82 条
+2026-04-27 22:50:21 | INFO     | [存储] CSV 写入 65 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-12\7581457477288906033\comments.csv
+2026-04-27 22:50:21 | INFO     | [存储] DB 写入 65 条 → comments
+2026-04-27 22:50:21 | INFO     | [采集] 视频 7581457477288906033 采集评论 65 条，新增 65 条
+2026-04-27 22:50:24 | INFO     | [存储] CSV 写入 53 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-12\7587032462887456058\comments.csv
+2026-04-27 22:50:24 | INFO     | [存储] DB 写入 53 条 → comments
+2026-04-27 22:50:24 | INFO     | [采集] 视频 7587032462887456058 采集评论 53 条，新增 53 条
+2026-04-27 22:50:27 | INFO     | [存储] CSV 写入 22 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-12\7587264186196053307\comments.csv
+2026-04-27 22:50:27 | INFO     | [存储] DB 写入 22 条 → comments
+2026-04-27 22:50:27 | INFO     | [采集] 视频 7587264186196053307 采集评论 22 条，新增 22 条
+2026-04-27 22:50:32 | INFO     | [存储] CSV 写入 69 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-12\7588131098325484986\comments.csv
+2026-04-27 22:50:32 | INFO     | [存储] DB 写入 69 条 → comments
+2026-04-27 22:50:32 | INFO     | [采集] 视频 7588131098325484986 采集评论 69 条，新增 69 条
+2026-04-27 22:50:35 | INFO     | [存储] CSV 写入 33 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-12\7589853605994697905\comments.csv
+2026-04-27 22:50:35 | INFO     | [存储] DB 写入 33 条 → comments
+2026-04-27 22:50:35 | INFO     | [采集] 视频 7589853605994697905 采集评论 33 条，新增 33 条
+2026-04-27 22:50:41 | INFO     | [存储] CSV 写入 57 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-01\7592289477906108273\comments.csv
+2026-04-27 22:50:41 | INFO     | [存储] DB 写入 57 条 → comments
+2026-04-27 22:50:41 | INFO     | [采集] 视频 7592289477906108273 采集评论 57 条，新增 57 条
+2026-04-27 22:50:42 | INFO     | [存储] CSV 写入 15 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-01\7601179503344749681\comments.csv
+2026-04-27 22:50:42 | INFO     | [存储] DB 写入 15 条 → comments
+2026-04-27 22:50:42 | INFO     | [采集] 视频 7601179503344749681 采集评论 15 条，新增 15 条
+2026-04-27 22:50:50 | INFO     | [存储] CSV 写入 114 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-02\7601924378800875898\comments.csv
+2026-04-27 22:50:50 | INFO     | [存储] DB 写入 114 条 → comments
+2026-04-27 22:50:50 | INFO     | [采集] 视频 7601924378800875898 采集评论 114 条，新增 114 条
+2026-04-27 22:50:54 | INFO     | [存储] CSV 写入 39 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-02\7602487755479045989\comments.csv
+2026-04-27 22:50:54 | INFO     | [存储] DB 写入 39 条 → comments
+2026-04-27 22:50:54 | INFO     | [采集] 视频 7602487755479045989 采集评论 39 条，新增 39 条
+2026-04-27 22:50:58 | INFO     | [存储] CSV 写入 50 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-02\7606743961860273338\comments.csv
+2026-04-27 22:50:58 | INFO     | [存储] DB 写入 50 条 → comments
+2026-04-27 22:50:58 | INFO     | [采集] 视频 7606743961860273338 采集评论 50 条，新增 50 条
+2026-04-27 22:51:01 | INFO     | [存储] CSV 写入 27 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-02\7607127516424664827\comments.csv
+2026-04-27 22:51:01 | INFO     | [存储] DB 写入 27 条 → comments
+2026-04-27 22:51:01 | INFO     | [采集] 视频 7607127516424664827 采集评论 27 条，新增 27 条
+2026-04-27 22:51:07 | INFO     | [存储] CSV 写入 64 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-02\7607789805016011505\comments.csv
+2026-04-27 22:51:07 | INFO     | [存储] DB 写入 64 条 → comments
+2026-04-27 22:51:07 | INFO     | [采集] 视频 7607789805016011505 采集评论 64 条，新增 64 条
+2026-04-27 22:51:09 | INFO     | [存储] CSV 写入 20 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-02\7607867103055971003\comments.csv
+2026-04-27 22:51:09 | INFO     | [存储] DB 写入 20 条 → comments
+2026-04-27 22:51:09 | INFO     | [采集] 视频 7607867103055971003 采集评论 20 条，新增 20 条
+2026-04-27 22:51:14 | INFO     | [存储] CSV 写入 71 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-02\7611080635616436453\comments.csv
+2026-04-27 22:51:14 | INFO     | [存储] DB 写入 71 条 → comments
+2026-04-27 22:51:14 | INFO     | [采集] 视频 7611080635616436453 采集评论 71 条，新增 71 条
+2026-04-27 22:51:15 | INFO     | [存储] CSV 写入 12 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-03\7612352146415930105\comments.csv
+2026-04-27 22:51:15 | INFO     | [存储] DB 写入 12 条 → comments
+2026-04-27 22:51:15 | INFO     | [采集] 视频 7612352146415930105 采集评论 12 条，新增 12 条
+2026-04-27 22:51:18 | INFO     | [存储] CSV 写入 24 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-03\7612620171912133114\comments.csv
+2026-04-27 22:51:18 | INFO     | [存储] DB 写入 24 条 → comments
+2026-04-27 22:51:18 | INFO     | [采集] 视频 7612620171912133114 采集评论 24 条，新增 24 条
+2026-04-27 22:51:21 | INFO     | [存储] CSV 写入 25 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-03\7622146667216092657\comments.csv
+2026-04-27 22:51:21 | INFO     | [存储] DB 写入 25 条 → comments
+2026-04-27 22:51:21 | INFO     | [采集] 视频 7622146667216092657 采集评论 25 条，新增 25 条
+2026-04-27 22:51:25 | INFO     | [存储] CSV 写入 42 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-04\7626667414588525541\comments.csv
+2026-04-27 22:51:25 | INFO     | [存储] DB 写入 42 条 → comments
+2026-04-27 22:51:25 | INFO     | [采集] 视频 7626667414588525541 采集评论 42 条，新增 42 条
+2026-04-27 22:51:26 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
+2026-04-27 22:51:26 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
+2026-04-27 22:51:26 | INFO     | [清理] 资源释放完成
+2026-04-27 22:51:48 | INFO     | [DB] SQLite 初始化完成: data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
+2026-04-27 22:51:49 | INFO     | [采集] 开始 用户=MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR 类型=回复 评论=968 视频=130
+2026-04-27 22:51:50 | INFO     | [Cookie] ✓ 验证通过，登录用户: 小黄鸭剪辑
+2026-04-27 22:51:51 | INFO     | [存储] CSV 写入 4 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-07\7261587813836049725\replies.csv
+2026-04-27 22:51:51 | INFO     | [存储] DB 写入 4 条 → replies
+2026-04-27 22:51:51 | INFO     | [采集] 视频 7261587813836049725 采集回复 4 条，新增 4 条
+2026-04-27 22:51:55 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-09\7279311852432018725\replies.csv
+2026-04-27 22:51:55 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 22:51:55 | INFO     | [采集] 视频 7279311852432018725 采集回复 2 条，新增 2 条
+2026-04-27 22:52:02 | INFO     | [存储] CSV 写入 11 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-09\7281982025345600825\replies.csv
+2026-04-27 22:52:02 | INFO     | [存储] DB 写入 11 条 → replies
+2026-04-27 22:52:02 | INFO     | [采集] 视频 7281982025345600825 采集回复 11 条，新增 11 条
+2026-04-27 22:52:12 | INFO     | [存储] CSV 写入 10 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-09\7284062686785113400\replies.csv
+2026-04-27 22:52:12 | INFO     | [存储] DB 写入 10 条 → replies
+2026-04-27 22:52:12 | INFO     | [采集] 视频 7284062686785113400 采集回复 10 条，新增 10 条
+2026-04-27 22:52:22 | INFO     | [存储] CSV 写入 15 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7288253442756283706\replies.csv
+2026-04-27 22:52:22 | INFO     | [存储] DB 写入 15 条 → replies
+2026-04-27 22:52:22 | INFO     | [采集] 视频 7288253442756283706 采集回复 15 条，新增 15 条
+2026-04-27 22:52:28 | INFO     | [存储] CSV 写入 6 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7288661845714406717\replies.csv
+2026-04-27 22:52:28 | INFO     | [存储] DB 写入 6 条 → replies
+2026-04-27 22:52:28 | INFO     | [采集] 视频 7288661845714406717 采集回复 6 条，新增 6 条
+2026-04-27 22:52:36 | INFO     | [存储] CSV 写入 9 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7289394467847654717\replies.csv
+2026-04-27 22:52:36 | INFO     | [存储] DB 写入 9 条 → replies
+2026-04-27 22:52:36 | INFO     | [采集] 视频 7289394467847654717 采集回复 9 条，新增 9 条
+2026-04-27 22:52:38 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7290255327683972408\replies.csv
+2026-04-27 22:52:38 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 22:52:38 | INFO     | [采集] 视频 7290255327683972408 采集回复 1 条，新增 1 条
+2026-04-27 22:52:42 | INFO     | [存储] CSV 写入 4 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7291220035832433977\replies.csv
+2026-04-27 22:52:42 | INFO     | [存储] DB 写入 4 条 → replies
+2026-04-27 22:52:42 | INFO     | [采集] 视频 7291220035832433977 采集回复 4 条，新增 4 条
+2026-04-27 22:52:45 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7291731507096440073\replies.csv
+2026-04-27 22:52:45 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 22:52:45 | INFO     | [采集] 视频 7291731507096440073 采集回复 2 条，新增 2 条
+2026-04-27 22:52:49 | INFO     | [存储] CSV 写入 4 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7292102952691469618\replies.csv
+2026-04-27 22:52:49 | INFO     | [存储] DB 写入 4 条 → replies
+2026-04-27 22:52:49 | INFO     | [采集] 视频 7292102952691469618 采集回复 4 条，新增 4 条
+2026-04-27 22:52:52 | INFO     | [存储] CSV 写入 3 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7292290078905224474\replies.csv
+2026-04-27 22:52:52 | INFO     | [存储] DB 写入 3 条 → replies
+2026-04-27 22:52:52 | INFO     | [采集] 视频 7292290078905224474 采集回复 3 条，新增 3 条
+2026-04-27 22:52:55 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7294152963709259059\replies.csv
+2026-04-27 22:52:55 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 22:52:55 | INFO     | [采集] 视频 7294152963709259059 采集回复 1 条，新增 1 条
+2026-04-27 22:52:58 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-10\7296140070451563814\replies.csv
+2026-04-27 22:52:58 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 22:52:58 | INFO     | [采集] 视频 7296140070451563814 采集回复 2 条，新增 2 条
+2026-04-27 22:53:01 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7296449030677122314\replies.csv
+2026-04-27 22:53:01 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 22:53:01 | INFO     | [采集] 视频 7296449030677122314 采集回复 2 条，新增 2 条
+2026-04-27 22:53:05 | INFO     | [存储] CSV 写入 5 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7297141182373711154\replies.csv
+2026-04-27 22:53:05 | INFO     | [存储] DB 写入 5 条 → replies
+2026-04-27 22:53:05 | INFO     | [采集] 视频 7297141182373711154 采集回复 5 条，新增 5 条
+2026-04-27 22:53:15 | INFO     | [存储] CSV 写入 14 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7299132135712066826\replies.csv
+2026-04-27 22:53:15 | INFO     | [存储] DB 写入 14 条 → replies
+2026-04-27 22:53:15 | INFO     | [采集] 视频 7299132135712066826 采集回复 14 条，新增 14 条
+2026-04-27 22:53:18 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7299342805757922610\replies.csv
+2026-04-27 22:53:18 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 22:53:18 | INFO     | [采集] 视频 7299342805757922610 采集回复 2 条，新增 2 条
+2026-04-27 22:53:23 | INFO     | [存储] CSV 写入 8 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7301887426841136411\replies.csv
+2026-04-27 22:53:23 | INFO     | [存储] DB 写入 8 条 → replies
+2026-04-27 22:53:23 | INFO     | [采集] 视频 7301887426841136411 采集回复 8 条，新增 8 条
+2026-04-27 22:53:27 | INFO     | [存储] CSV 写入 11 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7302864173812239654\replies.csv
+2026-04-27 22:53:27 | INFO     | [存储] DB 写入 11 条 → replies
+2026-04-27 22:53:27 | INFO     | [采集] 视频 7302864173812239654 采集回复 11 条，新增 11 条
+2026-04-27 22:53:34 | INFO     | [存储] CSV 写入 28 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7303241635402452250\replies.csv
+2026-04-27 22:53:34 | INFO     | [存储] DB 写入 28 条 → replies
+2026-04-27 22:53:34 | INFO     | [采集] 视频 7303241635402452250 采集回复 28 条，新增 28 条
+2026-04-27 22:53:40 | INFO     | [存储] CSV 写入 4 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7303799544825892134\replies.csv
+2026-04-27 22:53:40 | INFO     | [存储] DB 写入 4 条 → replies
+2026-04-27 22:53:40 | INFO     | [采集] 视频 7303799544825892134 采集回复 4 条，新增 4 条
+2026-04-27 22:53:47 | INFO     | [存储] CSV 写入 10 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7305451891301879091\replies.csv
+2026-04-27 22:53:47 | INFO     | [存储] DB 写入 10 条 → replies
+2026-04-27 22:53:47 | INFO     | [采集] 视频 7305451891301879091 采集回复 10 条，新增 10 条
+2026-04-27 22:58:31 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
+2026-04-27 22:58:31 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
+2026-04-27 22:58:31 | INFO     | [清理] 资源释放完成
+2026-04-27 22:58:48 | INFO     | [DB] SQLite 初始化完成: data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
+2026-04-27 22:58:48 | INFO     | [采集] 开始 用户=MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR 类型=回复 评论=968 视频=130
+2026-04-27 22:59:16 | INFO     | [Cookie] ✓ 验证通过，登录用户: 小黄鸭剪辑
+2026-04-27 22:59:18 | INFO     | [采集] 视频 7261587813836049725 采集回复 4 条，新增 0 条
+2026-04-27 22:59:23 | INFO     | [采集] 视频 7279311852432018725 采集回复 2 条，新增 0 条
+2026-04-27 22:59:32 | INFO     | [采集] 视频 7281982025345600825 采集回复 11 条，新增 0 条
+2026-04-27 22:59:47 | INFO     | [采集] 视频 7284062686785113400 采集回复 10 条，新增 0 条
+2026-04-27 22:59:59 | INFO     | [采集] 视频 7288253442756283706 采集回复 15 条，新增 0 条
+2026-04-27 23:00:06 | INFO     | [采集] 视频 7288661845714406717 采集回复 6 条，新增 0 条
+2026-04-27 23:00:16 | INFO     | [采集] 视频 7289394467847654717 采集回复 9 条，新增 0 条
+2026-04-27 23:00:18 | INFO     | [采集] 视频 7290255327683972408 采集回复 1 条，新增 0 条
+2026-04-27 23:00:22 | INFO     | [采集] 视频 7291220035832433977 采集回复 4 条，新增 0 条
+2026-04-27 23:00:24 | INFO     | [采集] 视频 7291731507096440073 采集回复 2 条，新增 0 条
+2026-04-27 23:00:29 | INFO     | [采集] 视频 7292102952691469618 采集回复 4 条，新增 0 条
+2026-04-27 23:00:37 | INFO     | [采集] 视频 7292290078905224474 采集回复 3 条，新增 0 条
+2026-04-27 23:00:40 | INFO     | [采集] 视频 7294152963709259059 采集回复 1 条，新增 0 条
+2026-04-27 23:00:45 | INFO     | [采集] 视频 7296140070451563814 采集回复 2 条，新增 0 条
+2026-04-27 23:00:47 | INFO     | [采集] 视频 7296449030677122314 采集回复 2 条，新增 0 条
+2026-04-27 23:00:52 | INFO     | [采集] 视频 7297141182373711154 采集回复 5 条，新增 0 条
+2026-04-27 23:01:02 | INFO     | [采集] 视频 7299132135712066826 采集回复 14 条，新增 0 条
+2026-04-27 23:01:07 | INFO     | [采集] 视频 7299342805757922610 采集回复 2 条，新增 0 条
+2026-04-27 23:01:12 | INFO     | [采集] 视频 7301887426841136411 采集回复 8 条，新增 0 条
+2026-04-27 23:01:17 | INFO     | [采集] 视频 7302864173812239654 采集回复 11 条，新增 0 条
+2026-04-27 23:01:28 | INFO     | [采集] 视频 7303241635402452250 采集回复 28 条，新增 0 条
+2026-04-27 23:01:33 | INFO     | [采集] 视频 7303799544825892134 采集回复 4 条，新增 0 条
+2026-04-27 23:01:41 | INFO     | [采集] 视频 7305451891301879091 采集回复 10 条，新增 0 条
+2026-04-27 23:11:46 | INFO     | [存储] CSV 写入 829 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7306105815142960410\replies.csv
+2026-04-27 23:11:46 | INFO     | [存储] DB 写入 645 条 → replies
+2026-04-27 23:11:46 | INFO     | [采集] 视频 7306105815142960410 采集回复 829 条，新增 829 条
+2026-04-27 23:11:49 | INFO     | [存储] CSV 写入 11 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-11\7307225351032147227\replies.csv
+2026-04-27 23:11:49 | INFO     | [存储] DB 写入 11 条 → replies
+2026-04-27 23:11:49 | INFO     | [采集] 视频 7307225351032147227 采集回复 11 条，新增 11 条
+2026-04-27 23:12:01 | INFO     | [存储] CSV 写入 28 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-12\7309531729046375730\replies.csv
+2026-04-27 23:12:01 | INFO     | [存储] DB 写入 28 条 → replies
+2026-04-27 23:12:01 | INFO     | [采集] 视频 7309531729046375730 采集回复 28 条，新增 28 条
+2026-04-27 23:12:06 | INFO     | [存储] CSV 写入 5 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-12\7312522928854175002\replies.csv
+2026-04-27 23:12:06 | INFO     | [存储] DB 写入 5 条 → replies
+2026-04-27 23:12:06 | INFO     | [采集] 视频 7312522928854175002 采集回复 5 条，新增 5 条
+2026-04-27 23:12:09 | INFO     | [存储] CSV 写入 3 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2023-12\7313451782972214555\replies.csv
+2026-04-27 23:12:09 | INFO     | [存储] DB 写入 3 条 → replies
+2026-04-27 23:12:09 | INFO     | [采集] 视频 7313451782972214555 采集回复 3 条，新增 3 条
+2026-04-27 23:12:14 | INFO     | [存储] CSV 写入 3 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-01\7319037285519985929\replies.csv
+2026-04-27 23:12:14 | INFO     | [存储] DB 写入 3 条 → replies
+2026-04-27 23:12:14 | INFO     | [采集] 视频 7319037285519985929 采集回复 3 条，新增 3 条
+2026-04-27 23:12:17 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-01\7320326783989976357\replies.csv
+2026-04-27 23:12:17 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 23:12:17 | INFO     | [采集] 视频 7320326783989976357 采集回复 1 条，新增 1 条
+2026-04-27 23:12:26 | INFO     | [存储] CSV 写入 11 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-01\7326264268645535002\replies.csv
+2026-04-27 23:12:26 | INFO     | [存储] DB 写入 11 条 → replies
+2026-04-27 23:12:26 | INFO     | [采集] 视频 7326264268645535002 采集回复 11 条，新增 11 条
+2026-04-27 23:12:28 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-01\7327936087756770598\replies.csv
+2026-04-27 23:12:28 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 23:12:28 | INFO     | [采集] 视频 7327936087756770598 采集回复 1 条，新增 1 条
+2026-04-27 23:12:39 | INFO     | [存储] CSV 写入 18 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-02\7333814963322015002\replies.csv
+2026-04-27 23:12:39 | INFO     | [存储] DB 写入 18 条 → replies
+2026-04-27 23:12:39 | INFO     | [采集] 视频 7333814963322015002 采集回复 18 条，新增 18 条
+2026-04-27 23:12:44 | INFO     | [存储] CSV 写入 4 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-02\7335084360145587507\replies.csv
+2026-04-27 23:12:44 | INFO     | [存储] DB 写入 4 条 → replies
+2026-04-27 23:12:44 | INFO     | [采集] 视频 7335084360145587507 采集回复 4 条，新增 4 条
+2026-04-27 23:12:48 | INFO     | [存储] CSV 写入 5 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-02\7335725760780520713\replies.csv
+2026-04-27 23:12:48 | INFO     | [存储] DB 写入 5 条 → replies
+2026-04-27 23:12:48 | INFO     | [采集] 视频 7335725760780520713 采集回复 5 条，新增 5 条
+2026-04-27 23:13:19 | INFO     | [存储] CSV 写入 56 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-03\7344976008048577842\replies.csv
+2026-04-27 23:13:19 | INFO     | [存储] DB 写入 56 条 → replies
+2026-04-27 23:13:19 | INFO     | [采集] 视频 7344976008048577842 采集回复 56 条，新增 56 条
+2026-04-27 23:13:21 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-03\7346642803608358194\replies.csv
+2026-04-27 23:13:21 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 23:13:21 | INFO     | [采集] 视频 7346642803608358194 采集回复 1 条，新增 1 条
+2026-04-27 23:13:27 | INFO     | [存储] CSV 写入 10 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-03\7347268959416093962\replies.csv
+2026-04-27 23:13:27 | INFO     | [存储] DB 写入 10 条 → replies
+2026-04-27 23:13:27 | INFO     | [采集] 视频 7347268959416093962 采集回复 10 条，新增 10 条
+2026-04-27 23:13:35 | INFO     | [存储] CSV 写入 8 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-03\7350774556467973413\replies.csv
+2026-04-27 23:13:35 | INFO     | [存储] DB 写入 8 条 → replies
+2026-04-27 23:13:35 | INFO     | [采集] 视频 7350774556467973413 采集回复 8 条，新增 8 条
+2026-04-27 23:13:39 | INFO     | [存储] CSV 写入 12 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-04\7361719759513095433\replies.csv
+2026-04-27 23:13:39 | INFO     | [存储] DB 写入 12 条 → replies
+2026-04-27 23:13:39 | INFO     | [采集] 视频 7361719759513095433 采集回复 12 条，新增 12 条
+2026-04-27 23:13:43 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-05\7364861940444695817\replies.csv
+2026-04-27 23:13:43 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 23:13:43 | INFO     | [采集] 视频 7364861940444695817 采集回复 2 条，新增 2 条
+2026-04-27 23:13:50 | INFO     | [存储] CSV 写入 9 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-05\7370250351515077939\replies.csv
+2026-04-27 23:13:50 | INFO     | [存储] DB 写入 9 条 → replies
+2026-04-27 23:13:50 | INFO     | [采集] 视频 7370250351515077939 采集回复 9 条，新增 9 条
+2026-04-27 23:13:59 | INFO     | [存储] CSV 写入 11 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-05\7371882667215703323\replies.csv
+2026-04-27 23:13:59 | INFO     | [存储] DB 写入 11 条 → replies
+2026-04-27 23:13:59 | INFO     | [采集] 视频 7371882667215703323 采集回复 11 条，新增 11 条
+2026-04-27 23:14:02 | INFO     | [存储] CSV 写入 11 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-05\7372467660577197322\replies.csv
+2026-04-27 23:14:02 | INFO     | [存储] DB 写入 11 条 → replies
+2026-04-27 23:14:02 | INFO     | [采集] 视频 7372467660577197322 采集回复 11 条，新增 11 条
+2026-04-27 23:14:07 | INFO     | [存储] CSV 写入 5 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-06\7375221463508389157\replies.csv
+2026-04-27 23:14:07 | INFO     | [存储] DB 写入 5 条 → replies
+2026-04-27 23:14:07 | INFO     | [采集] 视频 7375221463508389157 采集回复 5 条，新增 5 条
+2026-04-27 23:14:12 | INFO     | [存储] CSV 写入 23 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-06\7378400935359417637\replies.csv
+2026-04-27 23:14:12 | INFO     | [存储] DB 写入 23 条 → replies
+2026-04-27 23:14:12 | INFO     | [采集] 视频 7378400935359417637 采集回复 23 条，新增 23 条
+2026-04-27 23:14:20 | INFO     | [存储] CSV 写入 17 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-06\7380058929507749158\replies.csv
+2026-04-27 23:14:20 | INFO     | [存储] DB 写入 17 条 → replies
+2026-04-27 23:14:20 | INFO     | [采集] 视频 7380058929507749158 采集回复 17 条，新增 17 条
+2026-04-27 23:14:35 | INFO     | [存储] CSV 写入 38 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-06\7384457605776788786\replies.csv
+2026-04-27 23:14:35 | INFO     | [存储] DB 写入 38 条 → replies
+2026-04-27 23:14:35 | INFO     | [采集] 视频 7384457605776788786 采集回复 38 条，新增 38 条
+2026-04-27 23:14:39 | INFO     | [存储] CSV 写入 5 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-07\7386641128629620006\replies.csv
+2026-04-27 23:14:39 | INFO     | [存储] DB 写入 5 条 → replies
+2026-04-27 23:14:39 | INFO     | [采集] 视频 7386641128629620006 采集回复 5 条，新增 5 条
+2026-04-27 23:14:41 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-07\7387825962521496842\replies.csv
+2026-04-27 23:14:41 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 23:14:41 | INFO     | [采集] 视频 7387825962521496842 采集回复 1 条，新增 1 条
+2026-04-27 23:14:46 | INFO     | [存储] CSV 写入 16 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-07\7388202732336860426\replies.csv
+2026-04-27 23:14:46 | INFO     | [存储] DB 写入 16 条 → replies
+2026-04-27 23:14:46 | INFO     | [采集] 视频 7388202732336860426 采集回复 16 条，新增 16 条
+2026-04-27 23:14:49 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-07\7389347946048818459\replies.csv
+2026-04-27 23:14:49 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 23:14:49 | INFO     | [采集] 视频 7389347946048818459 采集回复 1 条，新增 1 条
+2026-04-27 23:15:03 | INFO     | [存储] CSV 写入 16 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-07\7389933555058527514\replies.csv
+2026-04-27 23:15:03 | INFO     | [存储] DB 写入 16 条 → replies
+2026-04-27 23:15:03 | INFO     | [采集] 视频 7389933555058527514 采集回复 16 条，新增 16 条
+2026-04-27 23:15:10 | INFO     | [存储] CSV 写入 10 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-07\7392664822225063219\replies.csv
+2026-04-27 23:15:10 | INFO     | [存储] DB 写入 10 条 → replies
+2026-04-27 23:15:10 | INFO     | [采集] 视频 7392664822225063219 采集回复 10 条，新增 10 条
+2026-04-27 23:15:15 | INFO     | [存储] CSV 写入 8 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-07\7392799360515411251\replies.csv
+2026-04-27 23:15:15 | INFO     | [存储] DB 写入 8 条 → replies
+2026-04-27 23:15:15 | INFO     | [采集] 视频 7392799360515411251 采集回复 8 条，新增 8 条
+2026-04-27 23:15:20 | INFO     | [存储] CSV 写入 8 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-07\7395634096287911218\replies.csv
+2026-04-27 23:15:20 | INFO     | [存储] DB 写入 8 条 → replies
+2026-04-27 23:15:20 | INFO     | [采集] 视频 7395634096287911218 采集回复 8 条，新增 8 条
+2026-04-27 23:15:23 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7402069880775658779\replies.csv
+2026-04-27 23:15:23 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 23:15:23 | INFO     | [采集] 视频 7402069880775658779 采集回复 2 条，新增 2 条
+2026-04-27 23:15:27 | INFO     | [存储] CSV 写入 9 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7402168346944277769\replies.csv
+2026-04-27 23:15:27 | INFO     | [存储] DB 写入 9 条 → replies
+2026-04-27 23:15:27 | INFO     | [采集] 视频 7402168346944277769 采集回复 9 条，新增 9 条
+2026-04-27 23:15:29 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7402300009120582949\replies.csv
+2026-04-27 23:15:29 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 23:15:29 | INFO     | [采集] 视频 7402300009120582949 采集回复 1 条，新增 1 条
+2026-04-27 23:15:31 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7403783768420519218\replies.csv
+2026-04-27 23:15:31 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 23:15:31 | INFO     | [采集] 视频 7403783768420519218 采集回复 1 条，新增 1 条
+2026-04-27 23:15:33 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7404080507589283110\replies.csv
+2026-04-27 23:15:33 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 23:15:33 | INFO     | [采集] 视频 7404080507589283110 采集回复 2 条，新增 2 条
+2026-04-27 23:15:40 | INFO     | [存储] CSV 写入 24 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7404393560725835017\replies.csv
+2026-04-27 23:15:40 | INFO     | [存储] DB 写入 24 条 → replies
+2026-04-27 23:15:40 | INFO     | [采集] 视频 7404393560725835017 采集回复 24 条，新增 24 条
+2026-04-27 23:15:51 | INFO     | [存储] CSV 写入 18 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7406251308908301577\replies.csv
+2026-04-27 23:15:51 | INFO     | [存储] DB 写入 18 条 → replies
+2026-04-27 23:15:51 | INFO     | [采集] 视频 7406251308908301577 采集回复 18 条，新增 18 条
+2026-04-27 23:15:57 | INFO     | [存储] CSV 写入 17 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-08\7408827897298832652\replies.csv
+2026-04-27 23:15:57 | INFO     | [存储] DB 写入 17 条 → replies
+2026-04-27 23:15:57 | INFO     | [采集] 视频 7408827897298832652 采集回复 17 条，新增 17 条
+2026-04-27 23:16:00 | INFO     | [存储] CSV 写入 7 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-09\7410697721922800935\replies.csv
+2026-04-27 23:16:00 | INFO     | [存储] DB 写入 7 条 → replies
+2026-04-27 23:16:00 | INFO     | [采集] 视频 7410697721922800935 采集回复 7 条，新增 7 条
+2026-04-27 23:16:12 | INFO     | [存储] CSV 写入 33 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-09\7411078046033235212\replies.csv
+2026-04-27 23:16:12 | INFO     | [存储] DB 写入 33 条 → replies
+2026-04-27 23:16:12 | INFO     | [采集] 视频 7411078046033235212 采集回复 33 条，新增 33 条
+2026-04-27 23:16:16 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-09\7411235908235562276\replies.csv
+2026-04-27 23:16:16 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 23:16:16 | INFO     | [采集] 视频 7411235908235562276 采集回复 2 条，新增 2 条
+2026-04-27 23:16:49 | INFO     | [存储] CSV 写入 89 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-09\7418633164471536915\replies.csv
+2026-04-27 23:16:49 | INFO     | [存储] DB 写入 89 条 → replies
+2026-04-27 23:16:49 | INFO     | [采集] 视频 7418633164471536915 采集回复 89 条，新增 89 条
+2026-04-27 23:16:56 | INFO     | [存储] CSV 写入 9 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-09\7420379083638426921\replies.csv
+2026-04-27 23:16:56 | INFO     | [存储] DB 写入 9 条 → replies
+2026-04-27 23:16:56 | INFO     | [采集] 视频 7420379083638426921 采集回复 9 条，新增 9 条
+2026-04-27 23:16:58 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-10\7420489775385169163\replies.csv
+2026-04-27 23:16:58 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 23:16:58 | INFO     | [采集] 视频 7420489775385169163 采集回复 1 条，新增 1 条
+2026-04-27 23:17:01 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-10\7422635383277505803\replies.csv
+2026-04-27 23:17:01 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 23:17:01 | INFO     | [采集] 视频 7422635383277505803 采集回复 1 条，新增 1 条
+2026-04-27 23:17:05 | INFO     | [存储] CSV 写入 3 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-10\7427010781021048076\replies.csv
+2026-04-27 23:17:05 | INFO     | [存储] DB 写入 3 条 → replies
+2026-04-27 23:17:05 | INFO     | [采集] 视频 7427010781021048076 采集回复 3 条，新增 3 条
+2026-04-27 23:17:10 | INFO     | [存储] CSV 写入 4 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-11\7434196946413210892\replies.csv
+2026-04-27 23:17:10 | INFO     | [存储] DB 写入 4 条 → replies
+2026-04-27 23:17:10 | INFO     | [采集] 视频 7434196946413210892 采集回复 4 条，新增 4 条
+2026-04-27 23:17:15 | INFO     | [存储] CSV 写入 4 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-11\7437065551840677131\replies.csv
+2026-04-27 23:17:15 | INFO     | [存储] DB 写入 4 条 → replies
+2026-04-27 23:17:15 | INFO     | [采集] 视频 7437065551840677131 采集回复 4 条，新增 4 条
+2026-04-27 23:17:21 | INFO     | [存储] CSV 写入 8 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-11\7438704959010393356\replies.csv
+2026-04-27 23:17:21 | INFO     | [存储] DB 写入 8 条 → replies
+2026-04-27 23:17:21 | INFO     | [采集] 视频 7438704959010393356 采集回复 8 条，新增 8 条
+2026-04-27 23:17:33 | INFO     | [存储] CSV 写入 15 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2024-12\7453021880681909531\replies.csv
+2026-04-27 23:17:33 | INFO     | [存储] DB 写入 15 条 → replies
+2026-04-27 23:17:33 | INFO     | [采集] 视频 7453021880681909531 采集回复 15 条，新增 15 条
+2026-04-27 23:17:38 | INFO     | [存储] CSV 写入 4 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-01\7456335660862033202\replies.csv
+2026-04-27 23:17:38 | INFO     | [存储] DB 写入 4 条 → replies
+2026-04-27 23:17:38 | INFO     | [采集] 视频 7456335660862033202 采集回复 4 条，新增 4 条
+2026-04-27 23:17:42 | INFO     | [存储] CSV 写入 3 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-01\7456499005523070258\replies.csv
+2026-04-27 23:17:42 | INFO     | [存储] DB 写入 3 条 → replies
+2026-04-27 23:17:42 | INFO     | [采集] 视频 7456499005523070258 采集回复 3 条，新增 3 条
+2026-04-27 23:17:45 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-01\7457840071421463846\replies.csv
+2026-04-27 23:17:45 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 23:17:45 | INFO     | [采集] 视频 7457840071421463846 采集回复 2 条，新增 2 条
+2026-04-27 23:17:47 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-01\7465281561005509925\replies.csv
+2026-04-27 23:17:47 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 23:17:47 | INFO     | [采集] 视频 7465281561005509925 采集回复 1 条，新增 1 条
+2026-04-27 23:17:49 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-01\7465982614332001586\replies.csv
+2026-04-27 23:17:49 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 23:17:49 | INFO     | [采集] 视频 7465982614332001586 采集回复 2 条，新增 2 条
+2026-04-27 23:17:53 | INFO     | [存储] CSV 写入 3 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-02\7469861568780520731\replies.csv
+2026-04-27 23:17:53 | INFO     | [存储] DB 写入 3 条 → replies
+2026-04-27 23:17:53 | INFO     | [采集] 视频 7469861568780520731 采集回复 3 条，新增 3 条
+2026-04-27 23:18:01 | INFO     | [存储] CSV 写入 6 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-02\7470500723457936691\replies.csv
+2026-04-27 23:18:01 | INFO     | [存储] DB 写入 6 条 → replies
+2026-04-27 23:18:01 | INFO     | [采集] 视频 7470500723457936691 采集回复 6 条，新增 6 条
+2026-04-27 23:18:03 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-02\7471178362417990963\replies.csv
+2026-04-27 23:18:03 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 23:18:03 | INFO     | [采集] 视频 7471178362417990963 采集回复 2 条，新增 2 条
+2026-04-27 23:18:07 | INFO     | [存储] CSV 写入 4 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-02\7475767020882070834\replies.csv
+2026-04-27 23:18:07 | INFO     | [存储] DB 写入 4 条 → replies
+2026-04-27 23:18:07 | INFO     | [采集] 视频 7475767020882070834 采集回复 4 条，新增 4 条
+2026-04-27 23:18:16 | INFO     | [存储] CSV 写入 10 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-03\7480886603251043622\replies.csv
+2026-04-27 23:18:16 | INFO     | [存储] DB 写入 10 条 → replies
+2026-04-27 23:18:16 | INFO     | [采集] 视频 7480886603251043622 采集回复 10 条，新增 10 条
+2026-04-27 23:18:18 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-04\7491975622512725286\replies.csv
+2026-04-27 23:18:18 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 23:18:18 | INFO     | [采集] 视频 7491975622512725286 采集回复 1 条，新增 1 条
+2026-04-27 23:18:20 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-04\7496548282882477350\replies.csv
+2026-04-27 23:18:20 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 23:18:20 | INFO     | [采集] 视频 7496548282882477350 采集回复 1 条，新增 1 条
+2026-04-27 23:18:22 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-04\7497924981742603583\replies.csv
+2026-04-27 23:18:22 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 23:18:22 | INFO     | [采集] 视频 7497924981742603583 采集回复 2 条，新增 2 条
+2026-04-27 23:18:29 | INFO     | [存储] CSV 写入 26 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-05\7500044273057336602\replies.csv
+2026-04-27 23:18:29 | INFO     | [存储] DB 写入 26 条 → replies
+2026-04-27 23:18:29 | INFO     | [采集] 视频 7500044273057336602 采集回复 26 条，新增 26 条
+2026-04-27 23:18:33 | INFO     | [存储] CSV 写入 12 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-05\7502725237583662346\replies.csv
+2026-04-27 23:18:33 | INFO     | [存储] DB 写入 12 条 → replies
+2026-04-27 23:18:33 | INFO     | [采集] 视频 7502725237583662346 采集回复 12 条，新增 12 条
+2026-04-27 23:18:35 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-05\7506458871000714559\replies.csv
+2026-04-27 23:18:35 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 23:18:35 | INFO     | [采集] 视频 7506458871000714559 采集回复 2 条，新增 2 条
+2026-04-27 23:18:39 | INFO     | [存储] CSV 写入 3 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-05\7508056830648782099\replies.csv
+2026-04-27 23:18:39 | INFO     | [存储] DB 写入 3 条 → replies
+2026-04-27 23:18:39 | INFO     | [采集] 视频 7508056830648782099 采集回复 3 条，新增 3 条
+2026-04-27 23:18:41 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-05\7509576798368501055\replies.csv
+2026-04-27 23:18:41 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 23:18:41 | INFO     | [采集] 视频 7509576798368501055 采集回复 1 条，新增 1 条
+2026-04-27 23:18:43 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-06\7510655994562202919\replies.csv
+2026-04-27 23:18:43 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 23:18:43 | INFO     | [采集] 视频 7510655994562202919 采集回复 2 条，新增 2 条
+2026-04-27 23:18:46 | INFO     | [存储] CSV 写入 5 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-06\7510813660940684598\replies.csv
+2026-04-27 23:18:46 | INFO     | [存储] DB 写入 5 条 → replies
+2026-04-27 23:18:46 | INFO     | [采集] 视频 7510813660940684598 采集回复 5 条，新增 5 条
+2026-04-27 23:18:49 | INFO     | [存储] CSV 写入 4 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-06\7515108880990129465\replies.csv
+2026-04-27 23:18:49 | INFO     | [存储] DB 写入 4 条 → replies
+2026-04-27 23:18:49 | INFO     | [采集] 视频 7515108880990129465 采集回复 4 条，新增 4 条
+2026-04-27 23:18:51 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-06\7518449259054878009\replies.csv
+2026-04-27 23:18:51 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 23:18:51 | INFO     | [采集] 视频 7518449259054878009 采集回复 2 条，新增 2 条
+2026-04-27 23:18:57 | INFO     | [存储] CSV 写入 3 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-06\7520973991768968505\replies.csv
+2026-04-27 23:18:57 | INFO     | [存储] DB 写入 3 条 → replies
+2026-04-27 23:18:57 | INFO     | [采集] 视频 7520973991768968505 采集回复 3 条，新增 3 条
+2026-04-27 23:19:01 | INFO     | [存储] CSV 写入 9 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-07\7527882666731425084\replies.csv
+2026-04-27 23:19:01 | INFO     | [存储] DB 写入 9 条 → replies
+2026-04-27 23:19:01 | INFO     | [采集] 视频 7527882666731425084 采集回复 9 条，新增 9 条
+2026-04-27 23:19:06 | INFO     | [存储] CSV 写入 28 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-08\7533518234445352251\replies.csv
+2026-04-27 23:19:06 | INFO     | [存储] DB 写入 28 条 → replies
+2026-04-27 23:19:06 | INFO     | [采集] 视频 7533518234445352251 采集回复 28 条，新增 28 条
+2026-04-27 23:19:12 | INFO     | [存储] CSV 写入 7 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-08\7537308327727041849\replies.csv
+2026-04-27 23:19:12 | INFO     | [存储] DB 写入 7 条 → replies
+2026-04-27 23:19:12 | INFO     | [采集] 视频 7537308327727041849 采集回复 7 条，新增 7 条
+2026-04-27 23:19:25 | INFO     | [存储] CSV 写入 40 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-08\7537608163916352826\replies.csv
+2026-04-27 23:19:25 | INFO     | [存储] DB 写入 40 条 → replies
+2026-04-27 23:19:25 | INFO     | [采集] 视频 7537608163916352826 采集回复 40 条，新增 40 条
+2026-04-27 23:19:52 | INFO     | [存储] CSV 写入 34 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-08\7537654713526439227\replies.csv
+2026-04-27 23:19:52 | INFO     | [存储] DB 写入 34 条 → replies
+2026-04-27 23:19:52 | INFO     | [采集] 视频 7537654713526439227 采集回复 34 条，新增 34 条
+2026-04-27 23:19:58 | INFO     | [存储] CSV 写入 6 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-08\7537693682305584444\replies.csv
+2026-04-27 23:19:58 | INFO     | [存储] DB 写入 6 条 → replies
+2026-04-27 23:19:58 | INFO     | [采集] 视频 7537693682305584444 采集回复 6 条，新增 6 条
+2026-04-27 23:20:03 | INFO     | [存储] CSV 写入 10 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-08\7540202443100556602\replies.csv
+2026-04-27 23:20:03 | INFO     | [存储] DB 写入 10 条 → replies
+2026-04-27 23:20:03 | INFO     | [采集] 视频 7540202443100556602 采集回复 10 条，新增 10 条
+2026-04-27 23:20:15 | INFO     | [存储] CSV 写入 12 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-08\7543195469028838714\replies.csv
+2026-04-27 23:20:15 | INFO     | [存储] DB 写入 12 条 → replies
+2026-04-27 23:20:15 | INFO     | [采集] 视频 7543195469028838714 采集回复 12 条，新增 12 条
+2026-04-27 23:20:18 | INFO     | [存储] CSV 写入 10 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-09\7547663836120730940\replies.csv
+2026-04-27 23:20:18 | INFO     | [存储] DB 写入 10 条 → replies
+2026-04-27 23:20:18 | INFO     | [采集] 视频 7547663836120730940 采集回复 10 条，新增 10 条
+2026-04-27 23:20:21 | INFO     | [存储] CSV 写入 8 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-10\7562986090622324026\replies.csv
+2026-04-27 23:20:21 | INFO     | [存储] DB 写入 8 条 → replies
+2026-04-27 23:20:21 | INFO     | [采集] 视频 7562986090622324026 采集回复 8 条，新增 8 条
+2026-04-27 23:20:27 | INFO     | [存储] CSV 写入 5 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-11\7569663726073195386\replies.csv
+2026-04-27 23:20:27 | INFO     | [存储] DB 写入 5 条 → replies
+2026-04-27 23:20:27 | INFO     | [采集] 视频 7569663726073195386 采集回复 5 条，新增 5 条
+2026-04-27 23:20:29 | INFO     | [存储] CSV 写入 11 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-11\7572860497566853818\replies.csv
+2026-04-27 23:20:29 | INFO     | [存储] DB 写入 11 条 → replies
+2026-04-27 23:20:29 | INFO     | [采集] 视频 7572860497566853818 采集回复 11 条，新增 11 条
+2026-04-27 23:20:34 | INFO     | [存储] CSV 写入 9 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-11\7575765670223546491\replies.csv
+2026-04-27 23:20:34 | INFO     | [存储] DB 写入 9 条 → replies
+2026-04-27 23:20:34 | INFO     | [采集] 视频 7575765670223546491 采集回复 9 条，新增 9 条
+2026-04-27 23:20:48 | INFO     | [存储] CSV 写入 25 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-11\7575887502252457147\replies.csv
+2026-04-27 23:20:48 | INFO     | [存储] DB 写入 25 条 → replies
+2026-04-27 23:20:48 | INFO     | [采集] 视频 7575887502252457147 采集回复 25 条，新增 25 条
+2026-04-27 23:20:50 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-11\7576364577147891705\replies.csv
+2026-04-27 23:20:50 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 23:20:50 | INFO     | [采集] 视频 7576364577147891705 采集回复 1 条，新增 1 条
+2026-04-27 23:20:55 | INFO     | [存储] CSV 写入 19 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-12\7581457477288906033\replies.csv
+2026-04-27 23:20:55 | INFO     | [存储] DB 写入 19 条 → replies
+2026-04-27 23:20:55 | INFO     | [采集] 视频 7581457477288906033 采集回复 19 条，新增 19 条
+2026-04-27 23:20:59 | INFO     | [存储] CSV 写入 4 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-12\7587032462887456058\replies.csv
+2026-04-27 23:20:59 | INFO     | [存储] DB 写入 4 条 → replies
+2026-04-27 23:20:59 | INFO     | [采集] 视频 7587032462887456058 采集回复 4 条，新增 4 条
+2026-04-27 23:21:01 | INFO     | [存储] CSV 写入 6 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-12\7587264186196053307\replies.csv
+2026-04-27 23:21:01 | INFO     | [存储] DB 写入 6 条 → replies
+2026-04-27 23:21:01 | INFO     | [采集] 视频 7587264186196053307 采集回复 6 条，新增 6 条
+2026-04-27 23:21:09 | INFO     | [存储] CSV 写入 13 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-12\7588131098325484986\replies.csv
+2026-04-27 23:21:09 | INFO     | [存储] DB 写入 13 条 → replies
+2026-04-27 23:21:09 | INFO     | [采集] 视频 7588131098325484986 采集回复 13 条，新增 13 条
+2026-04-27 23:21:11 | INFO     | [存储] CSV 写入 2 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2025-12\7589853605994697905\replies.csv
+2026-04-27 23:21:11 | INFO     | [存储] DB 写入 2 条 → replies
+2026-04-27 23:21:11 | INFO     | [采集] 视频 7589853605994697905 采集回复 2 条，新增 2 条
+2026-04-27 23:21:22 | INFO     | [存储] CSV 写入 29 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-01\7592289477906108273\replies.csv
+2026-04-27 23:21:22 | INFO     | [存储] DB 写入 29 条 → replies
+2026-04-27 23:21:22 | INFO     | [采集] 视频 7592289477906108273 采集回复 29 条，新增 29 条
+2026-04-27 23:21:25 | INFO     | [存储] CSV 写入 3 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-01\7601179503344749681\replies.csv
+2026-04-27 23:21:25 | INFO     | [存储] DB 写入 3 条 → replies
+2026-04-27 23:21:25 | INFO     | [采集] 视频 7601179503344749681 采集回复 3 条，新增 3 条
+2026-04-27 23:21:34 | INFO     | [存储] CSV 写入 32 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-02\7601924378800875898\replies.csv
+2026-04-27 23:21:34 | INFO     | [存储] DB 写入 32 条 → replies
+2026-04-27 23:21:34 | INFO     | [采集] 视频 7601924378800875898 采集回复 32 条，新增 32 条
+2026-04-27 23:21:37 | INFO     | [存储] CSV 写入 1 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-02\7602487755479045989\replies.csv
+2026-04-27 23:21:37 | INFO     | [存储] DB 写入 1 条 → replies
+2026-04-27 23:21:37 | INFO     | [采集] 视频 7602487755479045989 采集回复 1 条，新增 1 条
+2026-04-27 23:21:45 | INFO     | [存储] CSV 写入 30 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-02\7606743961860273338\replies.csv
+2026-04-27 23:21:45 | INFO     | [存储] DB 写入 30 条 → replies
+2026-04-27 23:21:45 | INFO     | [采集] 视频 7606743961860273338 采集回复 30 条，新增 30 条
+2026-04-27 23:21:52 | INFO     | [存储] CSV 写入 14 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-02\7607789805016011505\replies.csv
+2026-04-27 23:21:52 | INFO     | [存储] DB 写入 14 条 → replies
+2026-04-27 23:21:52 | INFO     | [采集] 视频 7607789805016011505 采集回复 14 条，新增 14 条
+2026-04-27 23:21:58 | INFO     | [存储] CSV 写入 10 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-02\7607867103055971003\replies.csv
+2026-04-27 23:21:58 | INFO     | [存储] DB 写入 10 条 → replies
+2026-04-27 23:21:58 | INFO     | [采集] 视频 7607867103055971003 采集回复 10 条，新增 10 条
+2026-04-27 23:22:04 | INFO     | [存储] CSV 写入 15 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-02\7611080635616436453\replies.csv
+2026-04-27 23:22:04 | INFO     | [存储] DB 写入 15 条 → replies
+2026-04-27 23:22:04 | INFO     | [采集] 视频 7611080635616436453 采集回复 15 条，新增 15 条
+2026-04-27 23:22:06 | INFO     | [存储] CSV 写入 3 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-03\7612352146415930105\replies.csv
+2026-04-27 23:22:06 | INFO     | [存储] DB 写入 3 条 → replies
+2026-04-27 23:22:06 | INFO     | [采集] 视频 7612352146415930105 采集回复 3 条，新增 3 条
+2026-04-27 23:22:10 | INFO     | [存储] CSV 写入 6 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-03\7612620171912133114\replies.csv
+2026-04-27 23:22:10 | INFO     | [存储] DB 写入 6 条 → replies
+2026-04-27 23:22:10 | INFO     | [采集] 视频 7612620171912133114 采集回复 6 条，新增 6 条
+2026-04-27 23:22:14 | INFO     | [存储] CSV 写入 6 条 → data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\2026-04\7626667414588525541\replies.csv
+2026-04-27 23:22:14 | INFO     | [存储] DB 写入 6 条 → replies
+2026-04-27 23:22:14 | INFO     | [采集] 视频 7626667414588525541 采集回复 6 条，新增 6 条
+2026-04-27 23:22:16 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
+2026-04-27 23:22:16 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
+2026-04-27 23:22:16 | INFO     | [清理] 资源释放完成
+2026-04-27 23:42:55 | INFO     | [DB] SQLite 初始化完成: data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
+2026-04-27 23:42:55 | INFO     | [采集] 开始 用户=MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR 类型=评论 视频=1
+2026-04-27 23:42:56 | INFO     | [Cookie] ✓ 验证通过，登录用户: 小黄鸭剪辑
+2026-04-27 23:43:04 | INFO     | [采集] 视频 7626667414588525541 采集评论 42 条，新增 0 条
+2026-04-27 23:43:05 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
+2026-04-27 23:43:05 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
+2026-04-27 23:43:05 | INFO     | [清理] 资源释放完成
