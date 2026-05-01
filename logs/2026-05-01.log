@@ -65,3 +65,72 @@
 2026-05-01 01:06:26 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA\sqlite.db
 2026-05-01 01:06:26 | INFO     | [DB] SQLite 连接已关闭: data\MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR\sqlite.db
 2026-05-01 01:06:26 | INFO     | [清理] 资源释放完成
+2026-05-01 17:01:23 | INFO     | [DB] SQLite 初始化完成: data/MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/sqlite.db
+2026-05-01 17:01:23 | INFO     | [采集] 开始 用户=MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA 类型=作品
+2026-05-01 17:01:25 | INFO     | [Cookie] ✓ 验证通过，登录用户: 万年
+2026-05-01 17:01:27 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1771148368000
+2026-05-01 17:01:33 | INFO     | [DB] SQLite 初始化完成: data/MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR/sqlite.db
+2026-05-01 17:01:33 | INFO     | [采集] 开始 用户=MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR 类型=作品
+2026-05-01 17:01:34 | INFO     | [Cookie] ✓ 验证通过，登录用户: 万年
+2026-05-01 17:01:35 | DEBUG    | [采集] API 响应：aweme_list=18, has_more=1, max_cursor=1766493669000
+2026-05-01 17:01:36 | INFO     | [存储] CSV 写入 1 条 → data/MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR/videos.csv
+2026-05-01 17:01:36 | INFO     | [存储] DB 写入 1 条 → videos
+2026-05-01 17:01:36 | INFO     | [采集] 开始 用户=MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA 类型=评论 视频=10
+2026-05-01 17:01:37 | INFO     | [Cookie] ✓ 验证通过，登录用户: 万年
+2026-05-01 17:01:43 | INFO     | [采集] 视频 7620514013474295418 采集评论 64 条，新增 0 条
+2026-05-01 17:01:48 | INFO     | [采集] 视频 7622614670629050033 采集评论 56 条，新增 0 条
+2026-05-01 17:01:57 | INFO     | [采集] 视频 7623179719697457849 采集评论 83 条，新增 0 条
+2026-05-01 17:02:05 | INFO     | [采集] 视频 7624581934820144074 采集评论 71 条，新增 0 条
+2026-05-01 17:02:20 | INFO     | [采集] 视频 7626441345066862705 采集评论 143 条，新增 0 条
+2026-05-01 17:02:32 | INFO     | [采集] 视频 7627558294349234875 采集评论 106 条，新增 0 条
+2026-05-01 17:02:51 | INFO     | [采集] 视频 7629651594590023163 采集评论 182 条，新增 0 条
+2026-05-01 17:02:55 | INFO     | [采集] 视频 7631634541144461489 采集评论 51 条，新增 0 条
+2026-05-01 17:03:00 | INFO     | [采集] 视频 7632013241091009201 采集评论 38 条，新增 0 条
+2026-05-01 17:03:14 | INFO     | [存储] CSV 写入 2 条 → data/MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/2026-04/7632818045987846010/comments.csv
+2026-05-01 17:03:14 | INFO     | [存储] DB 写入 2 条 → comments
+2026-05-01 17:03:14 | INFO     | [采集] 视频 7632818045987846010 采集评论 154 条，新增 2 条
+2026-05-01 17:03:15 | INFO     | [采集] 开始 用户=MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR 类型=评论 视频=10
+2026-05-01 17:03:18 | INFO     | [Cookie] ✓ 验证通过，登录用户: 万年
+2026-05-01 17:03:22 | INFO     | [采集] 视频 7606743961860273338 采集评论 50 条，新增 0 条
+2026-05-01 17:03:25 | INFO     | [采集] 视频 7607127516424664827 采集评论 27 条，新增 0 条
+2026-05-01 17:03:31 | INFO     | [采集] 视频 7607789805016011505 采集评论 64 条，新增 0 条
+2026-05-01 17:03:35 | INFO     | [采集] 视频 7607867103055971003 采集评论 20 条，新增 0 条
+2026-05-01 17:03:42 | INFO     | [采集] 视频 7611080635616436453 采集评论 71 条，新增 0 条
+2026-05-01 17:03:44 | INFO     | [采集] 视频 7612352146415930105 采集评论 12 条，新增 0 条
+2026-05-01 17:03:48 | INFO     | [采集] 视频 7612620171912133114 采集评论 24 条，新增 0 条
+2026-05-01 17:03:52 | INFO     | [采集] 视频 7622146667216092657 采集评论 25 条，新增 0 条
+2026-05-01 17:03:58 | INFO     | [采集] 视频 7626667414588525541 采集评论 42 条，新增 0 条
+2026-05-01 17:04:02 | INFO     | [存储] CSV 写入 44 条 → data/MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR/2026-05/7634610238670478449/comments.csv
+2026-05-01 17:04:02 | INFO     | [存储] DB 写入 44 条 → comments
+2026-05-01 17:04:02 | INFO     | [采集] 视频 7634610238670478449 采集评论 44 条，新增 44 条
+2026-05-01 17:04:03 | INFO     | [采集] 开始 用户=MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA 类型=回复 评论=97 视频=10
+2026-05-01 17:04:05 | INFO     | [Cookie] ✓ 验证通过，登录用户: 万年
+2026-05-01 17:04:17 | INFO     | [采集] 视频 7620514013474295418 采集回复 22 条，新增 0 条
+2026-05-01 17:04:32 | INFO     | [采集] 视频 7622614670629050033 采集回复 42 条，新增 0 条
+2026-05-01 17:04:56 | INFO     | [采集] 视频 7623179719697457849 采集回复 51 条，新增 0 条
+2026-05-01 17:05:14 | INFO     | [采集] 视频 7624581934820144074 采集回复 21 条，新增 0 条
+2026-05-01 17:05:29 | INFO     | [采集] 视频 7626441345066862705 采集回复 38 条，新增 0 条
+2026-05-01 17:05:51 | INFO     | [采集] 视频 7627558294349234875 采集回复 49 条，新增 0 条
+2026-05-01 17:06:09 | INFO     | [采集] 视频 7629651594590023163 采集回复 35 条，新增 0 条
+2026-05-01 17:06:17 | INFO     | [采集] 视频 7631634541144461489 采集回复 17 条，新增 0 条
+2026-05-01 17:06:23 | INFO     | [采集] 视频 7632013241091009201 采集回复 9 条，新增 0 条
+2026-05-01 17:06:34 | INFO     | [存储] CSV 写入 1 条 → data/MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/2026-04/7632818045987846010/replies.csv
+2026-05-01 17:06:34 | INFO     | [存储] DB 写入 1 条 → replies
+2026-05-01 17:06:34 | INFO     | [采集] 视频 7632818045987846010 采集回复 33 条，新增 1 条
+2026-05-01 17:06:34 | INFO     | [采集] 开始 用户=MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR 类型=回复 评论=27 视频=8
+2026-05-01 17:06:36 | INFO     | [Cookie] ✓ 验证通过，登录用户: 万年
+2026-05-01 17:06:45 | INFO     | [采集] 视频 7606743961860273338 采集回复 31 条，新增 0 条
+2026-05-01 17:06:53 | INFO     | [采集] 视频 7607789805016011505 采集回复 14 条，新增 0 条
+2026-05-01 17:06:59 | INFO     | [采集] 视频 7607867103055971003 采集回复 10 条，新增 0 条
+2026-05-01 17:07:07 | INFO     | [采集] 视频 7611080635616436453 采集回复 15 条，新增 0 条
+2026-05-01 17:07:10 | INFO     | [采集] 视频 7612352146415930105 采集回复 3 条，新增 0 条
+2026-05-01 17:07:15 | INFO     | [采集] 视频 7612620171912133114 采集回复 6 条，新增 0 条
+2026-05-01 17:07:22 | INFO     | [采集] 视频 7626667414588525541 采集回复 6 条，新增 0 条
+2026-05-01 17:07:24 | INFO     | [存储] CSV 写入 1 条 → data/MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR/2026-05/7634610238670478449/replies.csv
+2026-05-01 17:07:24 | INFO     | [存储] DB 写入 1 条 → replies
+2026-05-01 17:07:24 | INFO     | [采集] 视频 7634610238670478449 采集回复 1 条，新增 1 条
+2026-05-01 17:07:25 | INFO     | [DB] SQLite 连接已关闭: data/MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/sqlite.db
+2026-05-01 17:07:25 | INFO     | [DB] SQLite 连接已关闭: data/MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR/sqlite.db
+2026-05-01 17:07:25 | INFO     | [DB] SQLite 连接已关闭: data/MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/sqlite.db
+2026-05-01 17:07:25 | INFO     | [DB] SQLite 连接已关闭: data/MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR/sqlite.db
+2026-05-01 17:07:25 | INFO     | [清理] 资源释放完成
