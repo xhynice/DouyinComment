@@ -1,0 +1,122 @@
+2026-05-02 17:01:32 | 0s | [INIT] 日志文件: /home/runner/work/DouyinComment/DouyinComment/scripts/../logs/migrate/migrate_20260502_170132.log
+2026-05-02 17:01:32 | 0s | ======================================================================
+2026-05-02 17:01:32 | 0s |   [INIT] 抖音资源 → HF Bucket 迁移（v3）
+2026-05-02 17:01:32 | 0s |   [INIT] 数据目录:    /home/runner/work/DouyinComment/DouyinComment/scripts/../data
+2026-05-02 17:01:32 | 0s |   [INIT] 日志目录:    /home/runner/work/DouyinComment/DouyinComment/scripts/../logs/migrate
+2026-05-02 17:01:32 | 0s |   [INIT] 作者过滤:    all
+2026-05-02 17:01:32 | 0s |   [INIT] 限制表:      全部
+2026-05-02 17:01:32 | 0s |   [INIT] 限制字段:    全部
+2026-05-02 17:01:32 | 0s |   [INIT] 最大任务数:  不限
+2026-05-02 17:01:32 | 0s |   [INIT] 批次大小:    20
+2026-05-02 17:01:32 | 0s |   [INIT] 并发数:      6
+2026-05-02 17:01:32 | 0s |   [INIT] Dry-run:     否
+2026-05-02 17:01:32 | 0s |   [INIT] Direct:      否
+2026-05-02 17:01:32 | 0s | ======================================================================
+2026-05-02 17:01:32 | 0s | 
+  [SCAN] 已选择 2 个数据库:
+2026-05-02 17:01:32 | 0s |   [SCAN] 📁 MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSY... (videos=399, comments=95329, replies=20957, 43.6 MB)
+2026-05-02 17:01:32 | 0s |   [SCAN] 📁 MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfN... (videos=147, comments=7955, replies=1922, 3.9 MB)
+2026-05-02 17:01:32 | 0s | 
+--- HEIF 格式检测 ---
+2026-05-02 17:01:32 | 0s | ✅ pillow-heif 已就绪
+2026-05-02 17:01:32 | 0s | 
+--- 验证 Cookie ---
+2026-05-02 17:01:34 | 1s | ✅ Cookie 有效，用户: 万年
+2026-05-02 17:01:34 | 1s | 
+──────────────────────────────────────────────────────────────────────
+2026-05-02 17:01:34 | 1s |   [SCAN] 📁 作者: MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSY...
+2026-05-02 17:01:34 | 1s |   [SCAN] 📄 数据库: /home/runner/work/DouyinComment/DouyinComment/scripts/../data/MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/sqlite.db
+2026-05-02 17:01:34 | 1s | ──────────────────────────────────────────────────────────────────────
+2026-05-02 17:01:34 | 2s |   [SCAN] 总 task 数: 33
+2026-05-02 17:01:34 | 2s |     comment_image: 26
+2026-05-02 17:01:34 | 2s |     comment_sticker: 5
+2026-05-02 17:01:34 | 2s |     reply_image: 1
+2026-05-02 17:01:34 | 2s |     reply_sticker: 1
+2026-05-02 17:01:34 | 2s |   [SCAN] 唯一分组: 33，去重节省: 0 次下载
+2026-05-02 17:01:34 | 2s |   [BATCH] aweme_id 数: 10，分 1 批处理
+2026-05-02 17:01:34 | 2s | 
+  [BATCH] 📦 批次 1/1: 10 个 aweme_id, 33 个 URL
+2026-05-02 17:01:35 | 2s |   [API] 视频 aweme_id: 0, 评论 aweme_id: 9, 回复评论数: 2
+2026-05-02 17:01:35 | 2s |   [API] 涉及作者数: 0
+2026-05-02 17:01:35 | 2s |   [API] 数据库评论数: 95329, 回复数: 20957
+2026-05-02 17:03:04 | 1m31s |   [API] [评论] aweme_id=7503090764761009465: API 返回 551 条, 匹配 487, 不在DB中 64 (API样本: ['7503096159683429161', '7503158023826015035', '7571623437095191311', '7503130827045110543', '7503106511134327611'])
+2026-05-02 17:03:26 | 1m53s |   [API] [评论] aweme_id=7509903583040228666: API 返回 526 条, 匹配 499, 不在DB中 27 (API样本: ['7510033925886493499', '7542307092234486555', '7510066065483285263', '7509905001955984167', '7509933460762313532'])
+2026-05-02 17:04:25 | 2m53s |   [API] [评论] aweme_id=7553617629527002425: API 返回 1274 条, 匹配 1047, 不在DB中 227 (API样本: ['7585878136276271913', '7553979900635300651', '7553667077023286076', '7554670731704730427', '7585466045693149989'])
+2026-05-02 17:05:52 | 4m20s |   [API] [评论] aweme_id=7555833842822843706: API 返回 1858 条, 匹配 1621, 不在DB中 237 (API样本: ['7555859958027043624', '7556443225264636723', '7555841802823222076', '7557159860698317603', '7567228046936769314'])
+2026-05-02 17:06:09 | 4m36s |   [API] [评论] aweme_id=7560954743410675002: API 返回 360 条, 匹配 359, 不在DB中 1 (API样本: ['7560984482690581308', '7560962952188183355', '7560988045492388650', '7560958627403514681', '7561036580514333491'])
+2026-05-02 17:06:38 | 5m05s |   [API] [回复] aweme_id=7560954743410675002 cid=7561015775118771004: API 返回 0 条回复
+2026-05-02 17:06:38 | 5m05s |   [BATCH] 获取签名 URL: 6531 个
+2026-05-02 17:06:38 | 5m05s |   [FAIL] 签名缺失 | replies.id=18126 api_type=reply_image | 表=replies | aweme=7560954743410675002 | 字段=image_list | 原因=cache_key=7560954743410675002:reply_image:7561076079004762907:7561015775118771004
+2026-05-02 17:06:38 | 5m05s |   [FAIL] 签名缺失 | comments.id=36794 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=cache_key=7429276471669083451:comment_image:7429314204811232037
+2026-05-02 17:06:38 | 5m05s |   [FAIL] 签名缺失 | replies.id=21178 api_type=reply_sticker | 表=replies | aweme=7631634541144461489 | 字段=sticker | 原因=cache_key=7631634541144461489:reply_sticker:7631725939220005690:7631635677198058298
+2026-05-02 17:06:38 | 5m05s |   [FAIL] 签名缺失 | comments.id=90723 api_type=comment_sticker | 表=comments | aweme=7575874445581119665 | 字段=sticker | 原因=cache_key=7575874445581119665:comment_sticker:7605402697084551973
+2026-05-02 17:06:38 | 5m05s |   [FAIL] 签名缺失 | comments.id=46997 api_type=comment_sticker | 表=comments | aweme=7456483966602841403 | 字段=sticker | 原因=cache_key=7456483966602841403:comment_sticker:7456484925118612261
+2026-05-02 17:06:38 | 5m05s |   [FAIL] 签名缺失 | comments.id=55094 api_type=comment_image | 表=comments | aweme=7476411176209976636 | 字段=image_list | 原因=cache_key=7476411176209976636:comment_image:7477523394284536636
+2026-05-02 17:06:38 | 5m05s |   [FAIL] 签名缺失 | comments.id=85119 api_type=comment_image | 表=comments | aweme=7560954743410675002 | 字段=image_list | 原因=cache_key=7560954743410675002:comment_image:7561015775118771004
+2026-05-02 17:06:38 | 5m05s |   [FAIL] 签名缺失 | comments.id=85194 api_type=comment_sticker | 表=comments | aweme=7560954743410675002 | 字段=sticker | 原因=cache_key=7560954743410675002:comment_sticker:7560974587825144595
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/28c0338146dd46aa20ccde51a3006b0a.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/2550dfcf096e5d51a506becf6d983e1b.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/d74b291dd5ed1d97af29191e8ff9c287.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/46e501c9ee13847788987de5b867bc6a.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/53957e12e701965721c0503baaa319f8.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/6eba3ac2460c3f928cbb9db0e7ab31b6.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/b7fe043783cbaf287bd08e4c7c48b803.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/74fabef2c5d4e3c0b6bddd7bd737d135.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/54eca1745187e269ce257d863fe022c4.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/0471d9576b6e305f76fabb67fbcd1924.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/29fc9298400dda2fdf66c99227c52a52.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/2ccf1d1b74b0d499756a2b939e20525c.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/de1e645930e2681301bd583cc2e9e7ea.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/eec2f7e4f9b95eaddf3f8a40f101e19c.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/00d2981cb705346b40b8dd757679f403.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/stickers/311df72d0e29d76f006afa55dd894fcf.gif
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/23c6e81cef115c7918f3b36fd1e10c06.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/21ad9578129a73d1511b340c6056ca84.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/5f702275c0de7c9ace76c8144fbc649e.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/d1552d6472d64611a23a380f53df94ab.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/61c23b535b237178224fce185066d15e.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/c68214da15f5c78ff8abf3c9bf7cd82b.jpg
+2026-05-02 17:07:00 | 5m27s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/beda98210debdfbf22f3b4f9266bb43a.jpg
+2026-05-02 17:07:00 | 5m27s |   [DB] 📝 待更新: 23 行
+2026-05-02 17:07:00 | 5m27s |   [DB] ✅ commit 成功: 23 行已写入
+2026-05-02 17:07:08 | 5m36s |   [DL] ⚠️  网络错误 (ConnectTimeout): https://p11-sign.douyinpic.com/obj/tos-cn-i-3jr8j4ixpe/1c75ea069aee4991b7a84e8eb...
+2026-05-02 17:07:11 | 5m38s |   [DL] ⚠️  网络错误 (ConnectTimeout): https://p11-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/0d5d3ed3121b4e29804f895678941...
+2026-05-02 17:07:16 | 5m43s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/stickers/f2fa034d542471c0e06cb33919d68c50.gif
+2026-05-02 17:07:16 | 5m43s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/f70f1ad9013da56a586f7d970873c602.jpg
+2026-05-02 17:07:16 | 5m43s |   [DB] 📝 待更新: 2 行
+2026-05-02 17:07:16 | 5m43s |   [DB] ✅ commit 成功: 2 行已写入
+2026-05-02 17:07:16 | 5m43s |   [BATCH] ✅ 批次完成，已提交 33/33 个 URL，耗时 341.3s
+2026-05-02 17:07:16 | 5m43s | 
+  [OK] 作者完成: 上传 25，更新 25 行，HEIC 转换 1，失败 8
+2026-05-02 17:07:16 | 5m43s | 
+──────────────────────────────────────────────────────────────────────
+2026-05-02 17:07:16 | 5m43s |   [SCAN] 📁 作者: MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfN...
+2026-05-02 17:07:16 | 5m43s |   [SCAN] 📄 数据库: /home/runner/work/DouyinComment/DouyinComment/scripts/../data/MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR/sqlite.db
+2026-05-02 17:07:16 | 5m43s | ──────────────────────────────────────────────────────────────────────
+2026-05-02 17:07:16 | 5m43s |   [SCAN] ⚠️  无资源，跳过
+2026-05-02 17:07:16 | 5m43s | 
+2026-05-02 17:07:16 | 5m43s | ======================================================================
+2026-05-02 17:07:16 | 5m43s |   全部完成
+2026-05-02 17:07:16 | 5m43s | ======================================================================
+2026-05-02 17:07:16 | 5m43s |   作者数:        1
+2026-05-02 17:07:16 | 5m43s |   总 task:       33
+2026-05-02 17:07:16 | 5m43s |   上传成功:      25
+2026-05-02 17:07:16 | 5m43s |   更新行数:      25
+2026-05-02 17:07:16 | 5m43s |   HEIC 转换:     1
+2026-05-02 17:07:16 | 5m43s |   失败:          8
+2026-05-02 17:07:16 | 5m43s |   总耗时:        343s (5m43s)
+2026-05-02 17:07:16 | 5m43s | ======================================================================
+2026-05-02 17:07:16 | 5m43s | 
+──────────────────────────────────────────────────────────────────────
+2026-05-02 17:07:16 | 5m43s |   失败汇总 (共 8 项)
+2026-05-02 17:07:16 | 5m43s | ──────────────────────────────────────────────────────────────────────
+2026-05-02 17:07:16 | 5m43s |     签名缺失: 8
+2026-05-02 17:07:16 | 5m43s |     • 签名缺失 | replies.id=18126 api_type=reply_image | cache_key=7560954743410675002:reply_image:7561076079004762907:7561015775118771004
+2026-05-02 17:07:16 | 5m43s |     • 签名缺失 | comments.id=36794 api_type=comment_image | cache_key=7429276471669083451:comment_image:7429314204811232037
+2026-05-02 17:07:16 | 5m43s |     • 签名缺失 | replies.id=21178 api_type=reply_sticker | cache_key=7631634541144461489:reply_sticker:7631725939220005690:7631635677198058298
+2026-05-02 17:07:16 | 5m43s |     • 签名缺失 | comments.id=90723 api_type=comment_sticker | cache_key=7575874445581119665:comment_sticker:7605402697084551973
+2026-05-02 17:07:16 | 5m43s |     • 签名缺失 | comments.id=46997 api_type=comment_sticker | cache_key=7456483966602841403:comment_sticker:7456484925118612261
+2026-05-02 17:07:16 | 5m43s |     • 签名缺失 | comments.id=55094 api_type=comment_image | cache_key=7476411176209976636:comment_image:7477523394284536636
+2026-05-02 17:07:16 | 5m43s |     • 签名缺失 | comments.id=85119 api_type=comment_image | cache_key=7560954743410675002:comment_image:7561015775118771004
+2026-05-02 17:07:16 | 5m43s |     • 签名缺失 | comments.id=85194 api_type=comment_sticker | cache_key=7560954743410675002:comment_sticker:7560974587825144595
+2026-05-02 17:07:16 | 5m43s | ──────────────────────────────────────────────────────────────────────
