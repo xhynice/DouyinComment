@@ -1,4 +1,4 @@
-# douyin-comment
+# DouyinComment
 
 > 抖音用户作品与评论数据采集器 — API 分页拉取，评论/回复全量采集，CSV + SQLite 存储 + 媒体下载。
 
@@ -43,8 +43,8 @@
 ### 2. 安装
 
 ```bash
-git clone https://github.com/<your-username>/douyin-comment.git
-cd douyin-comment
+git clone https://github.com/xhynice/DouyinComment
+cd DouyinComment
 pip install -r requirements.txt
 ```
 

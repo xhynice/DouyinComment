@@ -35,6 +35,11 @@ jobs:
     - name: Run crawler
       run: python main.py --all --limit 10
     
+    - name: Touch database files
+      run: |
+        find data/ -name "sqlite.db" -exec touch {} \; 2>/dev/null || true
+        echo "Updated database file timestamps"
+    
     - name: Migrate to bucket (direct mode)
       run: python scripts/migrate_to_bucket.py --direct --author all
       env:
