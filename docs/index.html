@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="comment.css">
+    <link rel="icon" id="favicon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>" type="image/svg+xml">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <img id="header-avatar" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect fill='%23ddd' width='28' height='28'/><text x='14' y='14' text-anchor='middle' dy='.3em' fill='%23999' font-size='10'>?</text></svg>" alt="头像" class="header-avatar">
+                <div class="header-text">
+                    <div class="title-wrapper">
+                        <h1 id="header-title"></h1>
+                        <button class="user-switch-btn" id="user-switch-btn" style="display: none;" title="切换用户">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="subtitle">作品与评论数据展示</p>
+                </div>
+            </div>
+            <div class="stats" id="stats">
+                <div class="stat-item">
+                    <span class="stat-value" id="total-videos">-</span>
+                    <span class="stat-label">作品</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="total-comments">-</span>
+                    <span class="stat-label">评论</span>
+                </div>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <div class="search-box">
+                <div class="custom-select" id="search-type-wrapper">
+                    <div class="custom-select-trigger" data-value="nickname">
+                        <span>昵称</span>
+                        <svg class="custom-select-arrow" viewBox="0 0 12 12"><path d="M6 8L1 3h10z"/></svg>
+                    </div>
+                    <div class="custom-select-options">
+                        <div class="custom-select-option active" data-value="nickname">昵称</div>
+                        <div class="custom-select-option" data-value="content">内容</div>
+                    </div>
+                </div>
+                <input type="text" id="search-input" placeholder="搜索评论回复">
+                <button id="search-btn" aria-label="搜索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
+            </div>
+            <div class="filter-group">
+                <div class="custom-select filter-custom-select" id="year-select-wrapper">
+                    <div class="custom-select-trigger" data-value="">
+                        <span>年份选择</span>
+                        <svg class="custom-select-arrow" viewBox="0 0 12 12"><path d="M6 8L1 3h10z"/></svg>
+                    </div>
+                    <div class="custom-select-options" id="year-options">
+                        <div class="custom-select-option active" data-value="">年份选择</div>
+                    </div>
+                </div>
+                <div class="custom-select filter-custom-select" id="sort-select-wrapper">
+                    <div class="custom-select-trigger" data-value="time-desc">
+                        <span>最新发布</span>
+                        <svg class="custom-select-arrow" viewBox="0 0 12 12"><path d="M6 8L1 3h10z"/></svg>
+                    </div>
+                    <div class="custom-select-options">
+                        <div class="custom-select-option active" data-value="time-desc">最新发布</div>
+                        <div class="custom-select-option" data-value="time-asc">最早发布</div>
+                        <div class="custom-select-option" data-value="comments-desc">评论最多</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="search-results" id="search-results" style="display: none;">
+            <div class="search-results-header">
+                <span class="search-results-title">搜索结果 (<span id="search-count">0</span>)</span>
+                <button class="search-close-btn" id="search-close-btn">✕</button>
+            </div>
+            <div class="search-results-list" id="search-results-list"></div>
+            <div class="search-pagination" id="search-pagination"></div>
+        </div>
+
+        <div class="filter-info" id="filter-info" style="display: none;"></div>
+
+        <main class="main-content">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>加载中...</p>
+            </div>
+
+            <div class="video-grid" id="video-grid"></div>
+
+            <div class="load-more" id="load-more" style="display: none;">
+                <button id="load-more-btn" aria-label="加载更多">加载更多</button>
+            </div>
+        </main>
+
+        <div class="modal" id="video-modal">
+            <div class="modal-content">
+                <button class="modal-close" id="modal-close" aria-label="关闭" title="关闭">&times;</button>
+                <div class="modal-body" id="modal-body"></div>
+            </div>
+        </div>
+
+        <div class="user-switch-modal" id="user-switch-modal" style="display: none;">
+            <div class="user-switch-overlay" id="user-switch-overlay"></div>
+            <div class="user-switch-content">
+                <div class="user-switch-header">
+                    <h3>选择用户</h3>
+                    <button class="user-switch-close" id="user-switch-close">&times;</button>
+                </div>
+                <div class="user-list" id="user-list">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>数据存档时间: <span id="generated-time">-</span></p>
+    </footer>
+
+    <script src="comment.js"></script>
+</body>
+</html>
