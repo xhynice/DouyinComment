@@ -1,0 +1,292 @@
+2026-05-09 17:07:46 | 0s | [INIT] 日志文件: /home/runner/work/DouyinComment/DouyinComment/scripts/../logs/migrate/migrate_20260509_170746.log
+2026-05-09 17:07:46 | 0s | ======================================================================
+2026-05-09 17:07:46 | 0s |   [INIT] 抖音资源 → HF Bucket 迁移（v3）
+2026-05-09 17:07:46 | 0s |   [INIT] 数据目录:    /home/runner/work/DouyinComment/DouyinComment/scripts/../data
+2026-05-09 17:07:46 | 0s |   [INIT] 日志目录:    /home/runner/work/DouyinComment/DouyinComment/scripts/../logs/migrate
+2026-05-09 17:07:46 | 0s |   [INIT] 作者过滤:    all
+2026-05-09 17:07:46 | 0s |   [INIT] 限制表:      全部
+2026-05-09 17:07:46 | 0s |   [INIT] 限制字段:    全部
+2026-05-09 17:07:46 | 0s |   [INIT] 最大任务数:  不限
+2026-05-09 17:07:46 | 0s |   [INIT] 批次大小:    20
+2026-05-09 17:07:46 | 0s |   [INIT] 并发数:      6
+2026-05-09 17:07:46 | 0s |   [INIT] Dry-run:     否
+2026-05-09 17:07:46 | 0s |   [INIT] Direct:      是
+2026-05-09 17:07:46 | 0s | ======================================================================
+2026-05-09 17:07:46 | 0s | 
+  [SCAN] 已选择 2 个数据库:
+2026-05-09 17:07:46 | 0s |   [SCAN] 📁 MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSY... (videos=405, comments=96763, replies=21141, 44.2 MB)
+2026-05-09 17:07:46 | 0s |   [SCAN] 📁 MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfN... (videos=149, comments=8140, replies=1944, 4.0 MB)
+2026-05-09 17:07:46 | 0s | 
+--- HEIF 格式检测 ---
+2026-05-09 17:07:46 | 0s | ✅ pillow-heif 已就绪
+2026-05-09 17:07:46 | 0s | 
+--- 验证 Cookie ---
+2026-05-09 17:07:48 | 1s | ✅ Cookie 有效，用户: 万年
+2026-05-09 17:07:48 | 1s | 
+──────────────────────────────────────────────────────────────────────
+2026-05-09 17:07:48 | 1s |   [SCAN] 📁 作者: MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSY...
+2026-05-09 17:07:48 | 1s |   [SCAN] 📄 数据库: /home/runner/work/DouyinComment/DouyinComment/scripts/../data/MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/sqlite.db
+2026-05-09 17:07:48 | 1s | ──────────────────────────────────────────────────────────────────────
+2026-05-09 17:07:48 | 2s |   [SCAN] 总 task 数: 151
+2026-05-09 17:07:48 | 2s |     comment_avatar: 132
+2026-05-09 17:07:48 | 2s |     comment_image: 7
+2026-05-09 17:07:48 | 2s |     comment_sticker: 4
+2026-05-09 17:07:48 | 2s |     reply_avatar: 6
+2026-05-09 17:07:48 | 2s |     reply_image: 1
+2026-05-09 17:07:48 | 2s |     reply_sticker: 1
+2026-05-09 17:07:48 | 2s |   [SCAN] 唯一分组: 148，去重节省: 3 次下载
+2026-05-09 17:07:48 | 2s |   [BATCH] aweme_id 数: 12，分 1 批处理
+2026-05-09 17:07:48 | 2s | 
+  [BATCH] 📦 批次 1/1: 12 个 aweme_id, 148 个 URL
+2026-05-09 17:07:48 | 2s |   [BATCH] direct 模式: 直接使用原始 URL 151 个
+2026-05-09 17:07:50 | 4s |   [DL] ⚠️  HTTP 403: https://p3-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/e2a2935810aa4b8b87c5d164afb794...
+2026-05-09 17:07:52 | 5s |   [DL] ⚠️  HTTP 403: https://p26-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/8021ec5dcc93470b9ff105110e288...
+2026-05-09 17:07:52 | 6s |   [DL] ⚠️  HTTP 403: https://p3-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/8021ec5dcc93470b9ff105110e288c...
+2026-05-09 17:07:56 | 9s |   [DL] ⚠️  HTTP 403: https://p5-ex-gddgtc-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/e2a2935810aa4b8b87c5...
+2026-05-09 17:07:56 | 9s |   [DL] ⚠️  HTTP 403: https://p5-ex-gddgtc-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/8021ec5dcc93470b9ff1...
+2026-05-09 17:07:56 | 10s |   [DL] ⚠️  HTTP 403: https://p26-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/8021ec5dcc93470b9ff105110e288...
+2026-05-09 17:07:57 | 10s |   [DL] ❌ 下载失败，最后尝试的 URL: https://p26-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/8021ec5dcc93470b9ff105110e288cd7~tplv-p14lwwcsbr-7.jpeg?lk3s=7b078dd2&x-expires=1776952800&x-signature=D0%2F%2FSdYFxQfL5G1DpuWnnoFVNZI%3D&from=2064092626&se=false&sc=image&biz_tag=aweme_comment&l=20260422213043620A31DAC0379774BAE8
+2026-05-09 17:07:57 | 10s |   [FAIL] 下载失败 | https://p26-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/8021ec5dcc93470b9ff105110e288cd7~tplv-p14lwwcsbr- | 原因=所有CDN均失败
+2026-05-09 17:07:57 | 10s |   [FAIL] 下载失败 | replies.id=18126 api_type=reply_image | 表=replies | aweme=7560954743410675002 | 字段=image_list | 原因=下载失败
+2026-05-09 17:07:57 | 10s |   [DL] ⚠️  HTTP 403: https://p11-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/e2a2935810aa4b8b87c5d164afb79...
+2026-05-09 17:07:57 | 10s |   [DL] ⚠️  HTTP 403: https://p5-ex-gddgtc-sign.douyinpic.com/obj/douyin-user-image-file/8c8844d242627...
+2026-05-09 17:07:57 | 10s |   [DL] ❌ 下载失败，最后尝试的 URL: https://p5-ex-gddgtc-sign.douyinpic.com/obj/douyin-user-image-file/8c8844d242627c599d1e61a6c3f3f7a3?lk3s=7b078dd2&x-expires=1776938400&x-signature=3mPhXzM1XGYjiux88h2FMYLDAV0%3D&from=2064092626&s=sticker_comment&se=false&sc=sticker_heif&biz_tag=aweme_comment&l=20260422172351E72952BBBF2BB254ED0C
+2026-05-09 17:07:57 | 10s |   [FAIL] 下载失败 | https://p5-ex-gddgtc-sign.douyinpic.com/obj/douyin-user-image-file/8c8844d242627c599d1e61a6c3f3f7a3? | 原因=所有CDN均失败
+2026-05-09 17:07:57 | 10s |   [FAIL] 下载失败 | comments.id=85194 api_type=comment_sticker | 表=comments | aweme=7560954743410675002 | 字段=sticker | 原因=下载失败
+2026-05-09 17:07:57 | 10s |   [DL] ⚠️  HTTP 403: https://p3-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/e2a2935810aa4b8b87c5d164afb794...
+2026-05-09 17:07:57 | 10s |   [DL] ❌ 下载失败，最后尝试的 URL: https://p3-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/e2a2935810aa4b8b87c5d164afb7945e~tplv-p14lwwcsbr-7.jpeg?lk3s=7b078dd2&x-expires=1776938400&x-signature=sJh8%2BJ1%2Bwp2D6rGewepcZnCJYjA%3D&from=2064092626&se=false&sc=image&biz_tag=aweme_comment&l=20260422172339C383647A97FC9F534DAE
+2026-05-09 17:07:57 | 10s |   [FAIL] 下载失败 | https://p3-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/e2a2935810aa4b8b87c5d164afb7945e~tplv-p14lwwcsbr-7 | 原因=所有CDN均失败
+2026-05-09 17:07:57 | 10s |   [FAIL] 下载失败 | comments.id=85119 api_type=comment_image | 表=comments | aweme=7560954743410675002 | 字段=image_list | 原因=下载失败
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/3023d3b76c3d283342fff2f5bb56ccdd.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/4eb79852bc7a7c51dfca818114cba3ea.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/a03c64da9d0df716a9934367935e5355.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/ce789816b7bb0a33d7bb5f408a4ffe73.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/489d47f7cee9aaf44e4cec2bb0f44619.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/a7f89ba813da1cee40b74cb7e53c1a43.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/a4282b226070820a72664bfbe35a5ada.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/904729a95a6b7f1b5b83f8345456c170.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/0f75145dd2e1bf68a7919101a17c8f35.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/3b78bd43a46344a12b484fc210fdf1b4.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/28fff7a3ca46cc40f4ae2366240a36c1.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/46b29a9cd07d2794d4f1e99cd9757f79.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/1b30a99c4fbacd74b8694111b1434df2.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/94d8ca29da1bd581eea879dccbd14b70.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/93af360a0ae2972cde980fa33819f871.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/69a2b2d1f8a6bdb22a00954e01617997.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/62d93726bddeca81dccf433763f6b843.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/bcbffb0cb1a93b5fc7d6adc5e3a22155.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/f4e5f4c05bd549802f2152c824b13dab.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/9a21e889e80a3b46f304397fa29ecb79.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/05962f3eeb04b796ce3e7b6b808ee072.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/427f969cc24318d261bfad4b5aec89c1.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/6af518495133cf24a6c8236b8ffc204e.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/592892688b6cc44a87c48e59e1bccd8f.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/167bd42cc1f47fb8e1b5cd658bbeef5e.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/208087c81903b08abc9e11c340ecb786.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/858c67d85e4e821cdffc8fb509b67f50.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/09ea4436b1acbfb6d6a6dc09778c0842.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/81d93cac6fab59c168db156e25437783.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/bf8935dee433ff84e05f655e0fbb5c63.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/44c7916f92695ccd6a7aedaf16063c4e.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/2feffe7b93c0f9d0c41bf457e5d01610.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/1984586fbd1e2bc436830c8cfc20efdf.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/4df15c86986c816aa8b9c69b21fa01f3.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/221416eef89695a53c17952e3f8d4224.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/fb2dd9e00cfbd9d83d1443e938a0b340.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/b1be08d05d0720c86f579248e95cfef7.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/f33fea2b48c9057725f4e929922f89a3.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/918fc02bbe7d09376275c1df81ed3c04.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/ca4f7c9288c7368aedc1d756aafc6d95.jpg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/a597fa890ec50336a3b668d8cbe5cf6e.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/9f08471454b080660e8ae79b953800e5.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/9b7be4fd4344a6509eda65595cab22e2.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/2f55e2e7dffe452969ebb80fc95a811f.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/419fe62ea49b71c37d3f652f5c60d212.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/38a1b746400d22c6a1e85eb4a6aedc1e.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/93cdc72cec82f0e026ddbe3608321dfb.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/2f0c1d624595a7527daa35a19cf309de.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/8e7013935e06be0412889f8cd09cfa50.jpeg
+2026-05-09 17:08:00 | 13s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/6ae2d378e8be740e287244bb72159f26.jpg
+2026-05-09 17:08:00 | 13s |   [DB] 📝 待更新: 50 行
+2026-05-09 17:08:00 | 13s |   [DB] ✅ commit 成功: 50 行已写入
+2026-05-09 17:08:01 | 14s |   [DL] ⚠️  HTTP 403: https://p26-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/bd6e2809edac430686f01de210250...
+2026-05-09 17:08:01 | 14s |   [DL] ⚠️  HTTP 403: https://p3-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/bd6e2809edac430686f01de210250c...
+2026-05-09 17:08:01 | 14s |   [DL] ⚠️  HTTP 403: https://p5-ex-gddgtc-sign.douyinpic.com/obj/tos-cn-o-0812/osMbEYFxAgCM8ORMAADAIj...
+2026-05-09 17:08:01 | 14s |   [DL] ❌ 下载失败，最后尝试的 URL: https://p5-ex-gddgtc-sign.douyinpic.com/obj/tos-cn-o-0812/osMbEYFxAgCM8ORMAADAIjDlxCpgaCAyAGEff0?lk3s=7b078dd2&x-expires=1776938400&x-signature=a4s4ivW6IB1r42X4peH3NFRD5VE%3D&from=2064092626&s=sticker_comment&se=false&sc=sticker_heif&biz_tag=aweme_comment&l=202604221741241AE6C93B5D9DF35359FD
+2026-05-09 17:08:01 | 14s |   [FAIL] 下载失败 | https://p5-ex-gddgtc-sign.douyinpic.com/obj/tos-cn-o-0812/osMbEYFxAgCM8ORMAADAIjDlxCpgaCAyAGEff0?lk3 | 原因=所有CDN均失败
+2026-05-09 17:08:01 | 14s |   [FAIL] 下载失败 | comments.id=90723 api_type=comment_sticker | 表=comments | aweme=7575874445581119665 | 字段=sticker | 原因=下载失败
+2026-05-09 17:08:01 | 15s |   [DL] ⚠️  HTTP 403: https://p3-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/76d17b1c6935419b88c5ecf2b492dc...
+2026-05-09 17:08:02 | 15s |   [DL] ⚠️  HTTP 403: https://p5-ex-gddgtc-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/bd6e2809edac430686f0...
+2026-05-09 17:08:03 | 16s |   [DL] ⚠️  HTTP 403: https://p26-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/76d17b1c6935419b88c5ecf2b492d...
+2026-05-09 17:08:03 | 16s |   [DL] ⚠️  HTTP 403: https://p26-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/bd6e2809edac430686f01de210250...
+2026-05-09 17:08:03 | 16s |   [DL] ❌ 下载失败，最后尝试的 URL: https://p26-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/bd6e2809edac430686f01de210250cd4~tplv-p14lwwcsbr-7.jpeg?lk3s=7b078dd2&x-expires=1776934800&x-signature=p%2Bv%2Bj6Fggg8zWPl3wQ3A17jcSSY%3D&from=2064092626&se=false&sc=image&biz_tag=aweme_comment&l=20260422160926C47854014D9E4955E272
+2026-05-09 17:08:03 | 16s |   [FAIL] 下载失败 | https://p26-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/bd6e2809edac430686f01de210250cd4~tplv-p14lwwcsbr- | 原因=所有CDN均失败
+2026-05-09 17:08:03 | 16s |   [FAIL] 下载失败 | comments.id=55094 api_type=comment_image | 表=comments | aweme=7476411176209976636 | 字段=image_list | 原因=下载失败
+2026-05-09 17:08:03 | 16s |   [DL] ⚠️  HTTP 403: https://p26-sign.douyinpic.com/obj/tos-cn-o-0812/o0cguteHAroyvOClx6QCAktcgDQdIAe...
+2026-05-09 17:08:03 | 16s |   [DL] ❌ 下载失败，最后尝试的 URL: https://p26-sign.douyinpic.com/obj/tos-cn-o-0812/o0cguteHAroyvOClx6QCAktcgDQdIAelAHA8bn?lk3s=7b078dd2&x-expires=1776931200&x-signature=QKrJNCwSi5qhER7JuGxca4eE%2BkU%3D&from=2064092626&s=sticker_comment&se=false&sc=sticker_heif&biz_tag=aweme_comment&l=20260422155917D4AC69AC509C06719605
+2026-05-09 17:08:03 | 16s |   [FAIL] 下载失败 | https://p26-sign.douyinpic.com/obj/tos-cn-o-0812/o0cguteHAroyvOClx6QCAktcgDQdIAelAHA8bn?lk3s=7b078dd | 原因=所有CDN均失败
+2026-05-09 17:08:03 | 16s |   [FAIL] 下载失败 | comments.id=46997 api_type=comment_sticker | 表=comments | aweme=7456483966602841403 | 字段=sticker | 原因=下载失败
+2026-05-09 17:08:03 | 17s |   [DL] ⚠️  HTTP 403: https://p11-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/76d17b1c6935419b88c5ecf2b492d...
+2026-05-09 17:08:04 | 17s |   [DL] ⚠️  HTTP 403: https://p3-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/76d17b1c6935419b88c5ecf2b492dc...
+2026-05-09 17:08:04 | 17s |   [DL] ❌ 下载失败，最后尝试的 URL: https://p3-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/76d17b1c6935419b88c5ecf2b492dc71~tplv-p14lwwcsbr-7.jpeg?lk3s=7b078dd2&x-expires=1776931200&x-signature=NWZGJ6ZKNFu0oyaJ6zURxW6uW0Y%3D&from=2064092626&se=false&sc=image&biz_tag=aweme_comment&l=2026042215463186EC7CAE905A3B6CC9BC
+2026-05-09 17:08:04 | 17s |   [FAIL] 下载失败 | https://p3-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/76d17b1c6935419b88c5ecf2b492dc71~tplv-p14lwwcsbr-7 | 原因=所有CDN均失败
+2026-05-09 17:08:04 | 17s |   [FAIL] 下载失败 | comments.id=36794 api_type=comment_image | 表=comments | aweme=7429276471669083451 | 字段=image_list | 原因=下载失败
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/356bd537cf9e2c1c9f52ff40a628957a.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/f8b09f9e24af5db68f43f53b2b2beb10.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/5953097dbd1900e5765f2bf68b0e1384.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/66bac78da8b5479a711cd67bd9665cb6.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/d7d78ed7a1cc37d13873bbe2897437b0.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/276ffb9e7044ce347a2e4fb6426a6607.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/398da4a60ca8482ab3db2a570df0bcfe.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/556d99f69cfecf13bc02bbde97b932e0.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/5de7ef8b23d7edc5a55fe5f8298a9d16.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/f715cfeaab81f451dfab2c72c99f0d91.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/0b5a35b7ff7ef3f55e59216dae5e101f.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/c046bd1d67ad0a68925d2cb404aad97d.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/8e9ef4114417e19e10142948708da67e.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/72e77f029d1d2e554d79d655a98fb042.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/edd0834b2f36598ca47059f74ee2a7fa.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/dee08fa452481b10f9dea674f76419f0.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/e51eaff8681a4b07577479b9049a4dbf.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/353d0c7e60df96a79f73ee6b5e52dea4.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/e24abd5356fde91c1471bb28ece78d91.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/d2001c63c5cec12672c3c3eeec0545e4.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/46ffcea9a2bf922e2dcd44b251282559.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/699c217be35441be88dd13ce27d3c2e4.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/dd73d0fc455cbdbed586cfcad21aa4b1.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/9b55ce1516b601d65c92ed90f7663f8d.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/b61b1daa536a7f162e0901150b0eea31.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/022657a34a7dd4a207fa03421014d588.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/fd67cc9281f4b13c1ba535d468267bdd.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/9eea7f5d2f9293f8b1f14b8bb8872a9a.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/8a4f185edbd0e896c4e10e548d4e2bc1.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/f04f502f9f8aa61ae6558ac1dfd83241.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/501d87e6a01a08b7dbb9bac577431236.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/1a47488f4f1aaa0c5fd359b86e05b956.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/457d8b02586f50686f12fe71ecd6fcf0.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/cdb1fafdd9ec42cc7cc5397bbd05c1aa.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/5de4a475e7cecc731e61ba0a2fbeea88.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/ea57b3c377a18a692ce044d53df75112.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/6b2c6b1196ee4521191de0620fe32074.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/c75e86a957dc2963c6ab473c3c197941.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/878cd752ebff044a4e47f14141d194e2.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/cc5e5fea7e524b95a16bd528e661f9db.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/b68da82836bf4d3863174137e01c6818.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/c81393ff1d27f2e88ba57901169c9caf.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/0feb8cbe689c50d7e6ad4d55486bc9b5.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/e15b0f4e8eea4093295aaad8c895151d.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/891cee4ac93e45f93eabbecb19e76277.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/cf7bd4de8626412673af1ff278b702e8.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/4d8315edc36770483f577c143e317c87.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/6537f6775e95ef7df9b19728ebd44527.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/1560879684c0ea6ac4c0f1c6916d8830.jpeg
+2026-05-09 17:08:06 | 19s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/69a190b230f8f2e5d15bb900005ddee0.jpeg
+2026-05-09 17:08:06 | 19s |   [DB] 📝 待更新: 53 行
+2026-05-09 17:08:06 | 19s |   [DB] ✅ commit 成功: 53 行已写入
+2026-05-09 17:08:07 | 20s |   [DL] ⚠️  HTTP 403: https://p9-sign.douyinpic.com/obj/tos-cn-o-0812/okAuAfyyBAD0iA5Zadi8vNEj7BBIigGQ...
+2026-05-09 17:08:07 | 20s |   [DL] ❌ 下载失败，最后尝试的 URL: https://p9-sign.douyinpic.com/obj/tos-cn-o-0812/okAuAfyyBAD0iA5Zadi8vNEj7BBIigGQyVYEkA?lk3s=7b078dd2&x-expires=1776960000&x-signature=PGcNQ%2BFbEbGoPQbhPvr5GppjCr0%3D&from=2064092626&s=sticker_comment&se=false&sc=sticker_heif&biz_tag=aweme_comment&l=202604231846140F73B10722ECAAC2EAB9
+2026-05-09 17:08:07 | 20s |   [FAIL] 下载失败 | https://p9-sign.douyinpic.com/obj/tos-cn-o-0812/okAuAfyyBAD0iA5Zadi8vNEj7BBIigGQyVYEkA?lk3s=7b078dd2 | 原因=所有CDN均失败
+2026-05-09 17:08:07 | 20s |   [FAIL] 下载失败 | replies.id=21178 api_type=reply_sticker | 表=replies | aweme=7631634541144461489 | 字段=sticker | 原因=下载失败
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/4ce8bb99e3e91298c9f49a14a256620d.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/4cff59479f49f919daaf8402a00ab1ae.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/83d77a6eab0d5ca51bfb3228785b86a1.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/191a9c1f0de3401fa0657ed211a52159.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/07fe48ca63572c5a88acce6793803978.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/9b4a578cd08bbf03149e94fc1798a99a.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/f393f048f17324b478ce8d001648280f.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/312a0268343dd2a01e666fb2a5569c28.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/738c98b345dfc8fdb62bfd82aebbf2d8.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/0f8c3d53d8da4fd3a3040140284d8b78.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/fffb6c9bd02d4c3e93e12cb613a4d00e.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/00f0f7a258ada851105251ecc9e1273a.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/f8410f62ab06f1909aede31a9f7815a6.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/ae82412d461cf87803eb7ca623629383.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/24390d4c5b3ed4083e320c602032d26a.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/763c0192f1a1218468f8dbe2c6a3822c.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/0376fc3071996f62ffb350effc59622a.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/2357261cbaa2511b1ac753a09954029e.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/e344902e8ea44808499c471df2077048.jpg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/32ee21976ae3783be07a174202e6f4ba.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/68fb824b4c4d6e3e9fada8718cf2c64c.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/b55c8cbcabf1d537ee9cafff1ee7cdec.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/876b0893209d7d0bb4e8a27494f8e14e.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/85e70bed9181ba43fba075b82f714113.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/ebbb732f6216aa3eb68833d6de9ec9eb.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/5a2723c89e204a3a635e8570879c6bc6.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/cbc6695349f1f0ed4a0005347f955986.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/fd686abc0d5d79077c058cfc59368d60.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/45704cf5f53094c93177437c86f18e4a.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/28253bf4ff17a9ba9138c2e647c12db5.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/656384faf78b94d2678fd85e2bb5b3ca.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/f2a2b0152b68fe9cd6f1f0ae7e205dee.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/2d6c6eb3a5e291a42efa8a1f0e92f94c.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/31ef4f902f760385f86126a9905926ed.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/5ea05611e0425b7a8d64e967b8345e99.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/fc9741e8527bb459be277b212fedcf9f.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/8033fe44e42a66a5d8da9ba3c705f8b6.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/images/49295a86e098aeed674c02e8dcb08dad.jpg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/avatars/251979b3f6ea964140e10439b0f5937c.jpeg
+2026-05-09 17:08:12 | 25s |   [UPLOAD] ↑ MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA/stickers/9cb266eb0393ad88353202f487946e80.gif
+2026-05-09 17:08:12 | 25s |   [DB] 📝 待更新: 40 行
+2026-05-09 17:08:12 | 25s |   [DB] ✅ commit 成功: 40 行已写入
+2026-05-09 17:08:12 | 25s |   [BATCH] ✅ 批次完成，已提交 148/148 个 URL，耗时 23.9s
+2026-05-09 17:08:12 | 26s | 
+  [OK] 作者完成: 上传 140，更新 143 行，HEIC 转换 0，失败 8
+2026-05-09 17:08:12 | 26s | 
+──────────────────────────────────────────────────────────────────────
+2026-05-09 17:08:12 | 26s |   [SCAN] 📁 作者: MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfN...
+2026-05-09 17:08:12 | 26s |   [SCAN] 📄 数据库: /home/runner/work/DouyinComment/DouyinComment/scripts/../data/MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR/sqlite.db
+2026-05-09 17:08:12 | 26s | ──────────────────────────────────────────────────────────────────────
+2026-05-09 17:08:12 | 26s |   [SCAN] 总 task 数: 6
+2026-05-09 17:08:12 | 26s |     comment_avatar: 5
+2026-05-09 17:08:12 | 26s |     comment_sticker: 1
+2026-05-09 17:08:12 | 26s |   [SCAN] 唯一分组: 6，去重节省: 0 次下载
+2026-05-09 17:08:12 | 26s |   [BATCH] aweme_id 数: 1，分 1 批处理
+2026-05-09 17:08:12 | 26s | 
+  [BATCH] 📦 批次 1/1: 1 个 aweme_id, 6 个 URL
+2026-05-09 17:08:12 | 26s |   [BATCH] direct 模式: 直接使用原始 URL 6 个
+2026-05-09 17:08:14 | 27s |   [UPLOAD] ↑ MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR/avatars/a0767b6778762266f9473214944a687e.jpeg
+2026-05-09 17:08:14 | 27s |   [UPLOAD] ↑ MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR/avatars/6043fbd4b9019822264b6aa8864270ab.jpeg
+2026-05-09 17:08:14 | 27s |   [UPLOAD] ↑ MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR/avatars/8f2e3c38fe367cee38cd7411ae30c4d4.jpeg
+2026-05-09 17:08:14 | 27s |   [UPLOAD] ↑ MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR/avatars/01cf1380bc852de962a5792689132040.jpeg
+2026-05-09 17:08:14 | 27s |   [UPLOAD] ↑ MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR/avatars/e2245e3865eee64f0decc97d6f8ce8df.jpeg
+2026-05-09 17:08:14 | 27s |   [UPLOAD] ↑ MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR/stickers/b8dfa3507e81c5ddc858305e62c27db1.jpg
+2026-05-09 17:08:14 | 27s |   [DB] 📝 待更新: 6 行
+2026-05-09 17:08:14 | 27s |   [DB] ✅ commit 成功: 6 行已写入
+2026-05-09 17:08:14 | 27s |   [BATCH] ✅ 批次完成，已提交 6/6 个 URL，耗时 1.4s
+2026-05-09 17:08:14 | 27s | 
+  [OK] 作者完成: 上传 6，更新 6 行，HEIC 转换 0，失败 0
+2026-05-09 17:08:14 | 27s | 
+2026-05-09 17:08:14 | 27s | ======================================================================
+2026-05-09 17:08:14 | 27s |   全部完成
+2026-05-09 17:08:14 | 27s | ======================================================================
+2026-05-09 17:08:14 | 27s |   作者数:        2
+2026-05-09 17:08:14 | 27s |   总 task:       157
+2026-05-09 17:08:14 | 27s |   上传成功:      146
+2026-05-09 17:08:14 | 27s |   更新行数:      149
+2026-05-09 17:08:14 | 27s |   HEIC 转换:     0
+2026-05-09 17:08:14 | 27s |   失败:          8
+2026-05-09 17:08:14 | 27s |   总耗时:        27s (27s)
+2026-05-09 17:08:14 | 27s | ======================================================================
+2026-05-09 17:08:14 | 27s | 
+──────────────────────────────────────────────────────────────────────
+2026-05-09 17:08:14 | 27s |   失败汇总 (共 16 项)
+2026-05-09 17:08:14 | 27s | ──────────────────────────────────────────────────────────────────────
+2026-05-09 17:08:14 | 27s |     下载失败: 16
+2026-05-09 17:08:14 | 27s |     • 下载失败 | https://p26-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/8021ec5dcc93470b9ff105110e288cd7~tplv-p14lwwcsbr- | 所有CDN均失败
+2026-05-09 17:08:14 | 27s |     • 下载失败 | replies.id=18126 api_type=reply_image | 下载失败
+2026-05-09 17:08:14 | 27s |     • 下载失败 | https://p5-ex-gddgtc-sign.douyinpic.com/obj/douyin-user-image-file/8c8844d242627c599d1e61a6c3f3f7a3? | 所有CDN均失败
+2026-05-09 17:08:14 | 27s |     • 下载失败 | comments.id=85194 api_type=comment_sticker | 下载失败
+2026-05-09 17:08:14 | 27s |     • 下载失败 | https://p3-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/e2a2935810aa4b8b87c5d164afb7945e~tplv-p14lwwcsbr-7 | 所有CDN均失败
+2026-05-09 17:08:14 | 27s |     • 下载失败 | comments.id=85119 api_type=comment_image | 下载失败
+2026-05-09 17:08:14 | 27s |     • 下载失败 | https://p5-ex-gddgtc-sign.douyinpic.com/obj/tos-cn-o-0812/osMbEYFxAgCM8ORMAADAIjDlxCpgaCAyAGEff0?lk3 | 所有CDN均失败
+2026-05-09 17:08:14 | 27s |     • 下载失败 | comments.id=90723 api_type=comment_sticker | 下载失败
+2026-05-09 17:08:14 | 27s |     • 下载失败 | https://p26-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/bd6e2809edac430686f01de210250cd4~tplv-p14lwwcsbr- | 所有CDN均失败
+2026-05-09 17:08:14 | 27s |     • 下载失败 | comments.id=55094 api_type=comment_image | 下载失败
+2026-05-09 17:08:14 | 27s |     • 下载失败 | https://p26-sign.douyinpic.com/obj/tos-cn-o-0812/o0cguteHAroyvOClx6QCAktcgDQdIAelAHA8bn?lk3s=7b078dd | 所有CDN均失败
+2026-05-09 17:08:14 | 27s |     • 下载失败 | comments.id=46997 api_type=comment_sticker | 下载失败
+2026-05-09 17:08:14 | 27s |     • 下载失败 | https://p3-sign.douyinpic.com/tos-cn-i-p14lwwcsbr/76d17b1c6935419b88c5ecf2b492dc71~tplv-p14lwwcsbr-7 | 所有CDN均失败
+2026-05-09 17:08:14 | 27s |     • 下载失败 | comments.id=36794 api_type=comment_image | 下载失败
+2026-05-09 17:08:14 | 27s |     • 下载失败 | https://p9-sign.douyinpic.com/obj/tos-cn-o-0812/okAuAfyyBAD0iA5Zadi8vNEj7BBIigGQyVYEkA?lk3s=7b078dd2 | 所有CDN均失败
+2026-05-09 17:08:14 | 27s |     • 下载失败 | replies.id=21178 api_type=reply_sticker | 下载失败
+2026-05-09 17:08:14 | 27s | ──────────────────────────────────────────────────────────────────────
