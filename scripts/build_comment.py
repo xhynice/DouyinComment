@@ -72,27 +72,8 @@ class SiteBuilder:
         if not os.path.exists(output_path):
             return True
         
-        output_mtime = os.path.getmtime(output_path)
-        
-        if self.use_sqlite:
-            db_path = os.path.join(user_path, 'sqlite.db')
-            if os.path.exists(db_path) and os.path.getmtime(db_path) > output_mtime:
-                return True
-            return False
-        
-        videos_csv = os.path.join(user_path, 'videos.csv')
-        if os.path.exists(videos_csv) and os.path.getmtime(videos_csv) > output_mtime:
-            return True
-        
-        for entry in os.listdir(user_path):
-            entry_path = os.path.join(user_path, entry)
-            if os.path.isdir(entry_path) and '-' in entry:
-                for root, dirs, files in os.walk(entry_path):
-                    for f in files:
-                        if f.endswith('.csv') and os.path.getmtime(os.path.join(root, f)) > output_mtime:
-                            return True
-        
-        return False
+        # 总是需要构建（mtime 检测在 GitHub Actions 中不可靠）
+        return True
         
     def build(self):
         os.makedirs(self.output_dir, exist_ok=True)
