@@ -59,11 +59,32 @@ jobs:
           logs/
         retention-days: 3
     
-    - name: Commit data to repo
+    - name: Commit data to data branch
+      continue-on-error: true
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+
+        git fetch origin crawler-data || true
+
+        # 用 worktree 在单独目录操作 crawler-data 分支，避免覆盖工作区的 data/
+        DATA_WT=/tmp/crawler-data-wt
+        rm -rf "$DATA_WT"
+        git worktree add "$DATA_WT" crawler-data
+
+        # 同步采集数据到 worktree
+        cp -r data/ "$DATA_WT/data/" 2>/dev/null || mkdir -p "$DATA_WT/data/"
+        cp -r logs/ "$DATA_WT/logs/" 2>/dev/null || true
+
+        cd "$DATA_WT"
         git add -f data/ logs/ 2>/dev/null || true
-        git diff --quiet && git diff --staged --quiet || git commit -m "Auto crawl: $(date '+%Y-%m-%d %H:%M')"
-        git push || echo "No changes to commit"
-      continue-on-error: true
+        if git diff --staged --quiet; then
+          echo "无数据变化，跳过提交"
+        else
+          git commit -m "Auto crawl: $(date '+%Y-%m-%d %H:%M') [skip ci]"
+          git push origin crawler-data
+        fi
+
+        # 清理 worktree
+        cd "$GITHUB_WORKSPACE"
+        git worktree remove "$DATA_WT" --force 2>/dev/null || true
