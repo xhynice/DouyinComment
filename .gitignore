@@ -30,4 +30,5 @@ venv.bak/
 
 cookie.txt
 # 构建产物（本地存储）
+data/
 docs/data/
