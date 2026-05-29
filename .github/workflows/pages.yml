@@ -35,6 +35,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
+    - name: Fetch data from data branch
+      run: |
+        git fetch origin crawler-data
+        git checkout origin/crawler-data -- data/ 2>/dev/null || echo "数据分支暂无数据"
+        git rm --cached -r data/ 2>/dev/null || true
+
     - name: Build site data
       run: python scripts/build_comment.py --sqlite --cdn "https://huggingface.co/buckets/sunset139/douyin/resolve"
     
