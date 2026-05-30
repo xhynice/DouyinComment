@@ -32,6 +32,24 @@ jobs:
         mkdir -p scripts
         cp cookie.txt scripts/cookie.txt
     
+    - name: Load historical data for dedup
+      run: |
+        git fetch origin crawler-data || true
+        if git rev-parse --verify origin/crawler-data >/dev/null 2>&1; then
+          DATA_WT=/tmp/crawler-data-dedup
+          rm -rf "$DATA_WT"
+          git worktree add "$DATA_WT" crawler-data 2>/dev/null || true
+          if [ -d "$DATA_WT/data" ]; then
+            echo "加载历史数据用于去重..."
+            rsync -a "$DATA_WT/data/" data/
+            echo "历史数据加载完成，共 $(find data/ -name '*.csv' | wc -l) 个 CSV 文件"
+          fi
+          cd "$GITHUB_WORKSPACE"
+          git worktree remove "$DATA_WT" --force 2>/dev/null || true
+        else
+          echo "crawler-data 分支不存在，跳过历史数据加载"
+        fi
+
     - name: Run crawler
       run: python main.py --all --limit 10
     
