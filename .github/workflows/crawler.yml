@@ -70,11 +70,18 @@ jobs:
         # 用 worktree 在单独目录操作 crawler-data 分支，避免覆盖工作区的 data/
         DATA_WT=/tmp/crawler-data-wt
         rm -rf "$DATA_WT"
-        git worktree add "$DATA_WT" crawler-data
+        if git rev-parse --verify origin/crawler-data >/dev/null 2>&1; then
+          git worktree add "$DATA_WT" crawler-data
+        else
+          git worktree add --orphan "$DATA_WT" crawler-data
+          rm -rf "$DATA_WT"/* "$DATA_WT"/.* 2>/dev/null || true
+        fi
 
         # 同步采集数据到 worktree
-        cp -r data/ "$DATA_WT/data/" 2>/dev/null || mkdir -p "$DATA_WT/data/"
-        cp -r logs/ "$DATA_WT/logs/" 2>/dev/null || true
+        mkdir -p "$DATA_WT/data/"
+        rsync -a data/ "$DATA_WT/data/"
+        mkdir -p "$DATA_WT/logs/"
+        rsync -a logs/ "$DATA_WT/logs/"
 
         cd "$DATA_WT"
         git add -f data/ logs/ 2>/dev/null || true
