@@ -52,7 +52,7 @@ jobs:
 
     - name: Run crawler
       #run: python main.py --all --limit 10
-      run: python main.py --video
+      run: python main.py --all
     
     - name: Touch database files
       run: |
