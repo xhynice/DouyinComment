@@ -1,12 +1,19 @@
 # ==================== 用户配置 ====================
 # 支持多用户批量采集，每个用户数据独立存储
 users:
-  - enabled: true                  # 是否启用该用户（true=采集，false=跳过）
+  - enabled: false                  # 是否启用该用户（true=采集，false=跳过）
     sec_uid: "MS4wLjABAAAA2FYVN1jBWaTVasx7wXcsK0rCPfSYixt5-J1pUegQIbA"    # 用户 ID（从主页 URL 获取）
     nickname: "张全蛋。"            # 用户昵称（用于日志显示，便于识别）
     videos: true                   # 是否采集作品
     comments: true                 # 是否采集评论
     replies: true                  # 是否采集回复
+
+  - enabled: false
+    sec_uid: "MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR"
+    nickname: "才扁扁"
+    videos: true
+    comments: true
+    replies: true
 
   - enabled: true
     sec_uid: "MS4wLjABAAAAWKIRK91nF8hLjuza0KVRL50-lcfNlEPHocsF9hNYzCUag7n4BgIHQaERsfq_NiHR"
