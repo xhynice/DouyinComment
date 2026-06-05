@@ -48,8 +48,17 @@ class DouyinAPI:
         'round_trip_time': '50',
     }
     
+    UA_LIST = [
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
+    ]
+    UA_COUNT = len(UA_LIST)
+
     COMMON_HEADERS = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+        "User-Agent": UA_LIST[0],
         "sec-fetch-site": "same-origin",
         "sec-fetch-mode": "cors",
         "sec-fetch-dest": "empty",
@@ -95,6 +104,9 @@ class DouyinAPI:
             60 * 60,   # 第 3 次错误：暂停 1 小时
         ]
         self._max_errors = 4  # 最多 4 次错误，之后退出
+        self._state_lock = asyncio.Lock()
+        self._ua_index = random.randint(0, self.UA_COUNT - 1)
+        self._retry_method = 'sign_reply'
 
     async def _get_client(self) -> httpx.AsyncClient:
         if self._client is None or self._client.is_closed:
@@ -204,10 +216,21 @@ class DouyinAPI:
         chars = 'ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghigklmnopqrstuvwxyz0123456789='
         return ''.join(random.choice(chars) for _ in range(length))
 
+    def _rotate_ua(self):
+        ua = self.UA_LIST[self._ua_index % self.UA_COUNT]
+        self._ua_index += 1
+        self.COMMON_HEADERS["User-Agent"] = ua
+        m = re.search(r'Chrome/(\d+)', ua)
+        if m:
+            v = m.group(1)
+            self.COMMON_HEADERS["sec-ch-ua"] = f'"Not A(Brand";v="8", "Chromium";v="{v}", "Google Chrome";v="{v}"'
+        return ua
+
     async def _prepare_params(self, params: Dict, headers: Dict, sign_method: str = 'sign_datail') -> Tuple[Dict, Dict]:
         params = dict(params)
         params.update(self.COMMON_PARAMS)
-        
+
+        self._rotate_ua()
         headers = dict(headers)
         headers.update(self.COMMON_HEADERS)
         
@@ -240,18 +263,20 @@ class DouyinAPI:
 
         return params, headers
 
-    async def _request(self, url: str, params: Dict, headers: Dict) -> Dict:
+    async def _request(self, url: str, params: Dict, headers: Dict, _retry: int = 0) -> Dict:
         while True:
-            while self._pause_until > 0:
-                remaining = self._pause_until - time.time()
-                if remaining > 0:
-                    minutes = int(remaining / 60) + 1
-                    logger.warning(f"[API] ⏸ 暂停中，等待 {minutes} 分钟后恢复...")
-                    await asyncio.sleep(min(remaining, 60))
-                else:
-                    self._pause_until = 0
-                    self._error_count = 0
-                    logger.info("[API] ▶ 暂停结束，恢复采集")
+            async with self._state_lock:
+                if self._pause_until > 0:
+                    remaining = self._pause_until - time.time()
+                    if remaining > 0:
+                        minutes = int(remaining / 60) + 1
+                        logger.warning(f"[API] ⏸ 暂停中，等待 {minutes} 分钟后恢复...")
+                        await asyncio.sleep(min(remaining, 60))
+                        continue
+                    else:
+                        self._pause_until = 0
+                        self._error_count = 0
+                        logger.info("[API] ▶ 暂停结束，恢复采集")
             
             if not self._verified:
                 await self.verify_cookie()
@@ -263,9 +288,27 @@ class DouyinAPI:
                 
                 content = response.text
                 if not content or content.strip() == '':
+                    if _retry < 2:
+                        self._rotate_ua()
+                        ua = self.COMMON_HEADERS["User-Agent"]
+                        headers.update({
+                            'User-Agent': ua,
+                            'sec-ch-ua': self.COMMON_HEADERS["sec-ch-ua"],
+                        })
+                        params.pop('a_bogus', None)
+                        params['msToken'] = self._get_ms_token()
+                        query = '&'.join([f'{k}={urllib.parse.quote(str(v))}' for k, v in params.items()])
+                        sm = 'sign_datail' if _retry == 0 else 'sign_reply'
+                        params['a_bogus'] = sign_request(query, ua, sm)
+                        delay = random.uniform(2.0, 5.0)
+                        logger.warning(f"[API] 空响应，切换UA+签名重试 ({_retry + 1}/2)，{delay:.1f}s后...")
+                        await asyncio.sleep(delay)
+                        return await self._request(url, params, headers, _retry + 1)
+                    
                     logger.warning(f"[API] 空响应 url={url}")
-                    if self._handle_error("空响应"):
-                        raise CookieExpiredError("API 错误次数达到上限")
+                    async with self._state_lock:
+                        if self._handle_error("空响应"):
+                            raise CookieExpiredError("API 错误次数达到上限")
                     continue
                 
                 try:
@@ -281,8 +324,9 @@ class DouyinAPI:
                         self._handle_error("HTML 页面", is_fatal=True)
                         raise CookieExpiredError(f"API 返回 HTML 页面，Cookie 可能已过期")
                     
-                    if self._handle_error("JSON 解析失败"):
-                        raise CookieExpiredError("API 错误次数达到上限")
+                    async with self._state_lock:
+                        if self._handle_error("JSON 解析失败"):
+                            raise CookieExpiredError("API 错误次数达到上限")
                     continue
                     
             except httpx.HTTPStatusError as e:
@@ -292,20 +336,23 @@ class DouyinAPI:
                     self._handle_error("HTTP 错误", is_fatal=True)
                     raise CookieExpiredError(msg)
                 logger.error(f"[API] HTTP {e.response.status_code} url={url}")
-                if self._handle_error("HTTP 错误"):
-                    raise CookieExpiredError("API 错误次数达到上限")
+                async with self._state_lock:
+                    if self._handle_error("HTTP 错误"):
+                        raise CookieExpiredError("API 错误次数达到上限")
                 continue
             except CookieExpiredError:
                 raise
             except httpx.TimeoutException:
                 logger.warning(f"[API] 请求超时 url={url}")
-                if self._handle_error("超时"):
-                    raise CookieExpiredError("API 错误次数达到上限")
+                async with self._state_lock:
+                    if self._handle_error("超时"):
+                        raise CookieExpiredError("API 错误次数达到上限")
                 continue
             except Exception as e:
                 logger.error(f"[API] 请求异常 url={url}: {e}")
-                if self._handle_error("异常"):
-                    raise CookieExpiredError("API 错误次数达到上限")
+                async with self._state_lock:
+                    if self._handle_error("异常"):
+                        raise CookieExpiredError("API 错误次数达到上限")
                 continue
 
     def _handle_error(self, error_type: str, is_fatal: bool = False) -> bool:
@@ -367,7 +414,8 @@ class DouyinAPI:
             "comment_id": comment_id,
             "cursor": str(cursor),
             "count": str(count),
-            "item_type": "0"
+            "item_type": "0",
+            "cut_version": "1"
         }
         params, headers = await self._prepare_params(params, {}, sign_method='sign_reply')
         return await self._request(url, params, headers)

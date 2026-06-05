@@ -126,44 +126,52 @@ class ReplyService(BaseService):
         
         video_timestamps = self.storage.get_video_timestamps()
         
-        for aweme_id, video_comment_list in tqdm(video_comments.items(), 
-                                                 desc="采集回复", 
-                                                 unit="视频",
-                                                 bar_format='{percentage:3.0f}% | {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_fmt}]'):
-            video_all_replies = []
-            
-            for comment in video_comment_list:
+        sem = asyncio.Semaphore(2)
+
+        async def _fetch_one(video_id: str, comment: Dict) -> List[Dict]:
+            async with sem:
                 try:
-                    all_replies = await self._fetch_comment_reply(aweme_id, comment, page_size, delay)
+                    return await self._fetch_comment_reply(video_id, comment, page_size, delay)
                 except CookieExpiredError:
                     raise
                 except Exception as e:
                     logger.error(f"[采集] 异常：{e}")
+                    return []
+
+        for aweme_id, video_comment_list in tqdm(video_comments.items(), 
+                                                 desc="采集回复", 
+                                                 unit="视频",
+                                                 bar_format='{percentage:3.0f}% | {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_fmt}]'):
+            tasks = [_fetch_one(aweme_id, comment) for comment in video_comment_list]
+            results = await asyncio.gather(*tasks, return_exceptions=True)
+
+            video_all_replies = []
+            for result in results:
+                if isinstance(result, CookieExpiredError):
+                    raise result
+                if isinstance(result, Exception):
                     continue
-                
-                if all_replies:
-                    video_all_replies.extend(all_replies)
-                
-                await sleep_jitter(delay)
-            
+                if result:
+                    video_all_replies.extend(result)
+
             video_reply_count = len(video_all_replies)
             video_new_count = 0
-            
+
             if video_all_replies:
                 stats['total'] += video_reply_count
                 video_ts = video_timestamps.get(aweme_id)
-                
+
                 with tqdm.external_write_mode():
                     save_result = self.storage.save(video_all_replies, aweme_id, video_timestamp=video_ts)
                     video_new_count = save_result['csv']
                     stats['new'] += video_new_count
-            
+
             with tqdm.external_write_mode():
                 if video_reply_count > 0:
                     logger.info(f"[采集] 视频 {aweme_id} 采集回复 {video_reply_count} 条，新增 {video_new_count} 条")
                 else:
                     logger.info(f"[采集] 视频 {aweme_id} 无回复")
-            
+
             await sleep_jitter(delay)
         
         stats['duration'] = f"{(datetime.now() - start_time).total_seconds():.1f}秒"
