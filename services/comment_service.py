@@ -22,17 +22,25 @@ class CommentService(BaseService):
         all_comments = []
         cursor = 0
         has_more = 1
+        page = 0
         
         while has_more:
+            page += 1
             try:
                 response = await self.api.fetch_comments(aweme_id, cursor, page_size)
                 comments = response.get("comments", [])
                 
-                if isinstance(comments, list):
-                    all_comments.extend(comments)
+                if not isinstance(comments, list) or len(comments) == 0:
+                    logger.info(f"[翻页] 视频 {aweme_id} 第 {page} 页无评论，结束")
+                    break
                 
+                all_comments.extend(comments)
                 has_more = response.get("has_more", 0)
                 cursor = response.get("cursor", 0)
+                
+                # 每10页或最后一页时打印进度
+                if page % 10 == 0 or has_more == 0 or len(comments) < page_size:
+                    logger.info(f"[翻页] 视频 {aweme_id} 第 {page} 页，已获取 {len(all_comments)} 条评论")
                 
                 if has_more:
                     await sleep_jitter(delay)
@@ -47,11 +55,13 @@ class CommentService(BaseService):
     
     def process(self, raw_comments: List[Dict], aweme_id: str = None, **kwargs) -> List[Dict]:
         processed = []
+        seen_cids = set()
         
         for c in raw_comments:
             cid = c.get('cid')
-            if not cid:
+            if not cid or cid in seen_cids:
                 continue
+            seen_cids.add(cid)
             
             user_info = self._extract_user_info(c)
             
@@ -75,7 +85,7 @@ class CommentService(BaseService):
     async def run(self, aweme_ids: List[str] = None,
                   delay: float = None, limit: int = 0,
                   skip_existing: bool = False, **kwargs) -> Dict:
-        page_size = 18
+        page_size = 50
         if aweme_ids is None:
             aweme_ids = self.storage.get_video_ids(limit)
         
