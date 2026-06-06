@@ -217,9 +217,11 @@ class SQLiteDatabase(BaseDatabase):
 
     def __new__(cls, db_path: str = None, sec_uid: str = None) -> 'SQLiteDatabase':
         if sec_uid and not db_path:
-            db_path = os.path.join('data', sec_uid, 'sqlite.db')
+            from utils.field_config import UserManager
+            db_path = os.path.join(UserManager().get_data_dir(), sec_uid, 'sqlite.db')
         if db_path is None:
-            db_path = os.path.join('data', 'database', 'sqlite.db')
+            from utils.field_config import UserManager
+            db_path = os.path.join(UserManager().get_data_dir(), 'database', 'sqlite.db')
         
         with cls._lock:
             if db_path not in cls._instances:

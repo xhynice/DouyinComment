@@ -127,7 +127,7 @@ class VideoService(BaseService):
         avatar_task = None
         if raw_videos:
             need_update = False
-            avatar_path = os.path.join('data', self.sec_uid, 'avatar.jpg')
+            avatar_path = os.path.join(self.user_manager.get_data_dir(), self.sec_uid, 'avatar.jpg')
             if not os.path.exists(avatar_path) or os.path.getsize(avatar_path) == 0:
                 need_update = True
             if not self._get_current_nickname():
@@ -173,7 +173,7 @@ class VideoService(BaseService):
             author = raw_videos[0].get('author', {})
             nickname = author.get('nickname', '')
             avatar_url = author.get('avatar_thumb', {}).get('url_list', [None])[0]
-            avatar_path = os.path.join('data', self.sec_uid, 'avatar.jpg')
+            avatar_path = os.path.join(self.user_manager.get_data_dir(), self.sec_uid, 'avatar.jpg')
             
             # 1. 下载头像（不存在或为空时）
             if avatar_url and (not os.path.exists(avatar_path) or os.path.getsize(avatar_path) == 0):

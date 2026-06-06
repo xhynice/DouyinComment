@@ -56,7 +56,7 @@ from douyin_api import (
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")  # 数据目录（与 scripts 同级的 data/）
 BUCKET_ID = "sunset139/douyin"
-COOKIE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cookie.txt")
+COOKIE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "cookie.txt")
 CONCURRENCY = 6
 
 LOG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "logs", "migrate")

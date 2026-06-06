@@ -18,7 +18,7 @@ class StorageManager:
         self.csv_filename = csv_filename
         self.db = get_database(sec_uid=sec_uid)
         self.user_manager = UserManager()
-        self.data_dir = os.path.join('data', sec_uid)
+        self.data_dir = os.path.join(self.user_manager.get_data_dir(), sec_uid)
         os.makedirs(self.data_dir, exist_ok=True)
         
         self._csv_cache = {}

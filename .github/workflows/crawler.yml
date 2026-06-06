@@ -27,8 +27,6 @@ jobs:
     - name: Create cookie file from secret
       run: |
         echo "${{ secrets.COOKIE_TXT }}" | base64 -d > cookie.txt
-        mkdir -p scripts
-        cp cookie.txt scripts/cookie.txt
     
     - name: Load historical data for dedup
       run: |

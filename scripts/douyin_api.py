@@ -735,7 +735,7 @@ def _cli():
     sp = sub.add_parser("serve", help="启动 Web 服务")
     sp.add_argument("--host", default="0.0.0.0")
     sp.add_argument("--port", type=int, default=8080)
-    sp.add_argument("--cookie-file", default="cookie.txt")
+    sp.add_argument("--cookie-file", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "cookie.txt"))
     sp.add_argument("--cookie", default=None)
 
     # video
@@ -760,7 +760,7 @@ def _cli():
     sub.add_parser("verify", help="验证 Cookie")
 
     # 通用
-    ap.add_argument("--cookie-file", default="cookie.txt")
+    ap.add_argument("--cookie-file", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "cookie.txt"))
     ap.add_argument("--cookie", default=None)
 
     args = ap.parse_args()
@@ -772,7 +772,7 @@ def _cli():
     # 获取 Cookie
     cookie = getattr(args, "cookie", None)
     if not cookie:
-        cf = getattr(args, "cookie_file", "cookie.txt")
+        cf = getattr(args, "cookie_file", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "cookie.txt"))
         if os.path.exists(cf):
             cookie = open(cf).read().strip()
         else:

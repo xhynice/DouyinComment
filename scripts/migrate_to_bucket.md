@@ -30,7 +30,6 @@ SQLite 数据库
 scripts/
 ├── douyin_api.py           # API 层：签名算法 + DouyinClient
 ├── migrate_to_bucket.py    # 迁移层：下载/上传/数据库
-├── cookie.txt              # 抖音 Cookie
 └── requirements.txt
 ```
 

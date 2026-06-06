@@ -126,5 +126,11 @@ class UserManager:
         return config.get(data_type, {})
 
     def get_fields(self, data_type: str) -> List[str]:
-        fields = self._config.get('fields', {}).get(data_type, [])
-        return [f for f in fields if f and not str(f).startswith('#')]
+        fields = self._config.get('fields', {}).get(data_type, {})
+        return [k for k, v in fields.items() if v is True or v is None]
+
+    def get_data_dir(self) -> str:
+        path = self._config.get('data_dir', 'data')
+        if not os.path.isabs(path):
+            path = os.path.join(os.path.dirname(os.path.abspath(self.config_path)), path)
+        return path
