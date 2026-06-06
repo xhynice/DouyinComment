@@ -32,3 +32,5 @@ cookie.txt
 # 构建产物（本地存储）
 data/
 docs/data/
+# 运行时日志
+logs/
