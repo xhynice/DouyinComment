@@ -311,7 +311,7 @@ class App {
             document.getElementById('loading').style.display = 'none';
             document.getElementById('video-grid').style.display = 'grid';
         } catch (err) {
-            document.getElementById('loading').innerHTML = `<p style="color:var(--primary-color)">加载数据失败</p><p style="color:var(--text-secondary);margin-top:10px">${err.message}</p>`;
+            document.getElementById('loading').innerHTML = `<div style="text-align:center;padding:60px 20px"><div style="font-size:48px;margin-bottom:16px">📭</div><p style="color:var(--primary-color);font-size:16px">暂无数据</p><p style="color:var(--text-secondary);margin-top:10px;font-size:14px">数据正在准备中，请稍后再来</p></div>`;
         }
     }
     
