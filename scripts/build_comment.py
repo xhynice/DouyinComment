@@ -676,14 +676,30 @@ class SiteBuilder:
 
 
 def main():
+    # 从 config.yaml 读取默认值
+    config_data_dir = 'data'
+    config_output_dir = 'docs'
+    config_upload_dir = 'upload'
+    try:
+        import yaml
+        config_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'config.yaml')
+        if os.path.exists(config_path):
+            with open(config_path, 'r', encoding='utf-8') as f:
+                cfg = yaml.safe_load(f) or {}
+            config_data_dir = cfg.get('data_dir', config_data_dir)
+            config_output_dir = cfg.get('output_dir', config_output_dir)
+            config_upload_dir = cfg.get('upload_dir', config_upload_dir)
+    except Exception:
+        pass
+
     parser = argparse.ArgumentParser(description='构建评论数据站点')
     parser.add_argument('--sqlite', action='store_true', help='使用 SQLite 数据库作为数据源')
     parser.add_argument('--cdn', dest='cdn_url', default='', help='CDN 基础 URL (启用 CDN 模式)')
-    parser.add_argument('--data-dir', default='data', help='数据目录路径 (默认: data)')
-    parser.add_argument('--output-dir', default='docs', help='输出目录路径 (默认: docs)')
-    parser.add_argument('--upload-dir', default='upload', help='上传文件目录路径 (默认: upload)')
+    parser.add_argument('--data-dir', default=config_data_dir, help='数据目录路径 (默认: 从config.yaml读取)')
+    parser.add_argument('--output-dir', default=config_output_dir, help='输出目录路径 (默认: 从config.yaml读取)')
+    parser.add_argument('--upload-dir', default=config_upload_dir, help='上传文件目录路径 (默认: 从config.yaml读取)')
     args = parser.parse_args()
-    
+
     SiteBuilder(
         data_dir=args.data_dir,
         output_dir=args.output_dir,
