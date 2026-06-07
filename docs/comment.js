@@ -418,6 +418,10 @@ class App {
         this.videos = this.videoList.videos || [];
         this.filteredVideos = [...this.videos];
         this.commentsCache = {};
+        this.selectedYear = '';
+        
+        const yearTrigger = document.querySelector('#year-select-wrapper .custom-select-trigger');
+        if (yearTrigger) { yearTrigger.querySelector('span').textContent = '全部年份'; yearTrigger.dataset.value = ''; }
         
         this.generateYearOptions();
         this.updateStats();
@@ -431,6 +435,7 @@ class App {
     generateYearOptions() {
         const years = new Set(this.videos.filter(v => v.create_time).map(v => new Date(v.create_time * 1000).getFullYear()));
         const box = document.getElementById('year-options');
+        box.innerHTML = '';
         [...years].sort((a,b) => b-a).forEach(y => {
             const opt = document.createElement('div');
             opt.className = 'custom-select-option';
