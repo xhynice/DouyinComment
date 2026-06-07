@@ -79,6 +79,7 @@ class BaseDatabase(ABC):
     
     def _safe_close(self, conn: Any) -> None:
         try:
+            conn.execute('PRAGMA wal_checkpoint(TRUNCATE)')
             conn.close()
         except Exception:
             pass
