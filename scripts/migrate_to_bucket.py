@@ -216,7 +216,7 @@ class MediaDB:
         self.conn.row_factory = sqlite3.Row
         self._pending_images: Dict[Tuple, List] = {}
 
-    def get_all_tasks(self) -> List[Dict]:
+    def get_all_tasks(self, author_sec_uid: str = "unknown") -> List[Dict]:
         """
         从三张表提取所有 task。
         每个 task = 一个资源，带 fallback_urls 列表。
@@ -227,7 +227,7 @@ class MediaDB:
         cur = self.conn.execute("SELECT aweme_id, sec_uid, create_time FROM videos")
         video_meta = {}
         for row in cur.fetchall():
-            video_meta[str(row[0])] = {"sec_uid": row[1] or "unknown", "create_time": row[2]}
+            video_meta[str(row[0])] = {"sec_uid": row[1] or author_sec_uid, "create_time": row[2]}
 
         # ---- videos 表 ----
         cur = self.conn.execute(
@@ -235,7 +235,7 @@ class MediaDB:
         )
         for row in cur.fetchall():
             db_id, aweme_id, thumb, images, video, sec_uid, create_time = row
-            meta = {"sec_uid": sec_uid or "unknown", "create_time": create_time}
+            meta = {"sec_uid": sec_uid or author_sec_uid, "create_time": create_time}
             aid = str(aweme_id)
 
             # thumb: 1 task, 多个 CDN URL
@@ -280,7 +280,7 @@ class MediaDB:
             db_id, aweme_id, cid, avatar, sticker, image_list, create_time = row
             aid = str(aweme_id)
             meta = {
-                "sec_uid": video_meta.get(aid, {}).get("sec_uid", "unknown"),
+                "sec_uid": video_meta.get(aid, {}).get("sec_uid", author_sec_uid),
                 "create_time": create_time,
             }
             cid_str = str(cid)
@@ -322,7 +322,7 @@ class MediaDB:
             db_id, aweme_id, cid, reply_id, avatar, sticker, image_list, create_time = row
             aid = str(aweme_id)
             meta = {
-                "sec_uid": video_meta.get(aid, {}).get("sec_uid", "unknown"),
+                "sec_uid": video_meta.get(aid, {}).get("sec_uid", author_sec_uid),
                 "create_time": create_time,
             }
             cid_str = str(cid)
@@ -1180,7 +1180,7 @@ async def process_one_db(
 
     # 1. 扫描
     try:
-        all_tasks = db.get_all_tasks()
+        all_tasks = db.get_all_tasks(sec_uid)
     except sqlite3.DatabaseError as e:
         log(f"  [SCAN] ❌ 数据库损坏，跳过: {e}")
         db.close()
