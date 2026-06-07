@@ -360,6 +360,10 @@ class MediaDB:
         self.conn.commit()
 
     def close(self):
+        try:
+            self.conn.execute("PRAGMA wal_checkpoint(TRUNCATE)")
+        except Exception:
+            pass
         self.conn.close()
 
     def get_all_cids(self) -> set:
@@ -1175,7 +1179,12 @@ async def process_one_db(
     db = MediaDB(db_path)
 
     # 1. 扫描
-    all_tasks = db.get_all_tasks()
+    try:
+        all_tasks = db.get_all_tasks()
+    except sqlite3.DatabaseError as e:
+        log(f"  [SCAN] ❌ 数据库损坏，跳过: {e}")
+        db.close()
+        return
     if not all_tasks:
         log(f"  [SCAN] ⚠️  无资源，跳过")
         db.close()
