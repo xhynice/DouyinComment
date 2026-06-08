@@ -346,7 +346,31 @@ class SQLiteDatabase(BaseDatabase):
 
     def close(self) -> None:
         self._close_pool()
+        self._auto_vacuum()
         logger.info(f"[DB] SQLite 连接已关闭: {self.db_path}")
+
+    def _auto_vacuum(self, threshold: float = 0.3) -> None:
+        """碎片率超过阈值时自动 VACUUM（页面浪费 > 30%）"""
+        try:
+            conn = sqlite3.connect(self.db_path)
+            page_count = conn.execute("PRAGMA page_count").fetchone()[0]
+            page_size = conn.execute("PRAGMA page_size").fetchone()[0]
+            freelist = conn.execute("PRAGMA freelist_count").fetchone()[0]
+            conn.close()
+
+            if page_count == 0:
+                return
+
+            waste_ratio = freelist / page_count
+            if waste_ratio >= threshold:
+                waste_mb = freelist * page_size / 1024 / 1024
+                logger.info(f"[DB] 碎片率 {waste_ratio:.0%} (浪费 {waste_mb:.1f}MB)，执行 VACUUM...")
+                conn = sqlite3.connect(self.db_path)
+                conn.execute("PRAGMA vacuum")
+                conn.close()
+                logger.info(f"[DB] VACUUM 完成")
+        except Exception as e:
+            logger.warning(f"[DB] 自动 VACUUM 失败: {e}")
 
     def reset_pool(self) -> None:
         """阶段切换时重置连接池：checkpoint WAL + 关闭所有连接"""
