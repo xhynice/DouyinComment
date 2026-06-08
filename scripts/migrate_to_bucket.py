@@ -27,7 +27,7 @@ from collections import defaultdict
 from typing import Any, Dict, List, Optional, Tuple
 
 import httpx
-from huggingface_hub import batch_bucket_files
+from huggingface_hub import batch_bucket_files, HfApi
 from tqdm import tqdm
 
 HEIF_SUPPORT = False
@@ -931,6 +931,11 @@ async def upload_worker(
                 break
             except Exception as e:
                 last_error = e
+                # 认证错误直接终止，不再重试
+                err_str = str(e).lower()
+                if any(kw in err_str for kw in ("unauthorized", "403", "invalid token", "permission")):
+                    log(f"  [UPLOAD] ❌ 认证错误，终止上传: {e}")
+                    raise
                 if retry < 2:
                     log(f"  [UPLOAD] ⚠️  上传失败，重试 ({retry+1}/3): {e}")
                     await asyncio.sleep(2 ** retry)
@@ -1461,6 +1466,21 @@ async def main():
                     return
                 except (APIRateLimitError, APIServerError):
                     log("⚠️  验证请求失败（可能是限流），继续运行")
+
+                # 启动时验证 HF Token
+                log("\n--- 验证 HF Token ---")
+                try:
+                    hf_user = HfApi().whoami()
+                    token_role = hf_user.get("auth", {}).get("accessToken", {}).get("role", "unknown")
+                    log(f"✅ HF Token 有效，用户: {hf_user['name']}，角色: {token_role}")
+                    if token_role not in ("write", "admin"):
+                        log(f"❌ Token 角色 '{token_role}' 无写权限，无法上传到 Bucket")
+                        log("请在 HF Settings 创建具有 write 权限的 Token")
+                        return
+                except Exception as e:
+                    log(f"❌ HF Token 无效: {e}")
+                    log("请检查 HF_TOKEN 环境变量或 huggingface-cli login")
+                    return
 
                 for d in databases:
                     await process_one_db(d["sec_uid"], d["db_path"], client, http_client, global_stats)
