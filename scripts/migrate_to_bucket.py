@@ -45,10 +45,12 @@ except ImportError as e:
     HEIF_IMPORT_ERROR = f"Pillow 未安装: {e}"
 
 sys.path.insert(0, os.path.dirname(__file__))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from douyin_api import (
     sign_request, DouyinClient,
     CookieExpiredError, APIRateLimitError, APIServerError, APIError,
 )
+from core.downloader import detect_ext_from_bytes, convert_heic_to_jpeg as _convert_heic_to_jpeg_core, HEIF_SUPPORT as _DL_HEIF_SUPPORT
 
 # ============================================================
 # 配置
@@ -213,6 +215,7 @@ SUBDIR_MAP = {
 class MediaDB:
     def __init__(self, db_path: str):
         self.conn = sqlite3.connect(db_path)
+        self.conn.execute('PRAGMA busy_timeout=30000')
         self.conn.row_factory = sqlite3.Row
         self._pending_images: Dict[Tuple, List] = {}
 
@@ -482,57 +485,18 @@ def compute_md5(file_path: str) -> str:
 
 
 def detect_ext(file_path: str, url: str) -> str:
+    """Detect extension: try URL suffix first, then magic bytes."""
     path = url.split("?")[0].lower()
     for ext in (".mp4", ".mp3", ".webp", ".jpg", ".jpeg", ".png", ".gif", ".webm", ".wav",
                 ".heic", ".heif", ".avif", ".bmp", ".flac", ".ogg", ".aac"):
         if path.endswith(ext):
             return ext
-    with open(file_path, 'rb') as f:
-        header = f.read(20)
-    if header[:2] == b'\xff\xd8':
-        return ".jpg"
-    elif header[:8] == b'\x89PNG\r\n\x1a\n':
-        return ".png"
-    elif header[:4] == b'GIF8':
-        return ".gif"
-    elif header[:4] == b'RIFF' and len(header) >= 12 and header[8:12] == b'WEBP':
-        return ".webp"
-    elif len(header) >= 12 and header[4:8] == b'ftyp':
-        brand = header[8:12]
-        if brand in (b'heic', b'heix', b'heim', b'heis', b'mif1', b'hevc', b'hevx'):
-            return ".heic"
-        elif brand in (b'avif', b'avis'):
-            return ".avif"
-        else:
-            return ".mp4"
-    elif header[:3] == b'ID3' or header[:2] == b'\xff\xfb' or header[:2] == b'\xff\xf3':
-        return ".mp3"
-    elif header[:4] == b'OggS':
-        return ".ogg"
-    elif header[:4] == b'fLaC':
-        return ".flac"
-    elif header[:4] == b'\x1a\x45\xdf\xa3':
-        return ".webm"
-    elif header[:4] == b'RIFF':
-        return ".wav"
-    return ".jpg"
+    return detect_ext_from_bytes(file_path)
 
 
 def convert_heic_to_jpeg(file_path: str) -> Tuple[str, str]:
     """HEIC 转 JPEG，返回 (新路径, 新扩展名)"""
-    if not HEIF_SUPPORT:
-        return file_path, ".heic"
-    try:
-        img = _PILImage.open(file_path)
-        if img.mode in ('RGBA', 'P'):
-            img = img.convert('RGB')
-        jpeg_path = file_path.rsplit('.', 1)[0] + '.jpg'
-        img.save(jpeg_path, 'JPEG', quality=95)
-        os.remove(file_path)
-        return jpeg_path, ".jpg"
-    except Exception as e:
-        log(f"  [HEIC] ⚠️  转换失败 ({os.path.basename(file_path)}): {e}")
-        return file_path, ".heic"
+    return _convert_heic_to_jpeg_core(file_path)
 
 
 def detect_heic_stats(tasks: List[Dict]) -> Dict:
@@ -1177,210 +1141,207 @@ async def process_one_db(
     log(f"{'─' * 70}")
 
     db = MediaDB(db_path)
-
-    # 1. 扫描
     try:
-        all_tasks = db.get_all_tasks(sec_uid)
-    except sqlite3.DatabaseError as e:
-        log(f"  [SCAN] ❌ 数据库损坏，跳过: {e}")
-        db.close()
-        return
-    if not all_tasks:
-        log(f"  [SCAN] ⚠️  无资源，跳过")
-        db.close()
-        return
-
-    # 1.5 按表过滤
-    if TABLES:
-        all_tasks = [t for t in all_tasks if t["source_table"] in TABLES]
-        if not all_tasks:
-            log(f"  [FILTER] ⚠️  过滤后无任务（限制表: {TABLES}）")
-            db.close()
-            return
-
-    if FIELDS:
-        all_tasks = [t for t in all_tasks if t["api_type"] in FIELDS]
-        if not all_tasks:
-            log(f"  [FILTER] ⚠️  过滤后无任务（限制字段: {FIELDS}）")
-            db.close()
-            return
-
-    # 1.6 按数量限制
-    if MAX_TASKS and len(all_tasks) > MAX_TASKS:
-        log(f"  [FILTER] ⚠️  任务数 {len(all_tasks)} 超过限制 {MAX_TASKS}，截断")
-        all_tasks = all_tasks[:MAX_TASKS]
-
-    log(f"  [SCAN] 总 task 数: {len(all_tasks)}")
-    type_counts = {}
-    for t in all_tasks:
-        type_counts[t["api_type"]] = type_counts.get(t["api_type"], 0) + 1
-    for k, v in sorted(type_counts.items()):
-        log(f"    {k}: {v}")
-
-    # HEIF 检测
-    heif_info = detect_heic_stats(all_tasks)
-    if heif_info["heic_total"] > 0:
-        log(f"  [SCAN] 📷 HEIC 文件: {heif_info['heic_total']} 个")
-
-    # Dry-run 模式：只扫描不执行
-    if DRY_RUN:
-        log(f"\n  [SCAN] 🔍 DRY-RUN 模式，跳过下载和上传")
-        db.close()
-        return
-
-    # 2. 全局去重
-    url_to_tasks: Dict[str, List[Dict]] = defaultdict(list)
-    for t in all_tasks:
-        first_url = t["fallback_urls"][0] if t["fallback_urls"] else ""
-        if first_url:
-            url_to_tasks[first_url].append(t)
-
-    unique_urls = len(url_to_tasks)
-    log(f"  [SCAN] 唯一分组: {unique_urls}，去重节省: {len(all_tasks) - unique_urls} 次下载")
-
-    # 3. 按 aweme_id 分组 URL
-    aweme_to_urls: Dict[str, set] = defaultdict(set)
-    for url, tasks in url_to_tasks.items():
-        for t in tasks:
-            aweme_to_urls[t["aweme_id"]].add(url)
-
-    aweme_ids = list(aweme_to_urls.keys())
-    total_batches = (len(aweme_ids) + BATCH_SIZE - 1) // BATCH_SIZE
-    log(f"  [BATCH] aweme_id 数: {len(aweme_ids)}，分 {total_batches} 批处理")
-
-    # 3.5 全局预拉取视频 URL（按 sec_uid 只拉一次，所有批次共用）
-    # direct 模式下跳过，直接用数据库中的原始 URL
-    video_tasks = [t for t in all_tasks if t["api_type"] in ("origin_cover", "images", "video")]
-    video_cache: Dict[str, Dict] = {}  # aweme_id → {origin_cover, video, images}
-    if video_tasks and not DIRECT_MODE:
-        secuid_to_video_awemeids: Dict[str, set] = defaultdict(set)
-        for t in video_tasks:
-            secuid_to_video_awemeids[t.get("sec_uid", "unknown")].add(t["aweme_id"])
-        for idx, (sec_uid, v_aweme_ids) in enumerate(sorted(secuid_to_video_awemeids.items()), 1):
-            log(f"\n  [API] 🎬 预拉取视频 ({idx}/{len(secuid_to_video_awemeids)}) sec_uid={sec_uid[:30]}... ({len(v_aweme_ids)} 个作品)")
-            videos = await client.fetch_all_videos(sec_uid)
-            log(f"  [API]    获取 {len(videos)} 个作品，匹配 {len(v_aweme_ids)} 个")
-            matched = set()
-            for v in videos:
-                aid = str(v.get("aweme_id", ""))
-                if aid not in v_aweme_ids:
-                    continue
-                matched.add(aid)
-                urls = _extract_video_urls(v)
-                video_cache[aid] = urls
-            unmatched = v_aweme_ids - matched
-            if unmatched:
-                log(f"  [API]    ⚠️  {len(unmatched)} 个未找到: {list(unmatched)[:5]}{'...' if len(unmatched) > 5 else ''}")
-        log(f"  [API] 🎬 视频缓存: {len(video_cache)} 个 aweme_id")
-
-    # 4. 分批处理
-    stats = {"uploaded": 0, "updated_rows": 0, "failed": 0, "heic_converted": 0}
-    semaphore = asyncio.Semaphore(CONCURRENCY)
-    processed_urls = set()
-
-    for batch_idx in range(0, len(aweme_ids), BATCH_SIZE):
-        batch_aweme_ids = aweme_ids[batch_idx:batch_idx + BATCH_SIZE]
-        batch_num = batch_idx // BATCH_SIZE + 1
-
-        # 收集这批要处理的 URL（跳过已处理的）
-        batch_urls = set()
-        for aid in batch_aweme_ids:
-            for url in aweme_to_urls[aid]:
-                if url not in processed_urls:
-                    batch_urls.add(url)
-
-        if not batch_urls:
-            continue
-
-        # 收集这批的 tasks
-        batch_tasks = []
-        for url in batch_urls:
-            batch_tasks.extend(url_to_tasks[url])
-
-        log(f"\n  [BATCH] 📦 批次 {batch_num}/{total_batches}: {len(batch_aweme_ids)} 个 aweme_id, {len(batch_urls)} 个 URL")
-        batch_start = time.time()
-
-        # 获取签名 URL：direct 模式直接用数据库原始 URL，否则调 API
-        if DIRECT_MODE:
-            api_cache = {}
-            for t in batch_tasks:
-                key = get_cache_key(t)
-                if key and t.get("fallback_urls"):
-                    api_cache[key] = t["fallback_urls"]
-            log(f"  [BATCH] direct 模式: 直接使用原始 URL {len(api_cache)} 个")
-        else:
-            api_cache = await fetch_api_urls_batch(client, batch_tasks, db, set(batch_aweme_ids), video_cache=video_cache)
-            log(f"  [BATCH] 获取签名 URL: {len(api_cache)} 个")
-
-        # 并发下载 + 批量上传
-        pbar = tqdm(total=len(batch_tasks), desc=f"    批次{batch_num}", unit="个")
-
-        pending = []
-        for url in batch_urls:
-            url_tasks = url_to_tasks[url]
-            # 找到一个有效的 task 用于获取签名 URL
-            valid_task = next((t for t in url_tasks if get_cache_key(t) in api_cache), None)
-            if valid_task:
-                # 保留所有 tasks，用 valid_task 获取签名 URL
-                pending.append((url, url_tasks, valid_task))
-            else:
-                # 没有有效的 task，全部失败
-                for t in url_tasks:
-                    record_failure(
-                        "cache_miss",
-                        f"{t['source_table']}.id={t['source_id']} api_type={t['api_type']}",
-                        source_table=t["source_table"],
-                        aweme_id=t["aweme_id"],
-                        field=t["field"],
-                        reason=f"cache_key={get_cache_key(t)}"
-                    )
-                stats["failed"] += len(url_tasks)
-
-        # 创建上传队列 + 启动上传 worker
-        upload_queue = asyncio.Queue()
-        worker_task = asyncio.create_task(
-            upload_worker(upload_queue, db, stats, pbar)
-        )
-
-        temp_dir = tempfile.mkdtemp(prefix="migrate_")
-        coros = [
-            process_task(url, url_tasks, valid_task, http_client, db, semaphore, stats, pbar, api_cache, temp_dir, upload_queue)
-            for url, url_tasks, valid_task in pending
-        ]
-        await asyncio.gather(*coros)
-
-        # 所有下载完成，发哨兵值通知 worker 结束
-        await upload_queue.put(None)
-        await worker_task
-
-        pbar.close()
-
+        # 1. 扫描
         try:
-            os.rmdir(temp_dir)
-        except OSError:
-            pass
+            all_tasks = db.get_all_tasks(sec_uid)
+        except sqlite3.DatabaseError as e:
+            log(f"  [SCAN] ❌ 数据库损坏，跳过: {e}")
+            return
+        if not all_tasks:
+            log(f"  [SCAN] ⚠️  无资源，跳过")
+            return
 
-        # 标记已处理
-        processed_urls.update(batch_urls)
+        # 1.5 按表过滤
+        if TABLES:
+            all_tasks = [t for t in all_tasks if t["source_table"] in TABLES]
+            if not all_tasks:
+                log(f"  [FILTER] ⚠️  过滤后无任务（限制表: {TABLES}）")
+                return
 
-        # 提交这批
-        db.flush_pending_images()
-        db.commit()
-        batch_elapsed = time.time() - batch_start
-        log(f"  [BATCH] ✅ 批次完成，已提交 {len(processed_urls)}/{unique_urls} 个 URL，耗时 {batch_elapsed:.1f}s")
+        if FIELDS:
+            all_tasks = [t for t in all_tasks if t["api_type"] in FIELDS]
+            if not all_tasks:
+                log(f"  [FILTER] ⚠️  过滤后无任务（限制字段: {FIELDS}）")
+                return
 
-    db.close()
+        # 1.6 按数量限制
+        if MAX_TASKS and len(all_tasks) > MAX_TASKS:
+            log(f"  [FILTER] ⚠️  任务数 {len(all_tasks)} 超过限制 {MAX_TASKS}，截断")
+            all_tasks = all_tasks[:MAX_TASKS]
 
-    # 汇总
-    log(f"\n  [OK] 作者完成: 上传 {stats['uploaded']}，更新 {stats['updated_rows']} 行，"
-          f"HEIC 转换 {stats['heic_converted']}，失败 {stats['failed']}")
+        log(f"  [SCAN] 总 task 数: {len(all_tasks)}")
+        type_counts = {}
+        for t in all_tasks:
+            type_counts[t["api_type"]] = type_counts.get(t["api_type"], 0) + 1
+        for k, v in sorted(type_counts.items()):
+            log(f"    {k}: {v}")
 
-    global_stats["total_tasks"] += len(all_tasks)
-    global_stats["uploaded"] += stats["uploaded"]
-    global_stats["updated_rows"] += stats["updated_rows"]
-    global_stats["failed"] += stats["failed"]
-    global_stats["heic_converted"] += stats["heic_converted"]
-    global_stats["db_count"] += 1
+        # HEIF 检测
+        heif_info = detect_heic_stats(all_tasks)
+        if heif_info["heic_total"] > 0:
+            log(f"  [SCAN] 📷 HEIC 文件: {heif_info['heic_total']} 个")
+
+        # Dry-run 模式：只扫描不执行
+        if DRY_RUN:
+            log(f"\n  [SCAN] 🔍 DRY-RUN 模式，跳过下载和上传")
+            return
+
+        # 2. 全局去重
+        url_to_tasks: Dict[str, List[Dict]] = defaultdict(list)
+        for t in all_tasks:
+            first_url = t["fallback_urls"][0] if t["fallback_urls"] else ""
+            if first_url:
+                url_to_tasks[first_url].append(t)
+
+        unique_urls = len(url_to_tasks)
+        log(f"  [SCAN] 唯一分组: {unique_urls}，去重节省: {len(all_tasks) - unique_urls} 次下载")
+
+        # 3. 按 aweme_id 分组 URL
+        aweme_to_urls: Dict[str, set] = defaultdict(set)
+        for url, tasks in url_to_tasks.items():
+            for t in tasks:
+                aweme_to_urls[t["aweme_id"]].add(url)
+
+        aweme_ids = list(aweme_to_urls.keys())
+        total_batches = (len(aweme_ids) + BATCH_SIZE - 1) // BATCH_SIZE
+        log(f"  [BATCH] aweme_id 数: {len(aweme_ids)}，分 {total_batches} 批处理")
+
+        # 3.5 全局预拉取视频 URL（按 sec_uid 只拉一次，所有批次共用）
+        # direct 模式下跳过，直接用数据库中的原始 URL
+        video_tasks = [t for t in all_tasks if t["api_type"] in ("origin_cover", "images", "video")]
+        video_cache: Dict[str, Dict] = {}  # aweme_id → {origin_cover, video, images}
+        if video_tasks and not DIRECT_MODE:
+            secuid_to_video_awemeids: Dict[str, set] = defaultdict(set)
+            for t in video_tasks:
+                secuid_to_video_awemeids[t.get("sec_uid", "unknown")].add(t["aweme_id"])
+            for idx, (sec_uid, v_aweme_ids) in enumerate(sorted(secuid_to_video_awemeids.items()), 1):
+                log(f"\n  [API] 🎬 预拉取视频 ({idx}/{len(secuid_to_video_awemeids)}) sec_uid={sec_uid[:30]}... ({len(v_aweme_ids)} 个作品)")
+                videos = await client.fetch_all_videos(sec_uid)
+                log(f"  [API]    获取 {len(videos)} 个作品，匹配 {len(v_aweme_ids)} 个")
+                matched = set()
+                for v in videos:
+                    aid = str(v.get("aweme_id", ""))
+                    if aid not in v_aweme_ids:
+                        continue
+                    matched.add(aid)
+                    urls = _extract_video_urls(v)
+                    video_cache[aid] = urls
+                unmatched = v_aweme_ids - matched
+                if unmatched:
+                    log(f"  [API]    ⚠️  {len(unmatched)} 个未找到: {list(unmatched)[:5]}{'...' if len(unmatched) > 5 else ''}")
+            log(f"  [API] 🎬 视频缓存: {len(video_cache)} 个 aweme_id")
+
+        # 4. 分批处理
+        stats = {"uploaded": 0, "updated_rows": 0, "failed": 0, "heic_converted": 0}
+        semaphore = asyncio.Semaphore(CONCURRENCY)
+        processed_urls = set()
+
+        for batch_idx in range(0, len(aweme_ids), BATCH_SIZE):
+            batch_aweme_ids = aweme_ids[batch_idx:batch_idx + BATCH_SIZE]
+            batch_num = batch_idx // BATCH_SIZE + 1
+
+            # 收集这批要处理的 URL（跳过已处理的）
+            batch_urls = set()
+            for aid in batch_aweme_ids:
+                for url in aweme_to_urls[aid]:
+                    if url not in processed_urls:
+                        batch_urls.add(url)
+
+            if not batch_urls:
+                continue
+
+            # 收集这批的 tasks
+            batch_tasks = []
+            for url in batch_urls:
+                batch_tasks.extend(url_to_tasks[url])
+
+            log(f"\n  [BATCH] 📦 批次 {batch_num}/{total_batches}: {len(batch_aweme_ids)} 个 aweme_id, {len(batch_urls)} 个 URL")
+            batch_start = time.time()
+
+            # 获取签名 URL：direct 模式直接用数据库原始 URL，否则调 API
+            if DIRECT_MODE:
+                api_cache = {}
+                for t in batch_tasks:
+                    key = get_cache_key(t)
+                    if key and t.get("fallback_urls"):
+                        api_cache[key] = t["fallback_urls"]
+                log(f"  [BATCH] direct 模式: 直接使用原始 URL {len(api_cache)} 个")
+            else:
+                api_cache = await fetch_api_urls_batch(client, batch_tasks, db, set(batch_aweme_ids), video_cache=video_cache)
+                log(f"  [BATCH] 获取签名 URL: {len(api_cache)} 个")
+
+            # 并发下载 + 批量上传
+            pbar = tqdm(total=len(batch_tasks), desc=f"    批次{batch_num}", unit="个")
+
+            pending = []
+            for url in batch_urls:
+                url_tasks = url_to_tasks[url]
+                # 找到一个有效的 task 用于获取签名 URL
+                valid_task = next((t for t in url_tasks if get_cache_key(t) in api_cache), None)
+                if valid_task:
+                    # 保留所有 tasks，用 valid_task 获取签名 URL
+                    pending.append((url, url_tasks, valid_task))
+                else:
+                    # 没有有效的 task，全部失败
+                    for t in url_tasks:
+                        record_failure(
+                            "cache_miss",
+                            f"{t['source_table']}.id={t['source_id']} api_type={t['api_type']}",
+                            source_table=t["source_table"],
+                            aweme_id=t["aweme_id"],
+                            field=t["field"],
+                            reason=f"cache_key={get_cache_key(t)}"
+                        )
+                    stats["failed"] += len(url_tasks)
+
+            # 创建上传队列 + 启动上传 worker
+            upload_queue = asyncio.Queue()
+            worker_task = asyncio.create_task(
+                upload_worker(upload_queue, db, stats, pbar)
+            )
+
+            temp_dir = tempfile.mkdtemp(prefix="migrate_")
+            coros = [
+                process_task(url, url_tasks, valid_task, http_client, db, semaphore, stats, pbar, api_cache, temp_dir, upload_queue)
+                for url, url_tasks, valid_task in pending
+            ]
+            await asyncio.gather(*coros)
+
+            # 所有下载完成，发哨兵值通知 worker 结束
+            await upload_queue.put(None)
+            await worker_task
+
+            pbar.close()
+
+            try:
+                os.rmdir(temp_dir)
+            except OSError:
+                pass
+
+            # 标记已处理
+            processed_urls.update(batch_urls)
+
+            # 提交这批
+            db.flush_pending_images()
+            db.commit()
+            batch_elapsed = time.time() - batch_start
+            log(f"  [BATCH] ✅ 批次完成，已提交 {len(processed_urls)}/{unique_urls} 个 URL，耗时 {batch_elapsed:.1f}s")
+
+
+        # 汇总
+        log(f"\n  [OK] 作者完成: 上传 {stats['uploaded']}，更新 {stats['updated_rows']} 行，"
+              f"HEIC 转换 {stats['heic_converted']}，失败 {stats['failed']}")
+
+        global_stats["total_tasks"] += len(all_tasks)
+        global_stats["uploaded"] += stats["uploaded"]
+        global_stats["updated_rows"] += stats["updated_rows"]
+        global_stats["failed"] += stats["failed"]
+        global_stats["heic_converted"] += stats["heic_converted"]
+        global_stats["db_count"] += 1
+
+    finally:
+        db.close()
 
 
 async def main():

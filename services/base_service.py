@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List, Dict, Optional
+from typing import ClassVar, List, Dict, Optional
 
 from core.api import DouyinAPI
 from core.downloader import MediaDownloader
@@ -14,7 +14,7 @@ class BaseService(ABC):
     id_field: str = ""
     table_name: str = ""
     csv_filename: str = ""
-    media_fields: Dict[str, str] = {}
+    media_fields: ClassVar[Dict[str, str]] = {}
     has_avatar_sticker: bool = False
     
     def __init__(self, sec_uid: str, cookie: str = ""):

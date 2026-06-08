@@ -74,8 +74,10 @@ class UserManager:
                     break
 
             if updated:
-                with open(self.config_path, 'w', encoding='utf-8') as f:
+                tmp_path = self.config_path + '.tmp'
+                with open(tmp_path, 'w', encoding='utf-8') as f:
                     f.writelines(lines)
+                os.replace(tmp_path, self.config_path)
                 logger.info(f"[配置] 已更新 nickname: {nickname}")
                 self._config = self._load_config()
             return updated

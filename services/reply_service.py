@@ -148,6 +148,8 @@ class ReplyService(BaseService):
             video_all_replies = []
             for result in results:
                 if isinstance(result, CookieExpiredError):
+                    # 其他任务可能仍在运行，等待一小段时间让它们完成
+                    await asyncio.sleep(0.5)
                     raise result
                 if isinstance(result, Exception):
                     continue

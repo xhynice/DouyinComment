@@ -155,6 +155,10 @@ async def run_all(users: list, limit: int = 0, download_only: bool = False, skip
             await runner.download(users)
         else:
             await runner.collect(users, limit, skip_existing)
+        
+        # 阶段切换：重置所有 DB 连接池，触发 WAL checkpoint
+        from core.database import SQLiteDatabase
+        SQLiteDatabase.reset_all_pools()
     
     print(f"\n{'='*60}")
     print("全部操作完成!")

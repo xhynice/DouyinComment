@@ -19,6 +19,61 @@ try:
 except ImportError:
     HEIF_SUPPORT = False
 
+
+def detect_ext_from_bytes(file_path: str) -> str:
+    """Detect file extension from magic bytes (header sniffing)."""
+    try:
+        with open(file_path, 'rb') as f:
+            header = f.read(20)
+
+        if header[:2] == b'\xff\xd8':
+            return '.jpg'
+        elif header[:8] == b'\x89PNG\r\n\x1a\n':
+            return '.png'
+        elif header[:4] == b'GIF8':
+            return '.gif'
+        elif header[:4] == b'RIFF' and len(header) >= 12 and header[8:12] == b'WEBP':
+            return '.webp'
+        elif len(header) >= 12 and header[4:8] == b'ftyp':
+            brand = header[8:12]
+            if brand in (b'heic', b'heix', b'heim', b'heis', b'mif1', b'hevc', b'hevx'):
+                return '.heic'
+            elif brand in (b'avif', b'avis'):
+                return '.avif'
+            else:
+                return '.mp4'
+        elif header[:3] == b'ID3' or header[:2] == b'\xff\xfb' or header[:2] == b'\xff\xf3':
+            return '.mp3'
+        elif header[:4] == b'OggS':
+            return '.ogg'
+        elif header[:4] == b'fLaC':
+            return '.flac'
+        elif header[:4] == b'\x1a\x45\xdf\xa3':
+            return '.webm'
+        elif header[:4] == b'RIFF':
+            return '.wav'
+        return '.jpg'
+    except (IOError, OSError):
+        return '.jpg'
+
+
+def convert_heic_to_jpeg(file_path: str) -> tuple:
+    """Convert HEIC image to JPEG. Returns (new_path, extension)."""
+    if not HEIF_SUPPORT:
+        return file_path, '.heic'
+    try:
+        img = Image.open(file_path)
+        if img.mode in ('RGBA', 'P'):
+            img = img.convert('RGB')
+        jpeg_path = file_path.rsplit('.', 1)[0] + '.jpg'
+        img.save(jpeg_path, 'JPEG', quality=95)
+        os.remove(file_path)
+        logger.debug(f"[下载] HEIC 转换成功: {file_path} → {jpeg_path}")
+        return jpeg_path, '.jpg'
+    except Exception as e:
+        logger.warning(f"[下载] HEIC 转换失败: {e}")
+        return file_path, '.heic'
+
 BEIJING_TZ = timezone(timedelta(hours=8))
 
 
@@ -128,50 +183,11 @@ class MediaDownloader:
         cls._instances.clear()
 
     def _detect_extension(self, file_path: str) -> str:
-        try:
-            with open(file_path, 'rb') as f:
-                header = f.read(20)
-            
-            if header.startswith(b'\xff\xd8'):
-                return '.jpg'
-            elif header.startswith(b'\x89PNG'):
-                return '.png'
-            elif header.startswith(b'GIF8'):
-                return '.gif'
-            elif header.startswith(b'RIFF') and header[8:12] == b'WEBP':
-                return '.webp'
-            elif header.startswith(b'\x00\x00\x00') and b'ftyp' in header[:12]:
-                ftyp_pos = header.find(b'ftyp')
-                brand = header[ftyp_pos + 4:ftyp_pos + 8]
-                if brand in (b'heic', b'mif1', b'heix'):
-                    return '.heic'
-                elif brand in (b'avif', b'avis'):
-                    return '.avif'
-                else:
-                    return '.mp4'
-            elif header.startswith(b'ID3') or header.startswith(b'\x49\x44\x33'):
-                return '.mp3'
-            return '.jpg'
-        except (IOError, OSError):
-            return '.jpg'
+        return detect_ext_from_bytes(file_path)
 
     def _convert_heic_to_jpeg(self, file_path: str) -> str:
-        if not HEIF_SUPPORT:
-            logger.warning("[下载] pillow-heif 未安装 HEIC 转换不可用")
-            return file_path
-        
-        try:
-            img = Image.open(file_path)
-            jpeg_path = file_path.rsplit('.', 1)[0] + '.jpg'
-            if img.mode in ('RGBA', 'P'):
-                img = img.convert('RGB')
-            img.save(jpeg_path, 'JPEG', quality=95)
-            os.remove(file_path)
-            logger.debug(f"[下载] HEIC 转换成功: {file_path} → {jpeg_path}")
-            return jpeg_path
-        except Exception as e:
-            logger.warning(f"[下载] HEIC 转换失败: {e}")
-            return file_path
+        new_path, _ext = convert_heic_to_jpeg(file_path)
+        return new_path
 
     def _get_extension_from_url(self, url: str) -> str:
         parsed = urlparse(url)
@@ -308,7 +324,7 @@ class MediaDownloader:
                 for url_list in urls:
                     if url_list:
                         r = await self.download_first_valid(url_list, folder, year_month)
-                        results.append(r if r else url_list)
+                        results.append(r)  # 失败时 r 为 None，不混入原始列表
                 return str(results) if results else None
             else:
                 result = await self.download_first_valid(urls, folder, year_month)
@@ -427,7 +443,7 @@ class MediaDownloader:
                     if update_callback and len(results) >= batch_size:
                         with tqdm.external_write_mode():
                             update_callback(results)
-                        results.clear()
+                        results = {}
             except Exception as e:
                 logger.error(f"[下载] 头像/表情下载失败：{e}")
                 # 继续处理其他任务

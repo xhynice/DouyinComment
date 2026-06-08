@@ -175,6 +175,8 @@ class StorageManager:
             if not file_exists:
                 writer.writeheader()
             writer.writerows(truly_new_items)
+            f.flush()
+            os.fsync(f.fileno())
         
         # 同时更新 CSV 和 DB 缓存（P1 优化）
         for item in truly_new_items:
@@ -239,10 +241,17 @@ class StorageManager:
                     rows.append(row)
             
             if updated_count > 0:
-                with open(filepath, 'w', newline='', encoding='utf-8-sig') as f:
-                    writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
-                    writer.writeheader()
-                    writer.writerows(rows)
+                tmp_path = filepath + '.tmp'
+                try:
+                    with open(tmp_path, 'w', newline='', encoding='utf-8-sig') as f:
+                        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
+                        writer.writeheader()
+                        writer.writerows(rows)
+                    os.replace(tmp_path, filepath)
+                except OSError:
+                    if os.path.exists(tmp_path):
+                        os.remove(tmp_path)
+                    raise
                 logger.info(f"[存储] CSV 更新 {updated_count} 条 → {filepath}")
             
             return updated_count

@@ -17,18 +17,6 @@ class BaseDatabase(ABC):
     _connection_lock: threading.Lock
     
     @abstractmethod
-    def execute(self, sql: str, params: Tuple = None) -> int:
-        pass
-    
-    @abstractmethod
-    def query(self, sql: str, params: Tuple = None) -> List[Dict]:
-        pass
-    
-    @abstractmethod
-    def query_one(self, sql: str, params: Tuple = None) -> Optional[Dict]:
-        pass
-    
-    @abstractmethod
     def insert_many(self, table: str, data: List[Dict]) -> int:
         pass
     
@@ -53,9 +41,7 @@ class BaseDatabase(ABC):
             conn = self._pool.get(block=True, timeout=timeout)
             if self._validate_connection(conn):
                 return conn
-            self._safe_close(conn)
-            with self._connection_lock:
-                self._created_connections -= 1
+            self._safe_close(conn)  # _safe_close 内部已递减 _created_connections
             return self._create_new_connection()
         except Empty:
             return self._create_new_connection()
@@ -79,10 +65,9 @@ class BaseDatabase(ABC):
     
     def _safe_close(self, conn: Any) -> None:
         try:
-            conn.execute('PRAGMA wal_checkpoint(TRUNCATE)')
             conn.close()
-        except Exception:
-            pass
+        except Exception as e:
+            logger.warning(f"[DB] 连接关闭失败: {e}")
         with self._connection_lock:
             self._created_connections = max(0, self._created_connections - 1)
     
@@ -116,30 +101,9 @@ class BaseDatabase(ABC):
     
     @contextmanager
     def transaction(self) -> Generator:
-        conn = None
-        cur = None
-        try:
-            conn = self._get_connection()
-            if not conn:
-                raise RuntimeError("数据库连接池已满")
-            cur = conn.cursor()
+        with self.cursor(autocommit=False) as cur:
             yield cur
-            conn.commit()
-        except Exception as e:
-            if conn:
-                try:
-                    conn.rollback()
-                except Exception:
-                    pass
-            raise e
-        finally:
-            if cur:
-                try:
-                    cur.close()
-                except Exception:
-                    pass
-            if conn:
-                self._release_connection(conn)
+            cur.connection.commit()
     
     def get_existing_ids(self, table: str, id_field: str, ids: List[str]) -> Set[str]:
         if not ids:
@@ -251,8 +215,9 @@ class SQLiteDatabase(BaseDatabase):
     def _create_connection(self) -> sqlite3.Connection:
         conn = sqlite3.connect(self.db_path, check_same_thread=False)
         conn.row_factory = sqlite3.Row
-        conn.execute("PRAGMA journal_mode=WAL")
-        conn.execute("PRAGMA synchronous=NORMAL")
+        # DELETE 模式：兼容 FUSE 文件系统，不依赖 mmap 和文件锁
+        conn.execute("PRAGMA journal_mode=DELETE")
+        conn.execute("PRAGMA synchronous=FULL")
         conn.execute("PRAGMA cache_size=-64000")
         conn.execute("PRAGMA busy_timeout=30000")
         return conn
@@ -295,6 +260,32 @@ class SQLiteDatabase(BaseDatabase):
         return result is not None
 
     def _init_tables(self) -> None:
+        # 启动时清理残留 WAL 文件（从 WAL 模式迁移来的遗留）
+        wal_path = self.db_path + "-wal"
+        shm_path = self.db_path + "-shm"
+        if os.path.exists(wal_path):
+            try:
+                conn = sqlite3.connect(self.db_path)
+                conn.execute("PRAGMA wal_checkpoint(TRUNCATE)")
+                conn.close()
+                logger.info(f"[DB] 已 checkpoint 残留 WAL: {self.db_path}")
+            except Exception as e:
+                logger.warning(f"[DB] WAL checkpoint 失败，直接删除: {e}")
+                for p in (wal_path, shm_path):
+                    if os.path.exists(p):
+                        os.remove(p)
+                        logger.info(f"[DB] 已删除: {p}")
+
+        # 完整性检测
+        try:
+            conn = sqlite3.connect(self.db_path)
+            result = conn.execute("PRAGMA integrity_check").fetchone()
+            conn.close()
+            if result and result[0] != 'ok':
+                logger.error(f"[DB] 完整性检测失败: {result[0]}")
+        except Exception as e:
+            logger.warning(f"[DB] 完整性检测异常: {e}")
+
         with self.cursor() as cur:
             cur.executescript("""
                 CREATE TABLE IF NOT EXISTS videos (
@@ -356,6 +347,21 @@ class SQLiteDatabase(BaseDatabase):
     def close(self) -> None:
         self._close_pool()
         logger.info(f"[DB] SQLite 连接已关闭: {self.db_path}")
+
+    def reset_pool(self) -> None:
+        """阶段切换时重置连接池：checkpoint WAL + 关闭所有连接"""
+        self._close_pool()
+        logger.info(f"[DB] 连接池已重置: {self.db_path}")
+
+    @classmethod
+    def reset_all_pools(cls) -> None:
+        """重置所有 DB 实例的连接池"""
+        with cls._lock:
+            for instance in cls._instances.values():
+                try:
+                    instance._close_pool()  # type: ignore
+                except Exception:
+                    pass
 
 
 def get_database(sec_uid: str = None) -> Optional['SQLiteDatabase']:
