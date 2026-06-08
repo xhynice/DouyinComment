@@ -639,7 +639,7 @@ async def fetch_api_urls_batch(
                             api_cache[f"{aid}:images:{i}"] = img_url
     else:
         for idx, (sec_uid, aweme_ids) in enumerate(sorted(secuid_to_awemeids.items()), 1):
-            log(f"  [API] [视频] ({idx}/{len(secuid_to_awemeids)}) 拉取 sec_uid={sec_uid[:20]}... ({len(aweme_ids)} 个作品)")
+            log(f"  [API] [视频] ({idx}/{len(secuid_to_awemeids)}) 拉取 sec_uid={sec_uid} ({len(aweme_ids)} 个作品)")
             videos = await client.fetch_all_videos(sec_uid)
             log(f"  [API] [视频]   获取 {len(videos)} 个作品，匹配 {len(aweme_ids)} 个")
             matched_aids = set()
@@ -1090,16 +1090,16 @@ def select_databases(
     # 只有 1 个库，自动选择
     if len(databases) == 1:
         d = databases[0]
-        log(f"\n  [SCAN] 发现 1 个作者数据库，自动选择: {d['sec_uid'][:40]}...")
+        log(f"\n  [SCAN] 发现 1 个作者数据库，自动选择: {d['sec_uid']}")
         return databases
 
     # 打印摘要表
     log(f"\n  [SCAN] 发现 {len(databases)} 个作者数据库:\n")
-    header = f"  {'#':>3s}   {'sec_uid':<48s}  {'videos':>7s}  {'comments':>9s}  {'replies':>8s}  {'大小':>8s}"
+    header = f"  {'#':>3s}   {'sec_uid':<56s}  {'videos':>7s}  {'comments':>9s}  {'replies':>8s}  {'大小':>8s}"
     log(header)
-    log(f"  {'─' * 3}   {'─' * 48}  {'─' * 7}  {'─' * 9}  {'─' * 8}  {'─' * 8}")
+    log(f"  {'─' * 3}   {'─' * 56}  {'─' * 7}  {'─' * 9}  {'─' * 8}  {'─' * 8}")
     for i, d in enumerate(databases, 1):
-        log(f"  {i:>3d}   {d['sec_uid']:<48s}  {d['videos']:>7d}  {d['comments']:>9d}  {d['replies']:>8d}  {d['size_mb']:>7.1f}M")
+        log(f"  {i:>3d}   {d['sec_uid']:<56s}  {d['videos']:>7d}  {d['comments']:>9d}  {d['replies']:>8d}  {d['size_mb']:>7.1f}M")
     log("")
 
     # 等待用户输入
@@ -1136,7 +1136,7 @@ async def process_one_db(
 ):
     """处理单个作者的数据库（分批处理）"""
     log(f"\n{'─' * 70}")
-    log(f"  [SCAN] 📁 作者: {sec_uid[:40]}...")
+    log(f"  [SCAN] 📁 作者: {sec_uid}")
     log(f"  [SCAN] 📄 数据库: {db_path}")
     log(f"{'─' * 70}")
 
@@ -1216,7 +1216,7 @@ async def process_one_db(
             for t in video_tasks:
                 secuid_to_video_awemeids[t.get("sec_uid", "unknown")].add(t["aweme_id"])
             for idx, (sec_uid, v_aweme_ids) in enumerate(sorted(secuid_to_video_awemeids.items()), 1):
-                log(f"\n  [API] 🎬 预拉取视频 ({idx}/{len(secuid_to_video_awemeids)}) sec_uid={sec_uid[:30]}... ({len(v_aweme_ids)} 个作品)")
+                log(f"\n  [API] 🎬 预拉取视频 ({idx}/{len(secuid_to_video_awemeids)}) sec_uid={sec_uid} ({len(v_aweme_ids)} 个作品)")
                 videos = await client.fetch_all_videos(sec_uid)
                 log(f"  [API]    获取 {len(videos)} 个作品，匹配 {len(v_aweme_ids)} 个")
                 matched = set()
@@ -1423,7 +1423,7 @@ async def main():
 
     log(f"\n  [SCAN] 已选择 {len(databases)} 个数据库:")
     for d in databases:
-        log(f"  [SCAN] 📁 {d['sec_uid'][:40]}... "
+        log(f"  [SCAN] 📁 {d['sec_uid']} "
             f"(videos={d['videos']}, comments={d['comments']}, "
             f"replies={d['replies']}, {d['size_mb']:.1f} MB)")
 
