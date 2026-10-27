@@ -26,6 +26,10 @@ class DouyinAPI:
         'update_version_code': '170400',
         'pc_client_type': '1',
         'pc_libra_divert': 'Windows',
+        # 主站公共组（上游 2026-08-15/16 浏览器实录）：缺 support_* 会被部分
+        # 接口静默拒绝；round_trip_time 主站实录为 0，旧值 50 是错的。
+        'support_h265': '1',
+        'support_dash': '1',
         'version_code': '290100',
         'version_name': '29.1.0',
         'cookie_enabled': 'true',
@@ -45,7 +49,7 @@ class DouyinAPI:
         'platform': 'PC',
         'downlink': '10',
         'effective_type': '4g',
-        'round_trip_time': '50',
+        'round_trip_time': '0',
     }
     
     UA_LIST = [
@@ -226,42 +230,121 @@ class DouyinAPI:
             self.COMMON_HEADERS["sec-ch-ua"] = f'"Not A(Brand";v="8", "Chromium";v="{v}", "Google Chrome";v="{v}"'
         return ua
 
-    async def _prepare_params(self, params: Dict, headers: Dict, sign_method: str = 'sign_datail') -> Tuple[Dict, Dict]:
+    def _get_webid(self) -> str:
+        """webid：主站 44/44 接口都带。上游取登录者 user_unique_id（页面实录），
+        这里用 Cookie 里的 uid_tt 近似（同为登录者数字 id）；取不到则用 19 位
+        随机数兜底（上游 generate_fake_webid 同款做法）。缺 webid 本身就会
+        让部分接口静默拒绝，所以宁可给一个兜底值也不能不带。"""
+        uid = self._cookie_dict.get('uid_tt')
+        if uid:
+            return str(uid)
+        return ''.join(random.choice('0123456789') for _ in range(19))
+
+    async def _prepare_params(self, params: Dict, headers: Dict, sign_method: str = 'sign_datail',
+                              a_bogus_excludes_verify: bool = False,
+                              exclude_uifid: bool = False) -> Tuple[Dict, Dict]:
+        """组装请求参数 + 签名。
+
+        a_bogus 的签名输入范围逐接口不同（上游 2026-08-16 浏览器实录）：
+        - 评论列表：verifyFp/fp 在 a_bogus 之前，参与签名（默认，旧行为）；
+        - 作品列表、回复列表：verifyFp/fp 在 a_bogus 之后，不参与签名
+          （a_bogus_excludes_verify=True）；回复列表还不带 uifid
+          （exclude_uifid=True，回复是上游注明的严格校验接口之一）。
+        顺序错一个，严格校验接口就会判人机验证/403。
+        """
         params = dict(params)
         params.update(self.COMMON_PARAMS)
 
         self._rotate_ua()
-        headers = dict(headers)
-        headers.update(self.COMMON_HEADERS)
-        
+        # 旧代码先 headers.update(COMMON_HEADERS)，会把调用方传的 referer 等
+        # 覆盖掉；改为公共头打底、调用方头覆盖，调用方才能按接口设 referer。
+        headers = dict(self.COMMON_HEADERS)
+        headers.update(dict(headers))
+
         if self.cookie:
             headers['cookie'] = self.cookie
-        
+
         params['msToken'] = self._get_ms_token()
-        
+
         if self._cookie_dict:
             params['screen_width'] = self._cookie_dict.get('dy_swidth', 1920)
             params['screen_height'] = self._cookie_dict.get('dy_sheight', 1080)
             params['cpu_core_num'] = self._cookie_dict.get('device_web_cpu_core', 16)
             params['device_memory'] = self._cookie_dict.get('device_web_memory_size', 8)
-            
+
+            # webid：先于 uifid 加入（上游顺序：round_trip_time 后依次
+            # webid、uifid、verifyFp、fp）。
+            params['webid'] = self._get_webid()
+
+            if not exclude_uifid:
+                # 上游取 UIFID Cookie；旧代码只取 UIFID_TEMP，UIFID 优先、TEMP 兜底。
+                uifid = self._cookie_dict.get('UIFID') or self._cookie_dict.get('UIFID_TEMP')
+                if uifid:
+                    params['uifid'] = uifid
+
+        def _sign_a_bogus(p):
+            try:
+                query = '&'.join([f'{k}={urllib.parse.quote(str(v))}' for k, v in p.items()])
+                p["a_bogus"] = sign_request(query, headers["User-Agent"], sign_method)
+            except Exception as e:
+                logger.warning(f"[API] 签名异常 method={sign_method}: {e}")
+
+        if a_bogus_excludes_verify:
+            # 先算 a_bogus，再补 verifyFp/fp（不参与签名）。
+            _sign_a_bogus(params)
             s_v_web_id = self._cookie_dict.get('s_v_web_id')
             if s_v_web_id:
                 params['verifyFp'] = s_v_web_id
                 params['fp'] = s_v_web_id
-            
-            uifid = self._cookie_dict.get('UIFID_TEMP')
-            if uifid:
-                params['uifid'] = uifid
-        
-        # 纯 Python 签名 (无需 Node.js)
-        try:
-            query = '&'.join([f'{k}={urllib.parse.quote(str(v))}' for k, v in params.items()])
-            params["a_bogus"] = sign_request(query, headers["User-Agent"], sign_method)
-        except Exception as e:
-            logger.warning(f"[API] 签名异常 method={sign_method}: {e}")
+        else:
+            s_v_web_id = self._cookie_dict.get('s_v_web_id')
+            if s_v_web_id:
+                params['verifyFp'] = s_v_web_id
+                params['fp'] = s_v_web_id
+            _sign_a_bogus(params)
 
         return params, headers
+
+    async def _request_signed(self, signed_url: str, headers: Dict) -> Dict:
+        """发送已由 secsdk sign_url() 签好的完整 URL（作品列表专用）。
+
+        必须直接发这个 URL，不能再传 params——httpx 重编码会改变 query，
+        服务端按收到的 query 校验 secsdk 签名就会对不上（上游注释原话）。
+        403 处理与 _request 一致，但不走空响应重签名逻辑（作品采集外层
+        VideoService 已有 3 次重试 + 抖动等待）。
+        """
+        if not self._verified:
+            await self.verify_cookie()
+        client = await self._get_client()
+        try:
+            response = await client.get(signed_url, headers=headers)
+            response.raise_for_status()
+        except httpx.HTTPStatusError as e:
+            if e.response.status_code in (403, 401):
+                raise CookieExpiredError(self._forbidden_msg(e.response.status_code))
+            logger.error(f"[API] HTTP {e.response.status_code} url={signed_url.split('?')[0]}")
+            self._handle_error("HTTP 错误", is_fatal=True)
+            raise CookieExpiredError(f"API HTTP {e.response.status_code}")
+        content = response.text
+        try:
+            result = response.json()
+        except Exception:
+            logger.error(f"[API] JSON 解析失败，响应前 200 字：{content[:200]}")
+            self._handle_error("JSON 解析失败", is_fatal=True)
+            raise CookieExpiredError("API 返回非 JSON")
+        self._error_count = 0
+        return result
+
+    def _forbidden_msg(self, status_code: int) -> str:
+        """403/401 的文案：不要再一律写成“Cookie 可能已过期”。
+
+        2026-10-27 实测：Cookie 验证通过、评论接口正常时作品接口仍 403，
+        根因是签名/风控。验证没通过时才优先怀疑 Cookie。
+        """
+        if self._verified:
+            return (f"API 返回 {status_code}，Cookie 验证已通过，"
+                    f"优先排查签名/风控拦截（非 Cookie 失效）")
+        return f"API 返回 {status_code}，Cookie 可能已过期"
 
     async def _request(self, url: str, params: Dict, headers: Dict, _retry: int = 0) -> Dict:
         while True:
@@ -331,7 +414,7 @@ class DouyinAPI:
                     
             except httpx.HTTPStatusError as e:
                 if e.response.status_code in (403, 401):
-                    msg = f"API 返回 {e.response.status_code}，Cookie 可能已过期"
+                    msg = self._forbidden_msg(e.response.status_code)
                     logger.error(f"[Cookie] ❌ {msg}")
                     self._handle_error("HTTP 错误", is_fatal=True)
                     raise CookieExpiredError(msg)
@@ -374,40 +457,83 @@ class DouyinAPI:
         
         return False
 
-    async def fetch_videos(self, sec_user_id: str, max_cursor: int = 0, count: int = 30) -> Dict:
-        url = "https://www.douyin.com/aweme/v1/web/aweme/post/"
+    async def fetch_videos(self, sec_user_id: str, max_cursor: int = 0, count: int = 18) -> Dict:
+        """作品列表（/aweme/post/，secsdk 受保护接口）。
+
+        对齐上游 DouYin_Spider.get_user_work_info（2026-08-16 浏览器实录）：
+        count 取浏览器真实值 18（旧值 30）；补 locate_query、time_list_query、
+        whale_cut_token（空值但必须发）、cut_version；need_time_list 只在
+        首页为 1；referer 用用户主页；a_bogus 不含 verifyFp/fp；最后整条
+        query 再过 secsdk webSign，直接发签好的 URL。
+        """
+        from core.websign import sign_url as _websign_url
+        base = "https://www.douyin.com/aweme/v1/web/aweme/post/"
         params = {
             "sec_user_id": sec_user_id,
             "max_cursor": str(max_cursor),
-            "count": str(count),
-            "from_user_page": "1",
-            "publish_video_strategy_type": "2",
+            "locate_query": "false",
             "show_live_replay_strategy": "1",
-            "need_time_list": "1"
+            # 上游：首页 1、翻页 0；旧代码恒为 1。
+            "need_time_list": "1" if str(max_cursor) == "0" else "0",
+            "time_list_query": "0",
+            "whale_cut_token": "",
+            "cut_version": "1",
+            "count": str(count),
+            "publish_video_strategy_type": "2",
+            # 采别人主页时为 1；采登录者本人主页时浏览器发 0。这里的采集对象
+            # 都是他人账号，与上游“他人算 1”一致，不再区分本人分支。
+            "from_user_page": "1",
         }
-        params, headers = await self._prepare_params(params, {})
-        data = await self._request(url, params, headers)
+        params, headers = await self._prepare_params(
+            params,
+            {"referer": f"https://www.douyin.com/user/{sec_user_id}"},
+            a_bogus_excludes_verify=True,
+        )
+        query = '&'.join([f'{k}={urllib.parse.quote(str(v))}' for k, v in params.items()])
+        signed = _websign_url(f"{base}?{query}",
+                              uifid=self._cookie_dict.get('UIFID') or self._cookie_dict.get('UIFID_TEMP'))
+        data = await self._request_signed(signed, headers)
 
-        # 首页为空 → cookie大概率过期
         if not data and max_cursor == 0:
-            msg = "作品接口返回空数据，Cookie可能已过期，请更新cookie.txt"
+            msg = "作品接口返回空数据，请检查 Cookie / 签名是否有效"
             logger.error(f"[Cookie] ❌ {msg}")
             raise CookieExpiredError(msg)
 
         return data
 
     async def fetch_comments(self, aweme_id: str, cursor: int = 0, count: int = 50) -> Dict:
+        """一级评论（/comment/list/，不在 secsdk 保护列表里，目前能跑）。
+
+        对齐上游 webui 的 _request_out_comments：补 whale_cut_token（空值）、
+        cut_version、rcFT，以及 referer 用作品页。count 保持 50 不动：
+        服务端目前接受 50，且改成 20 只会让同一批评论多发 2.5 倍请求，
+        没有收益；webid、support_*、round_trip_time 已由 _prepare_params
+        和 COMMON_PARAMS 统一补上。
+        """
         url = "https://www.douyin.com/aweme/v1/web/comment/list/"
         params = {
             "aweme_id": aweme_id,
             "cursor": str(cursor),
             "count": str(count),
-            "item_type": "0"
+            "item_type": "0",
+            "whale_cut_token": "",
+            "cut_version": "1",
+            "rcFT": "",
         }
-        params, headers = await self._prepare_params(params, {})
+        params, headers = await self._prepare_params(
+            params,
+            {"referer": f"https://www.douyin.com/video/{aweme_id}"},
+        )
         return await self._request(url, params, headers)
 
     async def fetch_replies(self, aweme_id: str, comment_id: str, cursor: int = 0, count: int = 50) -> Dict:
+        """回复（/comment/list/reply/，上游注明的严格校验接口）。
+
+        对齐上游 get_work_inner_comment：a_bogus 不含 verifyFp/fp、不带
+        uifid，referer 用作品页。count 保持 50（原因同 fetch_comments）。
+        注意：这个接口的签名输入改动本身就有风险，改完必须实测（见测试
+        记录），不能只凭“浏览器实录”就认为一定过。
+        """
         url = "https://www.douyin.com/aweme/v1/web/comment/list/reply/"
         params = {
             "item_id": aweme_id,
@@ -417,5 +543,11 @@ class DouyinAPI:
             "item_type": "0",
             "cut_version": "1"
         }
-        params, headers = await self._prepare_params(params, {}, sign_method='sign_reply')
+        params, headers = await self._prepare_params(
+            params,
+            {"referer": f"https://www.douyin.com/video/{aweme_id}"},
+            sign_method='sign_reply',
+            a_bogus_excludes_verify=True,
+            exclude_uifid=True,
+        )
         return await self._request(url, params, headers)

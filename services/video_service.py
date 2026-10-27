@@ -22,7 +22,9 @@ class VideoService(BaseService):
     def __init__(self, sec_uid: str, cookie: str = ""):
         super().__init__(sec_uid, cookie)
     
-    async def fetch(self, page_size: int = 30, delay: float = None,
+    # page_size 对齐上游/浏览器实录的 18（旧值 30）；daily_crawl 的 --limit 7
+    # 在第一页内就截断，所以改小不会少采，只会少要无用数据。
+    async def fetch(self, page_size: int = 18, delay: float = None,
                     limit: int = 0, **kwargs) -> List[Dict]:
         all_videos = []
         max_cursor = 0
